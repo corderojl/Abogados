@@ -9,5 +9,6 @@ namespace VelaychuBE
     {
         public int CodigoAsociacion { get; set; }
         public string NombreAsociaccion { get; set; }
+        // prueba de version
     }
 }
