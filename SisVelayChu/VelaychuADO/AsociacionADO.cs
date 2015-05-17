@@ -13,6 +13,7 @@ namespace VelaychuADO
     public class AsociacionADO
     {
         
+        //Ado
         ConexionADO MiConexion = new ConexionADO();
         SqlConnection cnx = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
