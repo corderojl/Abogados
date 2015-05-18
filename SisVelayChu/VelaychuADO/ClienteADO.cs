@@ -234,6 +234,124 @@ namespace VelaychuADO
             }
             return (CodigoCliente);
         }
+        public bool DeshabilitarCliente(int _vcod)
+        {
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspClienteStatus";
 
+            try
+            {
+                cmd.Parameters.Add(new SqlParameter("@vcod", SqlDbType.Int));
+                cmd.Parameters["@vcod"].Value = _vcod;
+                cmd.Parameters.Add(new SqlParameter("@status", SqlDbType.Bit));
+                cmd.Parameters["@status"].Value = 0;
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                vexito = true;
+
+            }
+            catch (SqlException x)
+            {
+                vexito = false;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+
+            return vexito;
+        }
+        public bool HabilitarCliente(int _vcod)
+        {
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspClienteStatus";
+
+            try
+            {
+                cmd.Parameters.Add(new SqlParameter("@vcod", SqlDbType.Int));
+                cmd.Parameters["@vcod"].Value = _vcod;
+                cmd.Parameters.Add(new SqlParameter("@status", SqlDbType.Int));
+                cmd.Parameters["@status"].Value = 1;
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                vexito = true;
+
+            }
+            catch (SqlException x)
+            {
+                vexito = false;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+
+            return vexito;
+        }
+        public ClienteBE TraerCliente(int _Cliente_id)
+        {
+            SqlDataReader dtr = default(SqlDataReader);
+            ClienteBE _ClienteBE = new ClienteBE();
+            DataSet dts = new DataSet();
+            try
+            {
+                cnx.ConnectionString = MiConexion.GetCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "uspClienteTraer";
+                cmd.Parameters.Add(new SqlParameter("@CodigoCliente", SqlDbType.Int));
+                cmd.Parameters["@CodigoCliente"].Value = _Cliente_id;
+                cnx.Open();
+                dtr = cmd.ExecuteReader();
+                if (dtr.HasRows == true)
+                {
+                    dtr.Read();
+                    var _with1 = _ClienteBE;
+                    _with1.CodigoCliente = Convert.ToInt16(dtr.GetValue(dtr.GetOrdinal("CodigoCliente")));
+                    _with1.NombreCompleto = dtr.GetValue(dtr.GetOrdinal("NombreCompleto")).ToString();
+                    _with1.CodigoTipoDocumento = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoTipoDocumento")));
+                    _with1.CodigoAsociacion = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoAsociacion")));
+                    _with1.CodigoTipoCliente = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoTipoCliente")));
+                    _with1.CodigoGrado = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoGrado")));
+                    _with1.CodigoInstitucion = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoInstitucion")));
+                    _with1.CodigoPension = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoPension")));
+                    _with1.NumeroDocumento = dtr.GetValue(dtr.GetOrdinal("NumeroDocumento")).ToString();
+                    _with1.DirecccionCompleta = dtr.GetValue(dtr.GetOrdinal("DirecccionCompleta")).ToString();
+                    _with1.CodigoDepartamento = (dtr.GetValue(dtr.GetOrdinal("CodigoDepartamento"))).ToString();
+                    _with1.CodigoProvincia = (dtr.GetValue(dtr.GetOrdinal("CodigoProvincia"))).ToString();
+                    _with1.CodigoDistrito = (dtr.GetValue(dtr.GetOrdinal("CodigoDistrito"))).ToString();
+                    _with1.TelefonoFijo = dtr.GetValue(dtr.GetOrdinal("TelefonoFijo")).ToString();
+                    _with1.TelefonoCelular1 = dtr.GetValue(dtr.GetOrdinal("TelefonoCelular1")).ToString();
+                    _with1.TelefonoCelular1 = dtr.GetValue(dtr.GetOrdinal("TelefonoCelular1")).ToString();
+                    _with1.Email = dtr.GetValue(dtr.GetOrdinal("Email")).ToString();
+                    _with1.Activo = Convert.ToBoolean(dtr.GetValue(dtr.GetOrdinal("Activo")));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return _ClienteBE;
+        }
     }
 }

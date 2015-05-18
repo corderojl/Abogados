@@ -89,5 +89,82 @@ namespace VelaychuADO
             con.Close();
             return (lExpedientesBE);
         }
+        public DataTable BuscarExpedienteByCliente(int _CodigoCliente)
+        {
+            DataSet dts = new DataSet();
+            try
+            {
+                cnx.ConnectionString = MiConexion.GetCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "uspExpedienteBuscarByCliente";
+                cmd.Parameters.Add(new SqlParameter("@CodigoCliente", SqlDbType.Int));
+                cmd.Parameters["@CodigoCliente"].Value = _CodigoCliente;
+                SqlDataAdapter miada = default(SqlDataAdapter);
+                miada = new SqlDataAdapter(cmd);
+                miada.Fill(dts, "Sistemas");
+                dtv = dts.Tables["Sistemas"].DefaultView;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return dts.Tables["Sistemas"];
+        }
+
+        public ExpedientesBE TraerExpediente(int _CodigoExpediente)
+        {
+            SqlDataReader dtr = default(SqlDataReader);
+            ExpedientesBE _ExpedientesBE = new ExpedientesBE();
+            DataSet dts = new DataSet();
+            try
+            {
+                cnx.ConnectionString = MiConexion.GetCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "uspExpedienteTraer";
+                cmd.Parameters.Add(new SqlParameter("@CodigoExpediente", SqlDbType.Int));
+                cmd.Parameters["@CodigoExpediente"].Value = _CodigoExpediente;
+                cnx.Open();
+                dtr = cmd.ExecuteReader();
+                if (dtr.HasRows == true)
+                {
+                    dtr.Read();
+                    var _with1 = _ExpedientesBE;
+                    _with1.CodigoExpediente = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoExpedientes")));
+                    _with1.NumeroExpediente = dtr.GetValue(dtr.GetOrdinal("NumeroExpediente")).ToString();
+                    _with1.FechaRegistro = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaRegistro")));
+                    _with1.CodigoContrato = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoContrato")));
+                    _with1.CodigoCliente = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoCliente")));
+                    _with1.CodigoMateria = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoMateria")));
+                    _with1.CodigoJuzgado = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoJuzgado")));
+                    _with1.CodigoEspecialista = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoEspecialista")));
+                    _with1.CodigoSala = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoSala")));
+
+                    _with1.Activo = Convert.ToBoolean(dtr.GetValue(dtr.GetOrdinal("Activo")));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return _ExpedientesBE;
+        }
     }
 }

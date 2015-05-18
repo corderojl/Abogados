@@ -42,6 +42,7 @@
     <Compile Include="AsociacionBL.cs" />
     <Compile Include="CargoBL.cs" />
     <Compile Include="ClienteBL.cs" />
+    <Compile Include="ExpedienteBL.cs" />
     <Compile Include="GradoBL.cs" />
     <Compile Include="InstitucionBL.cs" />
     <Compile Include="PensionBL.cs" />

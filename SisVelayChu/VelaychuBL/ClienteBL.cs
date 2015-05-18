@@ -26,5 +26,17 @@ namespace VelaychuBL
         {
             return _ClienteADO.BuscarClienyeByNombres(_nombres);
         }
+        public ClienteBE TraerCliente(int _codigo)
+        {
+            return _ClienteADO.TraerCliente(_codigo);
+        }
+        public bool DeshabilitarCliente(int _codigo)
+        {
+            return _ClienteADO.DeshabilitarCliente(_codigo);
+        }
+        public bool HabilitarCliente(int _codigo)
+        {
+            return _ClienteADO.HabilitarCliente(_codigo);
+        }
     }
 }
