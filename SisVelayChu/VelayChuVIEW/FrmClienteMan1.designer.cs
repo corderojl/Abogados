@@ -89,6 +89,8 @@
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgCliente.Size = new System.Drawing.Size(848, 387);
             this.dtgCliente.TabIndex = 0;
+            this.dtgCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellContentClick);
+            
             // 
             // btnInsertar
             // 

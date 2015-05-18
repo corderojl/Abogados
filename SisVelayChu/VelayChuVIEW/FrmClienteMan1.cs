@@ -64,8 +64,18 @@ namespace VelayChuVIEW
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             FrmClienteMan3 fClienteMan3 = new FrmClienteMan3();
-            //fClienteMan3.Codigo = Convert.ToInt32(dtgUsuario.CurrentRow.Cells[0].Value);
-            fClienteMan3.ShowDialog();
+            fClienteMan3.Codigo = Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value);
+            fClienteMan3.MdiParent = this.MdiParent;
+            fClienteMan3.Show();
+            FiltrarDatos();
+        }
+        
+        private void dtgCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FrmClienteMan3 fClienteMan3 = new FrmClienteMan3();
+            fClienteMan3.Codigo = Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value);
+            fClienteMan3.MdiParent = this.MdiParent;
+            fClienteMan3.Show();
             FiltrarDatos();
         }
     }

@@ -15,5 +15,11 @@ namespace VelayChuVIEW
         {
             InitializeComponent();
         }
+        private int _codigo;
+        public int Codigo
+        {
+            get { return _codigo; }
+            set { _codigo = value; }
+        }
     }
 }
