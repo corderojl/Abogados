@@ -54,6 +54,7 @@
     <Compile Include="ImpulsosBE.cs" />
     <Compile Include="InstitucionBE.cs" />
     <Compile Include="JuzgadoBE.cs" />
+    <Compile Include="ListarExpedientesBE.cs" />
     <Compile Include="MateriaBE.cs" />
     <Compile Include="PensionBE.cs" />
     <Compile Include="PerfilBE.cs" />
