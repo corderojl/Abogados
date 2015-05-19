@@ -33,14 +33,14 @@ namespace VelayChuVIEW
         
         public void FiltrarDatos()
         {
-            string _apellidos, _nombres;
-            _apellidos = "%" + txtApellidos.Text + "%";
+            string  _nombres;
+     
             _nombres = "%" + txtNombres.Text + "%";
-            dtgUsuario.DataSource = _UsuarioBL.BuscarUsuarioByNombres(_nombres, _apellidos);
+            dtgUsuario.DataSource = _UsuarioBL.BuscarUsuarioByNombres(_nombres);
             dtgUsuario.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dtgUsuario.Columns[0].Width = 40;
-            dtgUsuario.Columns[1].Width = 150;
-            dtgUsuario.Columns[8].Width = 200;
+            //dtgUsuario.Columns[0].Width = 40;
+            //dtgUsuario.Columns[1].Width = 150;
+            //dtgUsuario.Columns[8].Width = 200;
             dtgUsuario.Refresh();
         }
 
@@ -90,6 +90,11 @@ namespace VelayChuVIEW
             {
                 MessageBox.Show("Error:" + ex.Message);
             }
+        }
+
+        private void txtNombres_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarDatos();
         }
     }
 }

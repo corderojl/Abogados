@@ -35,10 +35,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtNombres = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuario)).BeginInit();
             this.SuspendLayout();
@@ -57,10 +55,8 @@
             this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 4, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnImprimir, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtApellidos, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtNombres, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtNombres, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -145,44 +141,26 @@
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtApellidos.Location = new System.Drawing.Point(173, 17);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(164, 20);
-            this.txtApellidos.TabIndex = 7;
-            this.txtApellidos.TextChanged += new System.EventHandler(this.txtApellidos_TextChanged);
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNombres.Location = new System.Drawing.Point(513, 17);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(164, 20);
-            this.txtNombres.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Apellidos:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(343, 20);
+            this.label2.Location = new System.Drawing.Point(173, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Nombres:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.txtNombres, 2);
+            this.txtNombres.Location = new System.Drawing.Point(343, 17);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(334, 20);
+            this.txtNombres.TabIndex = 8;
+            this.txtNombres.TextChanged += new System.EventHandler(this.txtNombres_TextChanged);
             // 
             // FrmUsuarioMan1
             // 
@@ -209,9 +187,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtNombres;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
 
     }
