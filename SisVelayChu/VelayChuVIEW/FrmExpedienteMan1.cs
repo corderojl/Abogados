@@ -44,6 +44,22 @@ namespace VelayChuVIEW
             dtgExpediente.Refresh();
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            FrmExpedienteMan2 fFrmClienteMan2 = new FrmExpedienteMan2();
+            //fFrmClienteMan2.Codigo = Convert.ToInt32(dtgExpediente.CurrentRow.Cells[0].Value);
+            fFrmClienteMan2.MdiParent = this.MdiParent;
+            fFrmClienteMan2.Show();
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            FrmExpedienteMan3 fClienteMan3 = new FrmExpedienteMan3();
+            fClienteMan3.Codigo = Convert.ToInt32(dtgExpediente.CurrentRow.Cells[0].Value);
+            fClienteMan3.MdiParent = this.MdiParent;
+            fClienteMan3.Show();
+        }
+
 
     }
 }

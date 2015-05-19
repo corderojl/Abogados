@@ -63,6 +63,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.cboAsociacion = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgExpediente)).BeginInit();
@@ -114,6 +115,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtCelular2);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.txtCelular1);
@@ -149,7 +151,7 @@
             this.groupBox1.Size = new System.Drawing.Size(780, 132);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos principales del CLientes";
+            this.groupBox1.Text = "Datos principales del Clientes";
             // 
             // txtCelular2
             // 
@@ -398,6 +400,15 @@
             this.cboAsociacion.Size = new System.Drawing.Size(93, 21);
             this.cboAsociacion.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Nom. del Cliente:";
+            // 
             // FrmExpedienteMan2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,5 +464,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.ComboBox cboAsociacion;
+        private System.Windows.Forms.Label label1;
     }
 }
