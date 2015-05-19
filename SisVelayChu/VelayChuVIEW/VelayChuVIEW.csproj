@@ -50,6 +50,12 @@
     <Compile Include="FormPrincipal.designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmClienteMan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClienteMan1.Designer.cs">
+      <DependentUpon>FrmClienteMan1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClienteMan2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClienteMan1.resx">
+      <DependentUpon>FrmClienteMan1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteMan2.resx">
       <DependentUpon>FrmClienteMan2.cs</DependentUpon>
