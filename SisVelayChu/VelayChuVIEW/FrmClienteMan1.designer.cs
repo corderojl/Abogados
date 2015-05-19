@@ -61,27 +61,34 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(653, 454);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 509);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dtgCliente
             // 
-            this.dtgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCliente.AllowUserToAddRows = false;
+            this.dtgCliente.AllowUserToDeleteRows = false;
+            this.dtgCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.tableLayoutPanel1.SetColumnSpan(this.dtgCliente, 5);
             this.dtgCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgCliente.Location = new System.Drawing.Point(3, 78);
+            this.dtgCliente.Location = new System.Drawing.Point(3, 87);
             this.dtgCliente.Name = "dtgCliente";
+            this.dtgCliente.ReadOnly = true;
+            this.dtgCliente.RowHeadersVisible = false;
+            this.dtgCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.tableLayoutPanel1.SetRowSpan(this.dtgCliente, 4);
-            this.dtgCliente.Size = new System.Drawing.Size(647, 294);
+            this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgCliente.Size = new System.Drawing.Size(848, 330);
             this.dtgCliente.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 31);
+            this.label2.Location = new System.Drawing.Point(3, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 13);
+            this.label2.Size = new System.Drawing.Size(164, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "Buscar Cliente";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -90,18 +97,18 @@
             // 
             this.txtCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtCliente, 3);
-            this.txtCliente.Location = new System.Drawing.Point(133, 27);
+            this.txtCliente.Location = new System.Drawing.Point(173, 32);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(384, 20);
+            this.txtCliente.Size = new System.Drawing.Size(504, 20);
             this.txtCliente.TabIndex = 12;
             this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // btnInsertar
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertar.Location = new System.Drawing.Point(133, 402);
+            this.btnInsertar.Location = new System.Drawing.Point(173, 452);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(124, 25);
+            this.btnInsertar.Size = new System.Drawing.Size(164, 25);
             this.btnInsertar.TabIndex = 13;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -110,9 +117,9 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(263, 402);
+            this.btnActualizar.Location = new System.Drawing.Point(343, 452);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(124, 25);
+            this.btnActualizar.Size = new System.Drawing.Size(164, 25);
             this.btnActualizar.TabIndex = 14;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -122,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 454);
+            this.ClientSize = new System.Drawing.Size(854, 509);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmClienteMan1";
             this.Text = "FrmClienteMan1";
