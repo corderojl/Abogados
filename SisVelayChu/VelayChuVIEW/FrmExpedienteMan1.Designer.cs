@@ -101,6 +101,7 @@
             this.txtNumeroExpediente.Name = "txtNumeroExpediente";
             this.txtNumeroExpediente.Size = new System.Drawing.Size(135, 20);
             this.txtNumeroExpediente.TabIndex = 2;
+            this.txtNumeroExpediente.TextChanged += new System.EventHandler(this.txtNumeroExpediente_TextChanged);
             // 
             // label2
             // 
@@ -121,6 +122,7 @@
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(276, 20);
             this.txtNombreCliente.TabIndex = 2;
+            this.txtNombreCliente.TextChanged += new System.EventHandler(this.txtNombreCliente_TextChanged);
             // 
             // FrmExpedienteMan1
             // 

@@ -17,5 +17,15 @@ namespace VelayChuVIEW
         {
             InitializeComponent();
         }
+
+        private void txtNumeroExpediente_TextChanged(object sender, EventArgs e)
+        {
+            txtNombreCliente.Text   = "";
+        }
+
+        private void txtNombreCliente_TextChanged(object sender, EventArgs e)
+        {
+            txtNumeroExpediente.Text = "";
+        }
     }
 }
