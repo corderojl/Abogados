@@ -21,11 +21,29 @@ namespace VelayChuVIEW
         private void txtNumeroExpediente_TextChanged(object sender, EventArgs e)
         {
             txtNombreCliente.Text   = "";
+
+            string _numero_expediente;
+            _numero_expediente = "%" + txtNumeroExpediente.Text + "%";
+
+            dtgExpediente.DataSource = oListarExpedientesBL.BuscarExpedienteByNumeroExpedient(_numero_expediente);
+            dtgExpediente.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            dtgExpediente.Refresh();
         }
 
         private void txtNombreCliente_TextChanged(object sender, EventArgs e)
         {
             txtNumeroExpediente.Text = "";
+
+            string _nombre_cliente;
+            _nombre_cliente = "%" + txtNombreCliente.Text + "%";
+
+            dtgExpediente.DataSource = oListarExpedientesBL.BuscarExpedienteByNombreCliente(_nombre_cliente);
+            dtgExpediente.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            dtgExpediente.Refresh();
         }
+
+
     }
 }
