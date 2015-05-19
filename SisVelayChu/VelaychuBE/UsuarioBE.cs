@@ -8,9 +8,8 @@ namespace VelaychuBE
     public class UsuarioBE
     {
         public int CodigoUsuario { get; set; }
-        public string Nombre { get; set; }
-        public string ApellidoPaterno { get; set; }
-        public string ApellidoMaterno { get; set; }
+        public string NombreCompleto { get; set; }
+
         public int CodigoTipoDocumento { get; set; }
         public string NumeroDocumento { get; set; }
         public string Email { get; set; }
