@@ -55,6 +55,7 @@
     <Compile Include="GradoADO.cs" />
     <Compile Include="InstitucionADO.cs" />
     <Compile Include="JuzgadoADO.cs" />
+    <Compile Include="ListarExpedienteADO.cs" />
     <Compile Include="MateriaADO.cs" />
     <Compile Include="PensionADO.cs" />
     <Compile Include="PerfilADO.cs" />
