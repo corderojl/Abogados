@@ -60,7 +60,7 @@ namespace VelaychuADO
                 cnx.ConnectionString = MiConexion.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "uspBuscarExpedienteByNumeroExpedient";
+                cmd.CommandText = "uspBuscarExpedienteByNumeroExpediente";
 
                 par1 = cmd.Parameters.Add(new SqlParameter("@CadenaBusqueda", SqlDbType.VarChar, 150));
                 par1.Direction = ParameterDirection.Input;
@@ -68,6 +68,7 @@ namespace VelaychuADO
 
                 SqlDataAdapter miada = default(SqlDataAdapter);
                 miada = new SqlDataAdapter(cmd);
+
                 miada.Fill(dts, "Sistemas");
                 dtv = dts.Tables["Sistemas"].DefaultView;
             }
