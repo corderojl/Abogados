@@ -96,5 +96,10 @@ namespace VelayChuVIEW
             cboPension.ValueMember = "CodigoPension";
             cboPension.SelectedValue = _CodigoPension;
         }
+
+        private void FrmExpedienteMan2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

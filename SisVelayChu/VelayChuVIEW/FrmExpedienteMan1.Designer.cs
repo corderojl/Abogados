@@ -158,6 +158,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmExpedienteMan1";
             this.Text = "FrmExpedienteMan1";
+            this.Load += new System.EventHandler(this.FrmExpedienteMan1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgExpediente)).EndInit();

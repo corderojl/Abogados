@@ -139,10 +139,9 @@ namespace VelaychuADO
                 {
                     dtr.Read();
                     var _with1 = _ExpedientesBE;
-                    _with1.CodigoExpediente = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoExpedientes")));
+                    _with1.CodigoExpediente = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoExpediente")));
                     _with1.NumeroExpediente = dtr.GetValue(dtr.GetOrdinal("NumeroExpediente")).ToString();
                     _with1.FechaRegistro = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaRegistro")));
-                    _with1.CodigoContrato = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoContrato")));
                     _with1.CodigoCliente = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoCliente")));
                     _with1.CodigoMateria = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoMateria")));
                     _with1.CodigoJuzgado = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoJuzgado")));

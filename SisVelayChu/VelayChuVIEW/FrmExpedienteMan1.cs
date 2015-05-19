@@ -33,6 +33,11 @@ namespace VelayChuVIEW
 
         private void txtNombreCliente_TextChanged(object sender, EventArgs e)
         {
+            llenarData();
+        }
+
+        private void llenarData()
+        {
             txtNumeroExpediente.Text = "";
 
             string _nombre_cliente;
@@ -40,6 +45,7 @@ namespace VelayChuVIEW
 
             dtgExpediente.DataSource = oListarExpedientesBL.BuscarExpedienteByNombreCliente(_nombre_cliente);
             dtgExpediente.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dtgExpediente.Columns[1].Visible = false;
 
             dtgExpediente.Refresh();
         }
@@ -54,10 +60,22 @@ namespace VelayChuVIEW
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            FrmExpedienteMan3 fClienteMan3 = new FrmExpedienteMan3();
-            fClienteMan3.Codigo = Convert.ToInt32(dtgExpediente.CurrentRow.Cells[0].Value);
-            fClienteMan3.MdiParent = this.MdiParent;
-            fClienteMan3.Show();
+            try
+            {
+                FrmExpedienteMan3 fClienteMan3 = new FrmExpedienteMan3();
+                fClienteMan3.Codigo = Convert.ToInt32(dtgExpediente.CurrentRow.Cells[0].Value);
+                fClienteMan3.MdiParent = this.MdiParent;
+                fClienteMan3.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe seleccionar un espediente");
+            }
+        }
+
+        private void FrmExpedienteMan1_Load(object sender, EventArgs e)
+        {
+            llenarData();
         }
 
 

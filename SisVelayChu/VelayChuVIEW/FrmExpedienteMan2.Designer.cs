@@ -418,6 +418,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmExpedienteMan2";
             this.Text = "FrmExpedienteMan2";
+            this.Load += new System.EventHandler(this.FrmExpedienteMan2_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgExpediente)).EndInit();

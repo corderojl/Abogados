@@ -124,6 +124,9 @@
     <EmbeddedResource Include="FrmExpedienteMan2.resx">
       <DependentUpon>FrmExpedienteMan2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmExpedienteMan3.resx">
+      <DependentUpon>FrmExpedienteMan3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarioMan1.resx">
       <DependentUpon>FrmUsuarioMan1.cs</DependentUpon>
     </EmbeddedResource>
