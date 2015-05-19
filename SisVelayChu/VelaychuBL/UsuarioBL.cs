@@ -33,9 +33,9 @@ namespace VelaychuBL
             return _UsuarioADO.TraerUsuario(_Usuario_id);
         }
 
-        public object BuscarUsuarioByNombres(string _nombres, string _apellidos)
+        public object BuscarUsuarioByNombres(string _nombres)
         {
-            return _UsuarioADO.BuscarUsuarioByNombres(_nombres, _apellidos);
+            return _UsuarioADO.BuscarUsuarioByNombres(_nombres);
         }
 
         public int InsertarUsuario(UsuarioBE _UsuarioBE)
