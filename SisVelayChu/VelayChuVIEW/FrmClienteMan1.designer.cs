@@ -55,12 +55,12 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.840864F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.7721F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.16503F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.823183F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 509);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -72,21 +72,21 @@
             this.dtgCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.tableLayoutPanel1.SetColumnSpan(this.dtgCliente, 5);
             this.dtgCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgCliente.Location = new System.Drawing.Point(3, 87);
+            this.dtgCliente.Location = new System.Drawing.Point(3, 48);
             this.dtgCliente.Name = "dtgCliente";
             this.dtgCliente.ReadOnly = true;
             this.dtgCliente.RowHeadersVisible = false;
             this.dtgCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.tableLayoutPanel1.SetRowSpan(this.dtgCliente, 4);
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCliente.Size = new System.Drawing.Size(848, 330);
+            this.dtgCliente.Size = new System.Drawing.Size(848, 406);
             this.dtgCliente.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 35);
+            this.label2.Location = new System.Drawing.Point(3, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 13);
             this.label2.TabIndex = 11;
@@ -97,7 +97,7 @@
             // 
             this.txtCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtCliente, 3);
-            this.txtCliente.Location = new System.Drawing.Point(173, 32);
+            this.txtCliente.Location = new System.Drawing.Point(173, 12);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(504, 20);
             this.txtCliente.TabIndex = 12;
@@ -106,7 +106,7 @@
             // btnInsertar
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertar.Location = new System.Drawing.Point(173, 452);
+            this.btnInsertar.Location = new System.Drawing.Point(173, 470);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(164, 25);
             this.btnInsertar.TabIndex = 13;
@@ -117,7 +117,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(343, 452);
+            this.btnActualizar.Location = new System.Drawing.Point(343, 470);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(164, 25);
             this.btnActualizar.TabIndex = 14;
