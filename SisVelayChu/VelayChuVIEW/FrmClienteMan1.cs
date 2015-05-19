@@ -35,7 +35,7 @@ namespace VelayChuVIEW
             FrmClienteMan2 fFrmClienteMan2 = new FrmClienteMan2();
             fFrmClienteMan2.MdiParent = this.MdiParent;
             fFrmClienteMan2.Show();
-            FiltrarDatos();
+            //FiltrarDatos();
         }
 
         private void txtCliente_TextChanged(object sender, EventArgs e)
@@ -58,9 +58,9 @@ namespace VelayChuVIEW
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             FrmClienteMan3 fClienteMan3 = new FrmClienteMan3();
-            //fClienteMan3.Codigo = Convert.ToInt32(dtgUsuario.CurrentRow.Cells[0].Value);
-            fClienteMan3.ShowDialog();
-            FiltrarDatos();
+            fClienteMan3.Codigo = Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value);
+            fClienteMan3.MdiParent = this.MdiParent;
+            fClienteMan3.Show();
         }
     }
 }
