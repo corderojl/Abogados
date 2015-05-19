@@ -66,9 +66,8 @@ namespace VelaychuADO
                         ReadSingleRow((IDataRecord)drd);
                         obeUsuarioBE = new UsuarioBE();
                         obeUsuarioBE.CodigoCargo = Convert.ToInt32(drd[0]);
-                        obeUsuarioBE.Nombre = drd[1].ToString();
-                        obeUsuarioBE.ApellidoPaterno = drd[2].ToString();
-                        obeUsuarioBE.ApellidoMaterno = drd[3].ToString();
+                        obeUsuarioBE.NombreCompleto = drd[1].ToString();
+       
                         obeUsuarioBE.CodigoTipoDocumento = Convert.ToInt32(drd[4]);
                         obeUsuarioBE.NumeroDocumento = drd[5].ToString();
                         obeUsuarioBE.Email = drd[6].ToString();
@@ -241,9 +240,8 @@ namespace VelaychuADO
                     dtr.Read();
                     var _with1 = _UsuarioBE;
                     _with1.CodigoUsuario = Convert.ToInt16(dtr.GetValue(dtr.GetOrdinal("Usuario_Id")));
-                    _with1.Nombre = dtr.GetValue(dtr.GetOrdinal("Usuario_Nome")).ToString();
-                    _with1.ApellidoPaterno = dtr.GetValue(dtr.GetOrdinal("ApellidoPaterno")).ToString();
-                    _with1.ApellidoMaterno = dtr.GetValue(dtr.GetOrdinal("ApellidoMaterno")).ToString();
+                    _with1.NombreCompleto = dtr.GetValue(dtr.GetOrdinal("Usuario_Nome")).ToString();
+
                     _with1.Email = dtr.GetValue(dtr.GetOrdinal("ApellidoMaterno")).ToString();
                     _with1.CodigoPerfil = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoPerfil")));
                     _with1.CodigoCargo = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoCargo")));
@@ -283,9 +281,8 @@ namespace VelaychuADO
                     dtr.Read();
                     var _with1 = _UsuarioBE;
                     _with1.CodigoUsuario = Convert.ToInt16(dtr.GetValue(dtr.GetOrdinal("CodigoUsuario")));
-                    _with1.Nombre = dtr.GetValue(dtr.GetOrdinal("Nombre")).ToString();
-                    _with1.ApellidoPaterno = dtr.GetValue(dtr.GetOrdinal("ApellidoPaterno")).ToString();
-                    _with1.ApellidoMaterno = dtr.GetValue(dtr.GetOrdinal("ApellidoMaterno")).ToString();
+                    _with1.NombreCompleto = dtr.GetValue(dtr.GetOrdinal("NombreCompleto")).ToString();
+
                     _with1.CodigoTipoDocumento = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoTipoDocumento")));
                     _with1.NumeroDocumento = dtr.GetValue(dtr.GetOrdinal("NumeroDocumento")).ToString();
                     _with1.Email = dtr.GetValue(dtr.GetOrdinal("Email")).ToString();
@@ -309,7 +306,7 @@ namespace VelaychuADO
             return _UsuarioBE;
         }
 
-        public DataTable BuscarUsuarioByNombres(string _nombres, string _apellidos)
+        public DataTable BuscarUsuarioByNombres(string _nombres)
         {
             DataSet dts = new DataSet();
             SqlParameter par1;
@@ -320,12 +317,10 @@ namespace VelaychuADO
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "uspUsuarioBuscarByNombres";
 
-                par1 = cmd.Parameters.Add(new SqlParameter("@Nombres", SqlDbType.VarChar, 30));
+                par1 = cmd.Parameters.Add(new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 30));
                 par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@Nombres"].Value = _nombres;
-                par1 = cmd.Parameters.Add(new SqlParameter("@Apellidos", SqlDbType.VarChar, 30));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@Apellidos"].Value = _apellidos;
+                cmd.Parameters["@NombreCompleto"].Value = _nombres;
+
                 SqlDataAdapter miada = default(SqlDataAdapter);
                 miada = new SqlDataAdapter(cmd);
                 miada.Fill(dts, "Sistemas");
@@ -358,13 +353,8 @@ namespace VelaychuADO
             {
                 par1 = cmd.Parameters.Add(new SqlParameter("@Nombre", SqlDbType.VarChar, 150));
                 par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@Nombre"].Value = _UsuarioBE.Nombre;
-                par1 = cmd.Parameters.Add(new SqlParameter("@ApellidoPaterno", SqlDbType.VarChar, 150));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@ApellidoPaterno"].Value = _UsuarioBE.ApellidoPaterno;
-                par1 = cmd.Parameters.Add(new SqlParameter("@ApellidoMaterno", SqlDbType.VarChar, 150));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@ApellidoMaterno"].Value = _UsuarioBE.ApellidoMaterno;
+                cmd.Parameters["@Nombre"].Value = _UsuarioBE.NombreCompleto;
+
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoTipoDocumento", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoTipoDocumento"].Value = _UsuarioBE.CodigoTipoDocumento;
@@ -419,18 +409,15 @@ namespace VelaychuADO
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoUsuario", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoUsuario"].Value = _UsuarioBE.CodigoUsuario;
+
                 par1 = cmd.Parameters.Add(new SqlParameter("@Nombre", SqlDbType.VarChar, 150));
                 par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@Nombre"].Value = _UsuarioBE.Nombre;
-                par1 = cmd.Parameters.Add(new SqlParameter("@ApellidoPaterno", SqlDbType.VarChar, 150));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@ApellidoPaterno"].Value = _UsuarioBE.ApellidoPaterno;
-                par1 = cmd.Parameters.Add(new SqlParameter("@ApellidoMaterno", SqlDbType.VarChar, 150));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@ApellidoMaterno"].Value = _UsuarioBE.ApellidoMaterno;
+                cmd.Parameters["@Nombre"].Value = _UsuarioBE.NombreCompleto;
+
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoTipoDocumento", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoTipoDocumento"].Value = _UsuarioBE.CodigoTipoDocumento;
+
                 par1 = cmd.Parameters.Add(new SqlParameter("@NumeroDocumento", SqlDbType.VarChar, 50));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@NumeroDocumento"].Value = _UsuarioBE.NumeroDocumento;
