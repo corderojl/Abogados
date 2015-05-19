@@ -57,7 +57,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(746, 417);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 509);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dtgExpediente
@@ -68,10 +68,14 @@
             this.dtgExpediente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.tableLayoutPanel1.SetColumnSpan(this.dtgExpediente, 5);
             this.dtgExpediente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgExpediente.Location = new System.Drawing.Point(3, 47);
+            this.dtgExpediente.Location = new System.Drawing.Point(3, 56);
             this.dtgExpediente.Name = "dtgExpediente";
+            this.dtgExpediente.ReadOnly = true;
+            this.dtgExpediente.RowHeadersVisible = false;
+            this.dtgExpediente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.tableLayoutPanel1.SetRowSpan(this.dtgExpediente, 4);
-            this.dtgExpediente.Size = new System.Drawing.Size(740, 295);
+            this.dtgExpediente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgExpediente.Size = new System.Drawing.Size(848, 364);
             this.dtgExpediente.TabIndex = 0;
             // 
             // label1
@@ -79,7 +83,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(7, 15);
+            this.label1.Location = new System.Drawing.Point(28, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 13);
             this.label1.TabIndex = 1;
@@ -89,16 +93,16 @@
             // 
             this.txtClienteExpediente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtClienteExpediente, 3);
-            this.txtClienteExpediente.Location = new System.Drawing.Point(152, 12);
+            this.txtClienteExpediente.Location = new System.Drawing.Point(173, 16);
             this.txtClienteExpediente.Name = "txtClienteExpediente";
-            this.txtClienteExpediente.Size = new System.Drawing.Size(441, 20);
+            this.txtClienteExpediente.Size = new System.Drawing.Size(504, 20);
             this.txtClienteExpediente.TabIndex = 2;
             // 
             // FrmExpedienteMan1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 417);
+            this.ClientSize = new System.Drawing.Size(854, 509);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmExpedienteMan1";
             this.Text = "FrmExpedienteMan1";
