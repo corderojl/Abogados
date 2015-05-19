@@ -36,6 +36,8 @@
             this.ingresarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarExpedienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +46,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.empleadoToolStripMenuItem,
+            this.toolStripMenuItem2,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -78,14 +81,14 @@
             // ingresarEmpleadoToolStripMenuItem
             // 
             this.ingresarEmpleadoToolStripMenuItem.Name = "ingresarEmpleadoToolStripMenuItem";
-            this.ingresarEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ingresarEmpleadoToolStripMenuItem.Text = "Buscar Cliente";
+            this.ingresarEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.ingresarEmpleadoToolStripMenuItem.Text = "Registrar Cliente";
             this.ingresarEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.ingresarEmpleadoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(157, 6);
             // 
             // salirToolStripMenuItem
             // 
@@ -93,6 +96,21 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarExpedienteToolStripMenuItem1});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(81, 20);
+            this.toolStripMenuItem2.Text = "Expedientes";
+            // 
+            // registrarExpedienteToolStripMenuItem1
+            // 
+            this.registrarExpedienteToolStripMenuItem1.Name = "registrarExpedienteToolStripMenuItem1";
+            this.registrarExpedienteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.registrarExpedienteToolStripMenuItem1.Text = "Registrar Expediente";
+            this.registrarExpedienteToolStripMenuItem1.Click += new System.EventHandler(this.registrarExpedienteToolStripMenuItem1_Click);
             // 
             // FormPrincipal
             // 
@@ -122,5 +140,7 @@
         private System.Windows.Forms.ToolStripMenuItem ingresarEmpleadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem registrarExpedienteToolStripMenuItem1;
     }
 }

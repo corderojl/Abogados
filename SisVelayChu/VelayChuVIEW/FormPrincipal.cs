@@ -48,5 +48,15 @@ namespace VelayChuVIEW
                 Application.Exit();
             }
         }
+
+
+
+        private void registrarExpedienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmExpedienteMan1 FrmExpedienteMan1;
+            FrmExpedienteMan1 = new FrmExpedienteMan1();
+            FrmExpedienteMan1.MdiParent = this;
+            FrmExpedienteMan1.Show();
+        }
     }
 }
