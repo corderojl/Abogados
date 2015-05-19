@@ -52,14 +52,6 @@ namespace VelayChuVIEW
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            FrmExpedienteMan2 fFrmClienteMan2 = new FrmExpedienteMan2();
-            //fFrmClienteMan2.Codigo = Convert.ToInt32(dtgExpediente.CurrentRow.Cells[0].Value);
-            fFrmClienteMan2.MdiParent = this.MdiParent;
-            fFrmClienteMan2.Show();
-        }
-
-        private void btnInsertar_Click(object sender, EventArgs e)
-        {
             try
             {
                 FrmExpedienteMan3 fClienteMan3 = new FrmExpedienteMan3();
@@ -71,6 +63,15 @@ namespace VelayChuVIEW
             {
                 MessageBox.Show("Debe seleccionar un espediente");
             }
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            FrmExpedienteMan2 fFrmClienteMan2 = new FrmExpedienteMan2();
+            //fFrmClienteMan2.Codigo = Convert.ToInt32(dtgExpediente.CurrentRow.Cells[0].Value);
+            fFrmClienteMan2.MdiParent = this.MdiParent;
+            fFrmClienteMan2.Show();
+           
         }
 
         private void FrmExpedienteMan1_Load(object sender, EventArgs e)

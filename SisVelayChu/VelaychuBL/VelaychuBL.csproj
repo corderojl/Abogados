@@ -48,7 +48,9 @@
     <Compile Include="ExpedienteBL.cs" />
     <Compile Include="GradoBL.cs" />
     <Compile Include="InstitucionBL.cs" />
+    <Compile Include="JuzgadoBL.cs" />
     <Compile Include="ListarExpedientesBL.cs" />
+    <Compile Include="MateriaBL.cs" />
     <Compile Include="PensionBL.cs" />
     <Compile Include="PerfilBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -24,11 +24,11 @@ namespace VelayChuVIEW
         ContratoBL _ContratoBL = new ContratoBL();
         DocumentoBL _DocumentoBL = new DocumentoBL();
 
-        SalaBL _TipoDocumentoBL = new TipoDocumentoBL();
-        TipoClienteBL _TipoClienteBL = new TipoClienteBL();
-        GradoBL _GradoBL = new GradoBL();
-        InstitucionBL _InstitucionBL = new InstitucionBL();
-        PensionBL _PensionBL = new PensionBL();
+        SalaBL _SalaBL = new SalaBL();
+        JuzgadoBL _JuzgadoBL = new JuzgadoBL();
+        MateriaBL _MateriaBL = new MateriaBL();
+        EspecialistaBL _EspecialistaBL = new EspecialistaBL();
+        
 
         public FrmExpedienteMan3()
         {
@@ -70,15 +70,15 @@ namespace VelayChuVIEW
 
         private void llenarComboSala(int _CodigoSalas)
         {
-            cboSala.DataSource = _sala.ListAsociacion_All();
-            cboSala.DisplayMember = "DescripcionSalas";
-            cboSala.ValueMember = "CodigoSalas";
+            cboSala.DataSource = _SalaBL.ListarCON_SalaOAct();
+            cboSala.DisplayMember = "DescripcionSala";
+            cboSala.ValueMember = "CodigoSala";
             cboSala.SelectedValue = _CodigoSalas;
         }
 
         private void llenarComboEspecialista(int _CodigoEspecialista)
         {
-            cboEspecialista.DataSource = _AsociacionBL.ListAsociacion_All();
+            cboEspecialista.DataSource = _EspecialistaBL.ListEspecialista_All();
             cboEspecialista.DisplayMember = "NombreEspecialista";
             cboEspecialista.ValueMember = "CodigoEspecialista";
             cboEspecialista.SelectedValue = _CodigoEspecialista;
@@ -86,26 +86,26 @@ namespace VelayChuVIEW
 
         private void llenarComboJuzgado(int _CodigoJuzgados)
         {
-            cboJuzgado.DataSource = _AsociacionBL.ListAsociacion_All();
-            cboJuzgado.DisplayMember = "DescripcionJuzgados";
-            cboJuzgado.ValueMember = "CodigoJuzgados";
+            cboJuzgado.DataSource = _JuzgadoBL.ListJuzgado_All();
+            cboJuzgado.DisplayMember = "DescripcionJuzgado";
+            cboJuzgado.ValueMember = "CodigoJuzgado";
             cboJuzgado.SelectedValue = _CodigoJuzgados;
         }
 
         private void llenarComboMateria(int _CodigoMaterias)
         {
-            cboMateria.DataSource = _AsociacionBL.ListAsociacion_All();
-            cboMateria.DisplayMember = "DescripcionMaterias";
-            cboMateria.ValueMember = "CodigoMaterias";
+            cboMateria.DataSource = _MateriaBL.ListMateria_All();
+            cboMateria.DisplayMember = "DescripcionMateria";
+            cboMateria.ValueMember = "CodigoMateria";
             cboMateria.SelectedValue = _CodigoMaterias;
         }
 
-        private void llenarComboCliente(int _CodigoClientes)
+        private void llenarComboCliente(int _CodigoCliente)
         {
-            cboCliente.DataSource = _AsociacionBL.ListAsociacion_All();
-            cboCliente.DisplayMember = "NombreClientes";
-            cboCliente.ValueMember = "CodigoClientes";
-            cboCliente.SelectedValue = _CodigoClientes;
+            cboCliente.DataSource = _ClienteBL.ListarClienteO_Act();
+            cboCliente.DisplayMember = "NombreCompleto";
+            cboCliente.ValueMember = "CodigoCliente";
+            cboCliente.SelectedValue = _CodigoCliente;
         }
 
        

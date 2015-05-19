@@ -12,12 +12,12 @@ namespace VelaychuBL
     {
         ClienteADO _ClienteADO = new ClienteADO();
 
-        public DataTable ListarUsuario_All()
+        public DataTable ListarCliente_All()
         {
             return _ClienteADO.ListarDataTableCliente_All();
         }
 
-        public List<ClienteBE> ListarUsuarioO_Act()
+        public List<ClienteBE> ListarClienteO_Act()
         {
             return _ClienteADO.ListCliente_All();
         }
