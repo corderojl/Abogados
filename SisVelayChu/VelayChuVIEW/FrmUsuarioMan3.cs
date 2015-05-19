@@ -29,15 +29,15 @@ namespace VelayChuVIEW
             get { return _codigo; }
             set { _codigo = value; }
         }
+
         private void FrmUsuarioMan3_Load(object sender, EventArgs e)
         {
             try
             {
                 _UsuarioBE = _UsuarioBL.TraerFnc_Usuario(_codigo);
-                txtNombre.Text = _UsuarioBE.Nombre;
+                txtNombre.Text = _UsuarioBE.NombreCompleto;
                 lblCodigoUsuario.Text = _UsuarioBE.CodigoUsuario.ToString();
-                txtApellidoPaterno.Text = _UsuarioBE.ApellidoPaterno;
-                txtApellidoMaterno.Text = _UsuarioBE.ApellidoMaterno;
+
                 txtNumeroDocumento.Text = _UsuarioBE.NumeroDocumento;
                 txtEmail.Text = _UsuarioBE.Email;
                 txtLogin.Text = _UsuarioBE.Login;
@@ -57,7 +57,6 @@ namespace VelayChuVIEW
             cboPerfil.ValueMember = "CodigoPerfil";
             cboPerfil.SelectedValue = CodigoPerfil;
         }
-
         private void llenarComboCargo(int CodigoCargo)
         {
             cboCargo.DataSource = _CargoBL.ListarCON_CargoOAct();
@@ -65,7 +64,6 @@ namespace VelayChuVIEW
             cboCargo.ValueMember = "CodigoCargo";
             cboCargo.SelectedValue = CodigoCargo;
         }
-
         private void llenarComboTipoDocumento(int CodigoTipoDocumento)
         {
             cboTipoDocumento.DataSource = _TipoDocumentoBL.ListTipoDocumento_All();
@@ -80,10 +78,9 @@ namespace VelayChuVIEW
             {
                 var _miempl = _UsuarioBE;
                 _miempl.CodigoUsuario = int.Parse(lblCodigoUsuario.Text);
-               
-                _miempl.Nombre = txtNombre.Text;
-                _miempl.ApellidoPaterno = txtApellidoPaterno.Text;
-                _miempl.ApellidoMaterno = txtApellidoMaterno.Text;
+
+                _miempl.NombreCompleto = txtNombre.Text;
+
                 _miempl.CodigoTipoDocumento = Convert.ToInt32(cboTipoDocumento.SelectedValue);
                 _miempl.NumeroDocumento = txtNumeroDocumento.Text;
                 _miempl.CodigoCargo = Convert.ToInt32(cboCargo.SelectedValue);

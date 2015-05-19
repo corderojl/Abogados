@@ -60,9 +60,8 @@ namespace VelayChuVIEW
             {
                 var _miempl = _UsuarioBE;
                 //_miempl.Emp_id = "";
-                _miempl.Nombre = txtNombre.Text;
-                _miempl.ApellidoPaterno = txtApellidoPaterno.Text;
-                _miempl.ApellidoMaterno = txtApellidoMaterno.Text;
+                _miempl.NombreCompleto = txtNombre.Text;
+
                 _miempl.CodigoTipoDocumento = Convert.ToInt32(cboTipoDocumento.SelectedValue);
                 _miempl.NumeroDocumento = txtNumeroDocumento.Text;
                 _miempl.CodigoCargo = Convert.ToInt32(cboCargo.SelectedValue);

@@ -50,12 +50,6 @@
     <Compile Include="FormPrincipal.designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmClienteMan1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmClienteMan1.designer.cs">
-      <DependentUpon>FrmClienteMan1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmClienteMan2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +61,12 @@
     </Compile>
     <Compile Include="FrmClienteMan3.Designer.cs">
       <DependentUpon>FrmClienteMan3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExpedienteMan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExpedienteMan1.Designer.cs">
+      <DependentUpon>FrmExpedienteMan1.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUsuarioMan1.cs">
       <SubType>Form</SubType>
@@ -91,14 +91,14 @@
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmClienteMan1.resx">
-      <DependentUpon>FrmClienteMan1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteMan2.resx">
       <DependentUpon>FrmClienteMan2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteMan3.resx">
       <DependentUpon>FrmClienteMan3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExpedienteMan1.resx">
+      <DependentUpon>FrmExpedienteMan1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarioMan1.resx">
       <DependentUpon>FrmUsuarioMan1.cs</DependentUpon>
