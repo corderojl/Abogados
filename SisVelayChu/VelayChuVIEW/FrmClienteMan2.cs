@@ -20,6 +20,8 @@ namespace VelayChuVIEW
         InstitucionBL _InstitucionBL = new InstitucionBL();
         PensionBL _PensionBL = new PensionBL();
 
+        ClienteBE _ClienteBE = new ClienteBE();
+
         public FrmClienteMan2()
         {
             InitializeComponent();
@@ -74,6 +76,47 @@ namespace VelayChuVIEW
             llenarComboInstitucion();
             llenarComboPension();
 
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            ClienteBL _ClienteBL = new ClienteBL();
+            int _registro = -1;
+            try
+            {
+                var _miempl = _ClienteBE;
+                //_miempl.Emp_id = "";
+                _miempl.NombreCompleto = txtNombreCompleto.Text;
+                _miempl.CodigoTipoDocumento = Convert.ToInt32(cboTipoDocumento.SelectedValue);
+                _miempl.NumeroDocumento = txtNumeroDocumento.Text;
+                _miempl.CodigoAsociacion = Convert.ToInt32(cboAsociacion.SelectedValue);
+                _miempl.CodigoTipoCliente = Convert.ToInt32(cboTipoCliente.SelectedValue);
+                _miempl.CodigoGrado = Convert.ToInt32(cboGrado.SelectedValue);
+                _miempl.CodigoInstitucion = Convert.ToInt32(cboInstitucion.SelectedValue);
+                _miempl.CodigoPension = Convert.ToInt32(cboPension.SelectedValue);
+                _miempl.DirecccionCompleta = txtDireccionCompleta.Text;
+                _miempl.TelefonoFijo = txtTelefonoFijo.Text;
+                _miempl.TelefonoCelular1 = txtCelular1.Text;
+                _miempl.TelefonoCelular2 = txtCelular2.Text;
+                _miempl.Email = txtEmail.Text;
+
+                _registro = _ClienteBL.InsertarCliente(_ClienteBE);
+                if (_registro > -1)
+                {
+                    MessageBox.Show("Se registro con Exito");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error, verifique los Datos");
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se a producido el siguiente error: " + ex.Message);
+            }
         }
     }
 }

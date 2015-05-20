@@ -157,7 +157,7 @@
             this.ClientSize = new System.Drawing.Size(846, 509);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmExpedienteMan1";
-            this.Text = "FrmExpedienteMan1";
+            this.Text = "Mantenimiento de Expediente";
             this.Load += new System.EventHandler(this.FrmExpedienteMan1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

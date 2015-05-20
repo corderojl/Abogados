@@ -132,7 +132,7 @@
             this.ClientSize = new System.Drawing.Size(854, 509);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmClienteMan1";
-            this.Text = "FrmClienteMan1";
+            this.Text = "Mantenimiento de Cliente";
             this.Load += new System.EventHandler(this.FrmClienteMan1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

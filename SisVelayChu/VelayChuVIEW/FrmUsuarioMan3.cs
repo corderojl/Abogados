@@ -38,25 +38,19 @@ namespace VelayChuVIEW
                 txtNombre.Text = _UsuarioBE.NombreCompleto;
                 lblCodigoUsuario.Text = _UsuarioBE.CodigoUsuario.ToString();
 
-                txtNumeroDocumento.Text = _UsuarioBE.NumeroDocumento;
+                
                 txtEmail.Text = _UsuarioBE.Email;
                 txtLogin.Text = _UsuarioBE.Login;
-                llenarComboTipoDocumento(_UsuarioBE.CodigoTipoDocumento);
+                
                 llenarComboCargo(_UsuarioBE.CodigoCargo);
-                llenarComboPerfil(_UsuarioBE.CodigoPerfil);
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-        private void llenarComboPerfil(int CodigoPerfil)
-        {
-            cboPerfil.DataSource = _PerfilBL.ListPerfil_All();
-            cboPerfil.DisplayMember = "DescripcionPerfil";
-            cboPerfil.ValueMember = "CodigoPerfil";
-            cboPerfil.SelectedValue = CodigoPerfil;
-        }
+
         private void llenarComboCargo(int CodigoCargo)
         {
             cboCargo.DataSource = _CargoBL.ListarCON_CargoOAct();
@@ -64,13 +58,7 @@ namespace VelayChuVIEW
             cboCargo.ValueMember = "CodigoCargo";
             cboCargo.SelectedValue = CodigoCargo;
         }
-        private void llenarComboTipoDocumento(int CodigoTipoDocumento)
-        {
-            cboTipoDocumento.DataSource = _TipoDocumentoBL.ListTipoDocumento_All();
-            cboTipoDocumento.DisplayMember = "DescripcionTipoDocumento";
-            cboTipoDocumento.ValueMember = "CodigoTipoDocumento";
-            cboTipoDocumento.SelectedValue = CodigoTipoDocumento;
-        }
+
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
@@ -81,10 +69,9 @@ namespace VelayChuVIEW
 
                 _miempl.NombreCompleto = txtNombre.Text;
 
-                _miempl.CodigoTipoDocumento = Convert.ToInt32(cboTipoDocumento.SelectedValue);
-                _miempl.NumeroDocumento = txtNumeroDocumento.Text;
+
                 _miempl.CodigoCargo = Convert.ToInt32(cboCargo.SelectedValue);
-                _miempl.CodigoPerfil = Convert.ToInt32(cboPerfil.SelectedValue);
+
                 _miempl.Email = txtEmail.Text;
                 _miempl.Login = txtLogin.Text;
                 if (_UsuarioBL.ActualizarUsuario(_UsuarioBE))

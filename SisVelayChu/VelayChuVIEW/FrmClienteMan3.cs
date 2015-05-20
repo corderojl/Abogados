@@ -48,12 +48,11 @@ namespace VelayChuVIEW
                 llenarComboInstitucion(_ClienteBE.CodigoInstitucion);
                 llenarComboPension(_ClienteBE.CodigoPension);
                 txtNombreCliente.Text = _ClienteBE.NombreCompleto;
-                dtgExpediente.DataSource = _ExpedienteBL.BuscarExpedienteByCliente(_codigo);
-                dtgExpediente.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
                 //dtgExpediente.Columns[0].Width = 40;
                 //dtgExpediente.Columns[1].Width = 150;
                 //dtgExpediente.Columns[8].Width = 200;
-                dtgExpediente.Refresh();
+     
 
             }
             catch (Exception ex)

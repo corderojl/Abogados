@@ -58,9 +58,17 @@ namespace VelayChuVIEW
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             FrmClienteMan3 fClienteMan3 = new FrmClienteMan3();
-            fClienteMan3.Codigo = Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value);
-            fClienteMan3.MdiParent = this.MdiParent;
-            fClienteMan3.Show();
+            try
+            {
+                fClienteMan3.Codigo = Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value);
+                fClienteMan3.MdiParent = this.MdiParent;
+                fClienteMan3.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: Selecciones un registro");
+                //MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

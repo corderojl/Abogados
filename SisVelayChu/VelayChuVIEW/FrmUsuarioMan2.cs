@@ -26,18 +26,8 @@ namespace VelayChuVIEW
 
         private void FrmUsuarioMan2_Load(object sender, EventArgs e)
         {
-            llenarComboTipoDocumento();
             llenarComboCargo();
-            llenarComboPerfil();
         }
-
-        private void llenarComboPerfil()
-        {
-            cboPerfil.DataSource = _PerfilBL.ListPerfil_All();
-            cboPerfil.DisplayMember = "DescripcionPerfil";
-            cboPerfil.ValueMember = "CodigoPerfil";
-        }
-
         private void llenarComboCargo()
         {
             cboCargo.DataSource = _CargoBL.ListarCON_CargoOAct();
@@ -45,12 +35,6 @@ namespace VelayChuVIEW
             cboCargo.ValueMember = "CodigoCargo";
         }
 
-        private void llenarComboTipoDocumento()
-        {
-            cboTipoDocumento.DataSource = _TipoDocumentoBL.ListTipoDocumento_All();
-            cboTipoDocumento.DisplayMember = "DescripcionTipoDocumento";
-            cboTipoDocumento.ValueMember = "CodigoTipoDocumento";
-        }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
@@ -62,10 +46,9 @@ namespace VelayChuVIEW
                 //_miempl.Emp_id = "";
                 _miempl.NombreCompleto = txtNombre.Text;
 
-                _miempl.CodigoTipoDocumento = Convert.ToInt32(cboTipoDocumento.SelectedValue);
-                _miempl.NumeroDocumento = txtNumeroDocumento.Text;
+
                 _miempl.CodigoCargo = Convert.ToInt32(cboCargo.SelectedValue);
-                _miempl.CodigoPerfil = Convert.ToInt32(cboPerfil.SelectedValue);
+                
                 _miempl.Email = txtEmail.Text;
                 _miempl.Login = txtLogin.Text;
                 _registro = _UsuarioBL.InsertarUsuario(_UsuarioBE);
