@@ -158,7 +158,7 @@ namespace VelaychuADO
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "uspUsuarioAdicionar";
+            cmd.CommandText = "uspClienteAdicionar";
             try
             {
                 par1 = cmd.Parameters.Add(new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 150));
