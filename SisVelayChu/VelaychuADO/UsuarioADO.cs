@@ -45,50 +45,49 @@ namespace VelaychuADO
             }
             return dts.Tables["Sistemas"];
         }
-        public List<UsuarioBE> ListarUsuarioO_Act()
-        {
-            string conexion = MiConexion.GetCnx();
-            List<UsuarioBE> lUsuarioBE = null;
-            try
-            {
-                SqlConnection con = new SqlConnection(conexion);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("sp_ListarUsuario_Act", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataReader drd = cmd.ExecuteReader(CommandBehavior.SingleResult);
-                if (drd != null)
-                {
-                    lUsuarioBE = new List<UsuarioBE>();
+        //public List<UsuarioBE> ListarUsuarioO_Act()
+        //{
+        //    string conexion = MiConexion.GetCnx();
+        //    List<UsuarioBE> lUsuarioBE = null;
+        //    try
+        //    {
+        //        SqlConnection con = new SqlConnection(conexion);
+        //        con.Open();
+        //        SqlCommand cmd = new SqlCommand("sp_ListarUsuario_Act", con);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        SqlDataReader drd = cmd.ExecuteReader(CommandBehavior.SingleResult);
+        //        if (drd != null)
+        //        {
+        //            lUsuarioBE = new List<UsuarioBE>();
 
-                    UsuarioBE obeUsuarioBE = null;
-                    while (drd.Read())
-                    {
-                        ReadSingleRow((IDataRecord)drd);
-                        obeUsuarioBE = new UsuarioBE();
-                        obeUsuarioBE.CodigoCargo = Convert.ToInt32(drd[0]);
-                        obeUsuarioBE.NombreCompleto = drd[1].ToString();
+        //            UsuarioBE obeUsuarioBE = null;
+        //            while (drd.Read())
+        //            {
+        //                ReadSingleRow((IDataRecord)drd);
+        //                obeUsuarioBE = new UsuarioBE();
+        //                obeUsuarioBE.CodigoCargo = Convert.ToInt32(drd[0]);
+        //                obeUsuarioBE.NombreCompleto = drd[1].ToString();
        
-                        obeUsuarioBE.CodigoTipoDocumento = Convert.ToInt32(drd[4]);
-                        obeUsuarioBE.NumeroDocumento = drd[5].ToString();
-                        obeUsuarioBE.Email = drd[6].ToString();
-                        obeUsuarioBE.CodigoCargo = Convert.ToInt32(drd[7]);
-                        obeUsuarioBE.CodigoPerfil = Convert.ToInt32(drd[8]);
-                        obeUsuarioBE.Activo = Convert.ToBoolean(drd[9]);
-                        lUsuarioBE.Add(obeUsuarioBE);
-                    }
-                    drd.Close();
-                }
-            }
-            catch (SqlException ex)
-            {
 
-            }
-            catch (Exception ex)
-            {
+        //                obeUsuarioBE.Email = drd[6].ToString();
+        //                obeUsuarioBE.CodigoCargo = Convert.ToInt32(drd[7]);
+   
+        //                obeUsuarioBE.Activo = Convert.ToBoolean(drd[9]);
+        //                lUsuarioBE.Add(obeUsuarioBE);
+        //            }
+        //            drd.Close();
+        //        }
+        //    }
+        //    catch (SqlException ex)
+        //    {
 
-            }
-            return (lUsuarioBE);
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //    return (lUsuarioBE);
+        //}
         private static void ReadSingleRow(IDataRecord record)
         {
             Console.WriteLine(String.Format("{0}, {1}", record[0], record[1]));
@@ -243,7 +242,7 @@ namespace VelaychuADO
                     _with1.NombreCompleto = dtr.GetValue(dtr.GetOrdinal("Usuario_Nome")).ToString();
 
                     _with1.Email = dtr.GetValue(dtr.GetOrdinal("ApellidoMaterno")).ToString();
-                    _with1.CodigoPerfil = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoPerfil")));
+
                     _with1.CodigoCargo = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoCargo")));
                 }
             }
@@ -283,12 +282,11 @@ namespace VelaychuADO
                     _with1.CodigoUsuario = Convert.ToInt16(dtr.GetValue(dtr.GetOrdinal("CodigoUsuario")));
                     _with1.NombreCompleto = dtr.GetValue(dtr.GetOrdinal("NombreCompleto")).ToString();
 
-                    _with1.CodigoTipoDocumento = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoTipoDocumento")));
-                    _with1.NumeroDocumento = dtr.GetValue(dtr.GetOrdinal("NumeroDocumento")).ToString();
+
                     _with1.Email = dtr.GetValue(dtr.GetOrdinal("Email")).ToString();
                     _with1.Login = dtr.GetValue(dtr.GetOrdinal("Login")).ToString();
                     _with1.CodigoCargo = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoCargo")));
-                    _with1.CodigoPerfil = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoPerfil")));
+                    
                 }
             }
             catch (SqlException ex)
@@ -355,18 +353,12 @@ namespace VelaychuADO
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@Nombre"].Value = _UsuarioBE.NombreCompleto;
 
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoTipoDocumento", SqlDbType.Int));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoTipoDocumento"].Value = _UsuarioBE.CodigoTipoDocumento;
-                par1 = cmd.Parameters.Add(new SqlParameter("@NumeroDocumento", SqlDbType.VarChar, 50));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@NumeroDocumento"].Value = _UsuarioBE.NumeroDocumento;
+
+
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoCargo", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoCargo"].Value = _UsuarioBE.CodigoCargo;
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoPerfil", SqlDbType.Int));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoPerfil"].Value = _UsuarioBE.CodigoPerfil;
+
                 par1 = cmd.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar, 50));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@Email"].Value = _UsuarioBE.Email;
@@ -414,19 +406,10 @@ namespace VelaychuADO
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@Nombre"].Value = _UsuarioBE.NombreCompleto;
 
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoTipoDocumento", SqlDbType.Int));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoTipoDocumento"].Value = _UsuarioBE.CodigoTipoDocumento;
-
-                par1 = cmd.Parameters.Add(new SqlParameter("@NumeroDocumento", SqlDbType.VarChar, 50));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@NumeroDocumento"].Value = _UsuarioBE.NumeroDocumento;
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoCargo", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoCargo"].Value = _UsuarioBE.CodigoCargo;
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoPerfil", SqlDbType.Int));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoPerfil"].Value = _UsuarioBE.CodigoPerfil;
+
                 par1 = cmd.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar, 50));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@Email"].Value = _UsuarioBE.Email;

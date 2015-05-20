@@ -158,7 +158,7 @@ namespace VelaychuADO
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_ClienteAdicionar";
+            cmd.CommandText = "uspUsuarioAdicionar";
             try
             {
                 par1 = cmd.Parameters.Add(new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 150));
@@ -188,15 +188,15 @@ namespace VelaychuADO
                 par1 = cmd.Parameters.Add(new SqlParameter("@DirecccionCompleta", SqlDbType.VarChar, 350));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@DirecccionCompleta"].Value = _ClienteBE.DirecccionCompleta;
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoDepartamento", SqlDbType.VarChar, 3));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoDepartamento"].Value = _ClienteBE.CodigoDepartamento;
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoProvincia", SqlDbType.VarChar, 3));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoProvincia"].Value = _ClienteBE.CodigoProvincia;
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoDistrito", SqlDbType.VarChar, 3));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoDistrito"].Value = _ClienteBE.CodigoDistrito;
+                //par1 = cmd.Parameters.Add(new SqlParameter("@CodigoDepartamento", SqlDbType.VarChar, 3));
+                //par1.Direction = ParameterDirection.Input;
+                //cmd.Parameters["@CodigoDepartamento"].Value = _ClienteBE.CodigoDepartamento;
+                //par1 = cmd.Parameters.Add(new SqlParameter("@CodigoProvincia", SqlDbType.VarChar, 3));
+                //par1.Direction = ParameterDirection.Input;
+                //cmd.Parameters["@CodigoProvincia"].Value = _ClienteBE.CodigoProvincia;
+                //par1 = cmd.Parameters.Add(new SqlParameter("@CodigoDistrito", SqlDbType.VarChar, 3));
+                //par1.Direction = ParameterDirection.Input;
+                //cmd.Parameters["@CodigoDistrito"].Value = _ClienteBE.CodigoDistrito;
                 par1 = cmd.Parameters.Add(new SqlParameter("@TelefonoFijo", SqlDbType.VarChar, 20));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@TelefonoFijo"].Value = _ClienteBE.TelefonoFijo;
