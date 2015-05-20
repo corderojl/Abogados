@@ -20,10 +20,10 @@ namespace VelaychuBL
         {
             return _UsuarioADO.ListarUsuario_Act();
         }
-        public List<UsuarioBE> ListarUsuarioO_Act()
-        {
-            return _UsuarioADO.ListarUsuarioO_Act();
-        }
+        //public List<UsuarioBE> ListarUsuarioO_Act()
+        //{
+        //    //return _UsuarioADO.ListarUsuarioO_Act();
+        //}
         public UsuarioBE LoguearUsuario(string _Usuario, string _Password)
         {
             return _UsuarioADO.LoguearUsuario(_Usuario, _Password);

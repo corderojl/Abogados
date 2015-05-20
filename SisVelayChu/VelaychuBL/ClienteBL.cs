@@ -38,5 +38,12 @@ namespace VelaychuBL
         {
             return _ClienteADO.HabilitarCliente(_codigo);
         }
+
+        public int InsertarCliente(ClienteBE _ClienteBE)
+        {
+            return _ClienteADO.InsertarCliente(_ClienteBE);
+        }
+
+        
     }
 }
