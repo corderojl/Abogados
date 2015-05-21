@@ -75,5 +75,40 @@ namespace VelaychuADO
             con.Close();
             return (lPensionBE);
         }
+
+        public DataTable BuscarPensionByDescripcion(string _descripcion)
+        {
+            DataSet dts = new DataSet();
+            SqlParameter par1;
+            try
+            {
+                cnx.ConnectionString = MiConexion.GetCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_PensionBuscarByNombres";
+
+                par1 = cmd.Parameters.Add(new SqlParameter("@DescripcionPension", SqlDbType.VarChar, 150));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@DescripcionPension"].Value = _descripcion;
+
+                SqlDataAdapter miada = default(SqlDataAdapter);
+                miada = new SqlDataAdapter(cmd);
+                miada.Fill(dts, "Sistemas");
+                dtv = dts.Tables["Sistemas"].DefaultView;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return dts.Tables["Sistemas"];
+        }
     }
 }

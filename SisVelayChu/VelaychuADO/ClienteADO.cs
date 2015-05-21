@@ -127,7 +127,7 @@ namespace VelaychuADO
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sp_ClienteBuscarByNombres";
 
-                par1 = cmd.Parameters.Add(new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 30));
+                par1 = cmd.Parameters.Add(new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 150));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@NombreCompleto"].Value = _nombresCompletos;
 
