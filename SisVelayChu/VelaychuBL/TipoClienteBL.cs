@@ -20,5 +20,9 @@ namespace VelaychuBL
         {
             return _TipoClienteADO.ListTipoCliente_All();
         }
+        public object BuscaTipoClienteByDescripcion(string _descripcion)
+        {
+            return _TipoClienteADO.BuscarTipoClienteByDescripcion(_descripcion);
+        }
     }
 }

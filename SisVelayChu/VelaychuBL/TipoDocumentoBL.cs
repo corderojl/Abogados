@@ -21,6 +21,10 @@ namespace VelaychuBL
         {
             return _TipoDocumentoADO.ListTipoDocumento_All();
         }
+        public object BuscaTipoDocumentoByDescripcion(string _descripcion)
+        {
+            return _TipoDocumentoADO.BuscarTipoDocumentoByDescripcion(_descripcion);
+        }
        
     }
 }

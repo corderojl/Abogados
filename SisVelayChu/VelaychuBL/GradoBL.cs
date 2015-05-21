@@ -20,5 +20,9 @@ namespace VelaychuBL
         {
             return _GradoADO.ListGrado_All();
         }
+        public object BuscaGradoByDescripcion(string _descripcion)
+        {
+            return _GradoADO.BuscarGradoByDescripcion(_descripcion);
+        }
     }
 }

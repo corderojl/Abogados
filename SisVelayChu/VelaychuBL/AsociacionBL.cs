@@ -20,5 +20,10 @@ namespace VelaychuBL
         {
             return _AsociacionADO.ListAsociacion_All();
         }
+
+        public object BuscarAsociacionByDescripcion(string _descripcion)
+        {
+            return _AsociacionADO.BuscarAsociacionByDescripcion(_descripcion);
+        }
     }
 }

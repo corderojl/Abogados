@@ -21,5 +21,9 @@ namespace VelaychuBL
         {
             return _PensionADO.ListPension_All();
         }
+        public object BuscaPensionByDescripcion(string _descripcion)
+        {
+            return _PensionADO.BuscarPensionByDescripcion(_descripcion);
+        }
     }
 }

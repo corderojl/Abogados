@@ -21,5 +21,9 @@ namespace VelaychuBL
         {
             return _InstitucionADO.ListInstitucion_All();
         }
+        public object BuscaInstitucionByDescripcion(string _descripcion)
+        {
+            return _InstitucionADO.BuscarInstitucionByDescripcion(_descripcion);
+        }
     }
 }
