@@ -50,6 +50,12 @@
     <Compile Include="FormPrincipal.designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAsociacionMan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAsociacionMan1.Designer.cs">
+      <DependentUpon>FrmAsociacionMan1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClienteMan1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,36 @@
     </Compile>
     <Compile Include="FrmExpedienteMan3.Designer.cs">
       <DependentUpon>FrmExpedienteMan3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGradoMan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGradoMan1.Designer.cs">
+      <DependentUpon>FrmGradoMan1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInstitucionMan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInstitucionMan1.Designer.cs">
+      <DependentUpon>FrmInstitucionMan1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPensionMan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPensionMan1.Designer.cs">
+      <DependentUpon>FrmPensionMan1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTipoClienteMan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTipoClienteMan1.Designer.cs">
+      <DependentUpon>FrmTipoClienteMan1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTipoDocumentoMan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTipoDocumentoMan1.Designer.cs">
+      <DependentUpon>FrmTipoDocumentoMan1.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUsuarioMan1.cs">
       <SubType>Form</SubType>
