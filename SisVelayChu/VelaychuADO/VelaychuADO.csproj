@@ -46,6 +46,7 @@
     <Compile Include="ConexionADO.cs" />
     <Compile Include="ContratoADO.cs" />
     <Compile Include="DepartamentoADO.cs" />
+    <Compile Include="DetalleExpedienteADO.cs" />
     <Compile Include="DistritoADO.cs" />
     <Compile Include="DocumentoADO.cs" />
     <Compile Include="EspecialistaADO.cs" />

@@ -44,6 +44,7 @@
     <Compile Include="ClienteBE.cs" />
     <Compile Include="ContratoBE.cs" />
     <Compile Include="DepartamentoBE.cs" />
+    <Compile Include="DetalleExpedienteBE.cs" />
     <Compile Include="DistritoBE.cs" />
     <Compile Include="DocumentoBE.cs" />
     <Compile Include="EspecialistaBE.cs" />

@@ -12,7 +12,6 @@ namespace VelaychuBL
     {
         ContratoADO _ContratoADO = new ContratoADO();
 
-
         public DataTable ListarCON_Contrato()
         {
             return _ContratoADO.ListarDataTableContrato_All();

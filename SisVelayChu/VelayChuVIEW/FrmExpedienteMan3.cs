@@ -23,6 +23,7 @@ namespace VelayChuVIEW
 
         ContratoBL _ContratoBL = new ContratoBL();
         DocumentoBL _DocumentoBL = new DocumentoBL();
+        DetalleExpedienteBL _DetalleExpedienteBL = new DetalleExpedienteBL();
 
         SalaBL _SalaBL = new SalaBL();
         JuzgadoBL _JuzgadoBL = new JuzgadoBL();
@@ -48,8 +49,9 @@ namespace VelayChuVIEW
                 _ExpedientesBE = _ExpedienteBL.TraerExpediente(_codigo);
                 _ClienteBE = _ClienteBL.TraerCliente(_ExpedientesBE.CodigoCliente);
 
-                llenarComboCliente(_ClienteBE.CodigoAsociacion);
-                llenarComboMateria(_ClienteBE.CodigoTipoCliente);
+                //llenarComboCliente(_ClienteBE.CodigoAsociacion);
+                txtCliente.Text = _ClienteBE.NombreCompleto;
+               //llenarComboMateria(_ClienteBE.CodigoTipoCliente);
                 llenarComboJuzgado(_ClienteBE.CodigoGrado);
                 llenarComboEspecialista(_ClienteBE.CodigoInstitucion);
                 llenarComboSala(_ClienteBE.CodigoPension);
@@ -92,21 +94,49 @@ namespace VelayChuVIEW
             cboJuzgado.SelectedValue = _CodigoJuzgados;
         }
 
-        private void llenarComboMateria(int _CodigoMaterias)
+        private void dtgContrato_Click(object sender, EventArgs e)
         {
-            cboMateria.DataSource = _MateriaBL.ListMateria_All();
-            cboMateria.DisplayMember = "DescripcionMateria";
-            cboMateria.ValueMember = "CodigoMateria";
-            cboMateria.SelectedValue = _CodigoMaterias;
+            int _CodigoContrato=Convert.ToInt32(dtgContrato.CurrentRow.Cells[0].Value);
+            llenarGrillaDetalles(_CodigoContrato);
+            llenarGrillaDocumentos(_CodigoContrato);
+
         }
 
-        private void llenarComboCliente(int _CodigoCliente)
+        private void llenarGrillaDocumentos(int _CodigoContrato)
         {
-            cboCliente.DataSource = _ClienteBL.ListarClienteO_Act();
-            cboCliente.DisplayMember = "NombreCompleto";
-            cboCliente.ValueMember = "CodigoCliente";
-            cboCliente.SelectedValue = _CodigoCliente;
+            dtgDocumento.DataSource = _DocumentoBL.ListarDocumentoByContrato(_CodigoContrato);
+            dtgDocumento.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            //dtgExpediente.Columns[0].Width = 40;
+            //dtgExpediente.Columns[1].Width = 150;
+            //dtgExpediente.Columns[8].Width = 200;
+            dtgDocumento.Refresh();
         }
+
+        private void llenarGrillaDetalles(int _CodigoContrato)
+        {
+            dtgDetalle.DataSource = _DetalleExpedienteBL.ListarDetalleExpedienteByContrato(_CodigoContrato);
+            dtgDetalle.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            //dtgExpediente.Columns[0].Width = 40;
+            //dtgExpediente.Columns[1].Width = 150;
+            //dtgExpediente.Columns[8].Width = 200;
+            dtgDetalle.Refresh();
+        }
+
+        //private void llenarComboMateria(int _CodigoMaterias)
+        //{
+        //    cboMateria.DataSource = _MateriaBL.ListMateria_All();
+        //    cboMateria.DisplayMember = "DescripcionMateria";
+        //    cboMateria.ValueMember = "CodigoMateria";
+        //    cboMateria.SelectedValue = _CodigoMaterias;
+        //}
+
+        //private void llenarComboCliente(int _CodigoCliente)
+        //{
+        //    cboCliente.DataSource = _ClienteBL.ListarClienteO_Act();
+        //    cboCliente.DisplayMember = "NombreCompleto";
+        //    cboCliente.ValueMember = "CodigoCliente";
+        //    cboCliente.SelectedValue = _CodigoCliente;
+        //}
 
        
     }
