@@ -75,20 +75,21 @@
             // 
             this.txtAsociacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtAsociacion, 3);
-            this.txtAsociacion.Location = new System.Drawing.Point(118, 18);
+            this.txtAsociacion.Location = new System.Drawing.Point(118, 17);
             this.txtAsociacion.Name = "txtAsociacion";
             this.txtAsociacion.Size = new System.Drawing.Size(339, 20);
             this.txtAsociacion.TabIndex = 13;
+            this.txtAsociacion.TextChanged += new System.EventHandler(this.txtAsociacion_TextChanged);
             // 
             // dtgAsociacion
             // 
             this.dtgAsociacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dtgAsociacion, 5);
             this.dtgAsociacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgAsociacion.Location = new System.Drawing.Point(3, 59);
+            this.dtgAsociacion.Location = new System.Drawing.Point(3, 58);
             this.dtgAsociacion.Name = "dtgAsociacion";
             this.tableLayoutPanel1.SetRowSpan(this.dtgAsociacion, 4);
-            this.dtgAsociacion.Size = new System.Drawing.Size(572, 218);
+            this.dtgAsociacion.Size = new System.Drawing.Size(572, 214);
             this.dtgAsociacion.TabIndex = 14;
             // 
             // FrmAsociacionMan1
@@ -99,6 +100,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmAsociacionMan1";
             this.Text = "FrmAsociacionMan1";
+            this.Load += new System.EventHandler(this.FrmAsociacionMan1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAsociacion)).EndInit();

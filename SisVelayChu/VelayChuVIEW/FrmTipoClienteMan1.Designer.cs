@@ -79,6 +79,7 @@
             this.txtTipoCliente.Name = "txtTipoCliente";
             this.txtTipoCliente.Size = new System.Drawing.Size(297, 20);
             this.txtTipoCliente.TabIndex = 14;
+            this.txtTipoCliente.TextChanged += new System.EventHandler(this.txtTipoCliente_TextChanged);
             // 
             // dgtTipoCliente
             // 
@@ -99,6 +100,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmTipoClienteMan1";
             this.Text = "FrmTipoClienteMan1";
+            this.Load += new System.EventHandler(this.FrmTipoClienteMan1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtTipoCliente)).EndInit();

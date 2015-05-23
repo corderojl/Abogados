@@ -79,6 +79,7 @@
             this.txtInstitucion.Name = "txtInstitucion";
             this.txtInstitucion.Size = new System.Drawing.Size(303, 20);
             this.txtInstitucion.TabIndex = 14;
+            this.txtInstitucion.TextChanged += new System.EventHandler(this.txtInstitucion_TextChanged);
             // 
             // dtgInstitucion
             // 
@@ -99,6 +100,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmInstitucionMan1";
             this.Text = "FrmInstitucionMan1";
+            this.Load += new System.EventHandler(this.FrmInstitucionMan1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgInstitucion)).EndInit();

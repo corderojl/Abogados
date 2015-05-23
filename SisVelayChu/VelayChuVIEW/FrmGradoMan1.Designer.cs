@@ -79,6 +79,7 @@
             this.txtGrado.Name = "txtGrado";
             this.txtGrado.Size = new System.Drawing.Size(339, 20);
             this.txtGrado.TabIndex = 14;
+            this.txtGrado.TextChanged += new System.EventHandler(this.txtGrado_TextChanged);
             // 
             // dtgGrado
             // 
@@ -99,6 +100,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmGradoMan1";
             this.Text = "FrmGradoMan1";
+            this.Load += new System.EventHandler(this.FrmGradoMan1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgGrado)).EndInit();

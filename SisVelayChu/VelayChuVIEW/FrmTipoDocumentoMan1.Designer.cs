@@ -30,7 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtAosciacion = new System.Windows.Forms.TextBox();
+            this.txtTipoDocumento = new System.Windows.Forms.TextBox();
             this.dgtTipoDocumento = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtTipoDocumento)).BeginInit();
@@ -45,7 +45,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtAosciacion, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtTipoDocumento, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgtTipoDocumento, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -74,14 +74,15 @@
             this.label2.Text = "Buscar Tipo Documento";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtAosciacion
+            // txtTipoDocumento
             // 
-            this.txtAosciacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.txtAosciacion, 3);
-            this.txtAosciacion.Location = new System.Drawing.Point(92, 13);
-            this.txtAosciacion.Name = "txtAosciacion";
-            this.txtAosciacion.Size = new System.Drawing.Size(261, 20);
-            this.txtAosciacion.TabIndex = 14;
+            this.txtTipoDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.txtTipoDocumento, 3);
+            this.txtTipoDocumento.Location = new System.Drawing.Point(92, 13);
+            this.txtTipoDocumento.Name = "txtTipoDocumento";
+            this.txtTipoDocumento.Size = new System.Drawing.Size(261, 20);
+            this.txtTipoDocumento.TabIndex = 14;
+            this.txtTipoDocumento.TextChanged += new System.EventHandler(this.txtTipoDocumento_TextChanged);
             // 
             // dgtTipoDocumento
             // 
@@ -102,6 +103,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmTipoDocumentoMan1";
             this.Text = "FrmTipoDocumentoMan1";
+            this.Load += new System.EventHandler(this.FrmTipoDocumentoMan1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtTipoDocumento)).EndInit();
@@ -113,7 +115,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtAosciacion;
+        private System.Windows.Forms.TextBox txtTipoDocumento;
         private System.Windows.Forms.DataGridView dgtTipoDocumento;
     }
 }
