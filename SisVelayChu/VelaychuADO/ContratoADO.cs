@@ -78,7 +78,7 @@ namespace VelaychuADO
             con.Close();
             return (lContratoBE);
         }
-        public DataTable ListarContratoByExpediente(int CodigoExpediente)
+        public DataTable BuscarContratoByExpediente(int CodigoExpediente)
         {
             DataSet dts = new DataSet();
             SqlParameter par1;
@@ -87,7 +87,7 @@ namespace VelaychuADO
                 cnx.ConnectionString = MiConexion.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "uspListarContratoByExpediente";
+                cmd.CommandText = "uspBuscarContratoByExpediente";
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpediente", SqlDbType.VarChar, 150));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoExpediente"].Value = CodigoExpediente;

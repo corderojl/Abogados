@@ -56,7 +56,7 @@ namespace VelayChuVIEW
                 llenarComboEspecialista(_ClienteBE.CodigoInstitucion);
                 llenarComboSala(_ClienteBE.CodigoPension);
                 txtExpediente.Text = _ExpedientesBE.NumeroExpediente;
-                dtgContrato.DataSource = _ExpedienteBL.BuscarExpedienteByCliente(_codigo);
+                dtgContrato.DataSource = _ContratoBL.BuscarContratoByExpediente(_codigo);
                 dtgContrato.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 //dtgExpediente.Columns[0].Width = 40;
                 //dtgExpediente.Columns[1].Width = 150;
@@ -96,9 +96,16 @@ namespace VelayChuVIEW
 
         private void dtgContrato_Click(object sender, EventArgs e)
         {
-            int _CodigoContrato=Convert.ToInt32(dtgContrato.CurrentRow.Cells[0].Value);
-            llenarGrillaDetalles(_CodigoContrato);
-            llenarGrillaDocumentos(_CodigoContrato);
+            try
+            {
+                int _CodigoContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[0].Value);
+                llenarGrillaDetalles(_CodigoContrato);
+                llenarGrillaDocumentos(_CodigoContrato);
+            }
+            catch (Exception ex)
+            {
+                
+            }
 
         }
 

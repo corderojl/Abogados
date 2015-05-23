@@ -20,9 +20,9 @@ namespace VelaychuBL
         {
             return _ContratoADO.ListContrato_All();
         }
-        public DataTable ListarContratoByExpediente(int _CodigoExpediente)
+        public DataTable BuscarContratoByExpediente(int _CodigoExpediente)
         {
-            return _ContratoADO.ListarContratoByExpediente(_CodigoExpediente);
+            return _ContratoADO.BuscarContratoByExpediente(_CodigoExpediente);
         }
     }
 }
