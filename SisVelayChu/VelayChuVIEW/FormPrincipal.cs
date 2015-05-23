@@ -58,5 +58,50 @@ namespace VelayChuVIEW
             FrmExpedienteMan1.MdiParent = this;
             FrmExpedienteMan1.Show();
         }
+
+        private void nuevaAsociacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAsociacionMan1 FrmAsociacionMan1;
+            FrmAsociacionMan1 = new FrmAsociacionMan1();
+            FrmAsociacionMan1.MdiParent = this;
+            FrmAsociacionMan1.Show();            
+            
+        }
+
+        private void nuevaInstitucionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmInstitucionMan1 FrmInstitucionMan1;
+            FrmInstitucionMan1 = new FrmInstitucionMan1();
+            FrmInstitucionMan1.MdiParent = this;
+            FrmInstitucionMan1.Show();              
+            
+        }
+
+        private void gradoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGradoMan1 FrmGradoMan1;
+            FrmGradoMan1 = new FrmGradoMan1();
+            FrmGradoMan1.MdiParent = this;
+            FrmGradoMan1.Show();               
+            
+        }
+
+        private void tipoClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTipoClienteMan1 FrmTipoClienteMan1;
+            FrmTipoClienteMan1 = new FrmTipoClienteMan1();
+            FrmTipoClienteMan1.MdiParent = this;
+            FrmTipoClienteMan1.Show();   
+            
+        }
+
+        private void tipoDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTipoDocumentoMan1 FrmTipoDocumentoMan1;
+            FrmTipoDocumentoMan1 = new FrmTipoDocumentoMan1();
+            FrmTipoDocumentoMan1.MdiParent = this;
+            FrmTipoDocumentoMan1.Show();              
+            
+        }
     }
 }

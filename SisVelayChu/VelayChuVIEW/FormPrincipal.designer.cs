@@ -35,9 +35,14 @@
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarExpedienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaAsociacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaInstitucionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +62,12 @@
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoContratoToolStripMenuItem});
+            this.nuevoContratoToolStripMenuItem,
+            this.nuevaAsociacionToolStripMenuItem,
+            this.nuevaInstitucionToolStripMenuItem,
+            this.gradoToolStripMenuItem,
+            this.tipoClienteToolStripMenuItem,
+            this.tipoDocumentoToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.archivoToolStripMenuItem.Text = "Mantenimiento";
@@ -65,8 +75,8 @@
             // nuevoContratoToolStripMenuItem
             // 
             this.nuevoContratoToolStripMenuItem.Name = "nuevoContratoToolStripMenuItem";
-            this.nuevoContratoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.nuevoContratoToolStripMenuItem.Text = "Nuevo Usuario";
+            this.nuevoContratoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.nuevoContratoToolStripMenuItem.Text = "Usuario";
             this.nuevoContratoToolStripMenuItem.Click += new System.EventHandler(this.nuevoContratoToolStripMenuItem_Click);
             // 
             // empleadoToolStripMenuItem
@@ -90,13 +100,6 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(157, 6);
             // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -111,6 +114,48 @@
             this.registrarExpedienteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.registrarExpedienteToolStripMenuItem1.Text = "Registrar Expediente";
             this.registrarExpedienteToolStripMenuItem1.Click += new System.EventHandler(this.registrarExpedienteToolStripMenuItem1_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // nuevaAsociacionToolStripMenuItem
+            // 
+            this.nuevaAsociacionToolStripMenuItem.Name = "nuevaAsociacionToolStripMenuItem";
+            this.nuevaAsociacionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.nuevaAsociacionToolStripMenuItem.Text = "Asociacion";
+            this.nuevaAsociacionToolStripMenuItem.Click += new System.EventHandler(this.nuevaAsociacionToolStripMenuItem_Click);
+            // 
+            // nuevaInstitucionToolStripMenuItem
+            // 
+            this.nuevaInstitucionToolStripMenuItem.Name = "nuevaInstitucionToolStripMenuItem";
+            this.nuevaInstitucionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.nuevaInstitucionToolStripMenuItem.Text = "Institucion";
+            this.nuevaInstitucionToolStripMenuItem.Click += new System.EventHandler(this.nuevaInstitucionToolStripMenuItem_Click);
+            // 
+            // gradoToolStripMenuItem
+            // 
+            this.gradoToolStripMenuItem.Name = "gradoToolStripMenuItem";
+            this.gradoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.gradoToolStripMenuItem.Text = "Grado";
+            this.gradoToolStripMenuItem.Click += new System.EventHandler(this.gradoToolStripMenuItem_Click);
+            // 
+            // tipoClienteToolStripMenuItem
+            // 
+            this.tipoClienteToolStripMenuItem.Name = "tipoClienteToolStripMenuItem";
+            this.tipoClienteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.tipoClienteToolStripMenuItem.Text = "Tipo Cliente";
+            this.tipoClienteToolStripMenuItem.Click += new System.EventHandler(this.tipoClienteToolStripMenuItem_Click);
+            // 
+            // tipoDocumentoToolStripMenuItem
+            // 
+            this.tipoDocumentoToolStripMenuItem.Name = "tipoDocumentoToolStripMenuItem";
+            this.tipoDocumentoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.tipoDocumentoToolStripMenuItem.Text = "Tipo Documento";
+            this.tipoDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDocumentoToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -142,5 +187,10 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem registrarExpedienteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem nuevaAsociacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaInstitucionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gradoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDocumentoToolStripMenuItem;
     }
 }
