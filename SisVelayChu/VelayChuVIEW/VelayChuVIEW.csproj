@@ -145,6 +145,9 @@
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAsociacionMan1.resx">
+      <DependentUpon>FrmAsociacionMan1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteMan1.resx">
       <DependentUpon>FrmClienteMan1.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +165,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmExpedienteMan3.resx">
       <DependentUpon>FrmExpedienteMan3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGradoMan1.resx">
+      <DependentUpon>FrmGradoMan1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInstitucionMan1.resx">
+      <DependentUpon>FrmInstitucionMan1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTipoClienteMan1.resx">
+      <DependentUpon>FrmTipoClienteMan1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTipoDocumentoMan1.resx">
+      <DependentUpon>FrmTipoDocumentoMan1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarioMan1.resx">
       <DependentUpon>FrmUsuarioMan1.cs</DependentUpon>
