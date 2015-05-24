@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpbCliente = new System.Windows.Forms.GroupBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cboSala = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,8 +48,10 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dtgDetalle = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.gpbCliente.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContrato)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -58,27 +61,37 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gpbCliente
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.groupBox1, 2);
-            this.groupBox1.Controls.Add(this.txtCliente);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.cboSala);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cboEspecialista);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.cboJuzgado);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtExpediente);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dtpFecha);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(984, 77);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Expediente";
+            this.tableLayoutPanel1.SetColumnSpan(this.gpbCliente, 4);
+            this.gpbCliente.Controls.Add(this.txtCliente);
+            this.gpbCliente.Controls.Add(this.label7);
+            this.gpbCliente.Controls.Add(this.cboSala);
+            this.gpbCliente.Controls.Add(this.label5);
+            this.gpbCliente.Controls.Add(this.cboEspecialista);
+            this.gpbCliente.Controls.Add(this.label6);
+            this.gpbCliente.Controls.Add(this.cboJuzgado);
+            this.gpbCliente.Controls.Add(this.label4);
+            this.gpbCliente.Controls.Add(this.label2);
+            this.gpbCliente.Controls.Add(this.txtExpediente);
+            this.gpbCliente.Controls.Add(this.label1);
+            this.gpbCliente.Controls.Add(this.dtpFecha);
+            this.gpbCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gpbCliente.Enabled = false;
+            this.gpbCliente.Location = new System.Drawing.Point(3, 3);
+            this.gpbCliente.Name = "gpbCliente";
+            this.tableLayoutPanel1.SetRowSpan(this.gpbCliente, 3);
+            this.gpbCliente.Size = new System.Drawing.Size(798, 78);
+            this.gpbCliente.TabIndex = 0;
+            this.gpbCliente.TabStop = false;
+            this.gpbCliente.Text = "Expediente";
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(295, 13);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(269, 20);
+            this.txtCliente.TabIndex = 14;
             // 
             // label7
             // 
@@ -178,11 +191,11 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 2);
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 3);
             this.groupBox2.Controls.Add(this.dtgContrato);
-            this.groupBox2.Location = new System.Drawing.Point(3, 116);
+            this.groupBox2.Location = new System.Drawing.Point(3, 115);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1002, 222);
+            this.groupBox2.Size = new System.Drawing.Size(597, 217);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contratos";
@@ -198,7 +211,7 @@
             this.dtgContrato.ReadOnly = true;
             this.dtgContrato.RowHeadersVisible = false;
             this.dtgContrato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgContrato.Size = new System.Drawing.Size(996, 203);
+            this.dtgContrato.Size = new System.Drawing.Size(591, 198);
             this.dtgContrato.TabIndex = 0;
             this.dtgContrato.Click += new System.EventHandler(this.dtgContrato_Click);
             // 
@@ -207,10 +220,11 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox3, 2);
             this.groupBox3.Controls.Add(this.dtgDocumento);
-            this.groupBox3.Location = new System.Drawing.Point(507, 344);
+            this.groupBox3.Location = new System.Drawing.Point(606, 115);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(498, 215);
+            this.groupBox3.Size = new System.Drawing.Size(399, 217);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Documentos";
@@ -226,7 +240,7 @@
             this.dtgDocumento.ReadOnly = true;
             this.dtgDocumento.RowHeadersVisible = false;
             this.dtgDocumento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDocumento.Size = new System.Drawing.Size(492, 196);
+            this.dtgDocumento.Size = new System.Drawing.Size(393, 198);
             this.dtgDocumento.TabIndex = 0;
             // 
             // groupBox5
@@ -234,10 +248,11 @@
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox5, 5);
             this.groupBox5.Controls.Add(this.dtgDetalle);
-            this.groupBox5.Location = new System.Drawing.Point(3, 344);
+            this.groupBox5.Location = new System.Drawing.Point(3, 338);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(498, 215);
+            this.groupBox5.Size = new System.Drawing.Size(1002, 221);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalles";
@@ -253,36 +268,69 @@
             this.dtgDetalle.ReadOnly = true;
             this.dtgDetalle.RowHeadersVisible = false;
             this.dtgDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDetalle.Size = new System.Drawing.Size(492, 196);
+            this.dtgDetalle.Size = new System.Drawing.Size(996, 202);
             this.dtgDetalle.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 2);
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.gpbCliente, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 3, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.30249F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.160142F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.74733F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.79004F));
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.102041F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.102041F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.102041F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.102041F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.79592F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.79592F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 562);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // txtCliente
+            // btnCancelar
             // 
-            this.txtCliente.Location = new System.Drawing.Point(295, 13);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(269, 20);
-            this.txtCliente.TabIndex = 14;
+            this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancelar.Location = new System.Drawing.Point(807, 59);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(198, 22);
+            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnGuardar.Location = new System.Drawing.Point(807, 31);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(198, 22);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar cambios";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnActualizar.Location = new System.Drawing.Point(807, 3);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(198, 22);
+            this.btnActualizar.TabIndex = 4;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // FrmExpedienteMan3
             // 
@@ -293,8 +341,8 @@
             this.Name = "FrmExpedienteMan3";
             this.Text = "FrmExpedienteMan3";
             this.Load += new System.EventHandler(this.FrmExpedienteMan3_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpbCliente.ResumeLayout(false);
+            this.gpbCliente.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgContrato)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -309,7 +357,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpbCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtExpediente;
         private System.Windows.Forms.Label label1;
@@ -329,5 +377,8 @@
         private System.Windows.Forms.DataGridView dtgDetalle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

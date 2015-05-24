@@ -16,12 +16,10 @@ namespace VelaychuBL
         {
             return _ExpedienteADO.ListarDataTableExpediente_All();
         }
-
         public List<ExpedientesBE> ListarUsuarioO_Act()
         {
             return _ExpedienteADO.ListExpediente_All();
         }
-       
         public DataTable BuscarExpedienteByCliente(int _CodigoCliente)
         {
             return _ExpedienteADO.BuscarExpedienteByCliente(_CodigoCliente);
@@ -29,6 +27,10 @@ namespace VelaychuBL
         public ExpedientesBE TraerExpediente(int _codigo)
         {
             return _ExpedienteADO.TraerExpediente(_codigo);
+        }
+        public int InsertarExpedientes(ExpedientesBE _ExpedientesBE)
+        {
+            return _ExpedienteADO.InsertarExpedientes(_ExpedientesBE);
         }
     }
 }

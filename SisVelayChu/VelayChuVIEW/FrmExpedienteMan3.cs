@@ -29,7 +29,7 @@ namespace VelayChuVIEW
         JuzgadoBL _JuzgadoBL = new JuzgadoBL();
         MateriaBL _MateriaBL = new MateriaBL();
         EspecialistaBL _EspecialistaBL = new EspecialistaBL();
-        
+
 
         public FrmExpedienteMan3()
         {
@@ -46,16 +46,21 @@ namespace VelayChuVIEW
         {
             try
             {
+
                 _ExpedientesBE = _ExpedienteBL.TraerExpediente(_codigo);
                 _ClienteBE = _ClienteBL.TraerCliente(_ExpedientesBE.CodigoCliente);
 
+                btnActualizar.Enabled = true;
+                btnCancelar.Enabled = false;
+                btnGuardar.Enabled = false;
                 //llenarComboCliente(_ClienteBE.CodigoAsociacion);
                 txtCliente.Text = _ClienteBE.NombreCompleto;
-               //llenarComboMateria(_ClienteBE.CodigoTipoCliente);
+                //llenarComboMateria(_ClienteBE.CodigoTipoCliente);
                 llenarComboJuzgado(_ClienteBE.CodigoGrado);
                 llenarComboEspecialista(_ClienteBE.CodigoInstitucion);
                 llenarComboSala(_ClienteBE.CodigoPension);
                 txtExpediente.Text = _ExpedientesBE.NumeroExpediente;
+                dtpFecha.Value = _ExpedientesBE.FechaRegistro;
                 dtgContrato.DataSource = _ContratoBL.BuscarContratoByExpediente(_codigo);
                 dtgContrato.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 //dtgExpediente.Columns[0].Width = 40;
@@ -104,7 +109,7 @@ namespace VelayChuVIEW
             }
             catch (Exception ex)
             {
-                
+
             }
 
         }
@@ -129,6 +134,36 @@ namespace VelayChuVIEW
             dtgDetalle.Refresh();
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            gpbCliente.Enabled = true;
+            btnGuardar.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnActualizar.Enabled = false;
+            activarControles();
+        }
+
+        private void activarControles()
+        {
+            gpbCliente.Enabled = true;
+            btnGuardar.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnActualizar.Enabled = false;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            desactivarControles();
+        }
+
+        private void desactivarControles()
+        {
+            gpbCliente.Enabled = false;
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnActualizar.Enabled = true;
+        }
+
         //private void llenarComboMateria(int _CodigoMaterias)
         //{
         //    cboMateria.DataSource = _MateriaBL.ListMateria_All();
@@ -145,6 +180,6 @@ namespace VelayChuVIEW
         //    cboCliente.SelectedValue = _CodigoCliente;
         //}
 
-       
+
     }
 }

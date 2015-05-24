@@ -352,9 +352,6 @@ namespace VelaychuADO
                 par1 = cmd.Parameters.Add(new SqlParameter("@Nombre", SqlDbType.VarChar, 150));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@Nombre"].Value = _UsuarioBE.NombreCompleto;
-
-
-
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoCargo", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoCargo"].Value = _UsuarioBE.CodigoCargo;
