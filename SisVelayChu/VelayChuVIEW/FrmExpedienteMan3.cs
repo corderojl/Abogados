@@ -56,9 +56,9 @@ namespace VelayChuVIEW
                 //llenarComboCliente(_ClienteBE.CodigoAsociacion);
                 txtCliente.Text = _ClienteBE.NombreCompleto;
                 //llenarComboMateria(_ClienteBE.CodigoTipoCliente);
-                llenarComboJuzgado(_ClienteBE.CodigoGrado);
-                llenarComboEspecialista(_ClienteBE.CodigoInstitucion);
-                llenarComboSala(_ClienteBE.CodigoPension);
+                llenarComboJuzgado(_ExpedientesBE.CodigoJuzgado);
+                llenarComboEspecialista(_ExpedientesBE.CodigoEspecialista);
+                llenarComboSala(_ExpedientesBE.CodigoSala);
                 txtExpediente.Text = _ExpedientesBE.NumeroExpediente;
                 dtpFecha.Value = _ExpedientesBE.FechaRegistro;
                 dtgContrato.DataSource = _ContratoBL.BuscarContratoByExpediente(_codigo);
@@ -167,9 +167,9 @@ namespace VelayChuVIEW
         private void btnGuardar_Click(object sender, EventArgs e)
         {
            ExpedientesBE _ExpedientesBE=new ExpedientesBE();
-            int _codigoExpediente;
+           _ExpedientesBE.CodigoExpediente = _codigo;
             _ExpedientesBE.NumeroExpediente=txtExpediente.Text;
-            _ExpedientesBE.CodigoCliente=Convert.ToInt32(lblCodigoCliente.Text);
+            //_ExpedientesBE.CodigoCliente=Convert.ToInt32(lblCodigoCliente.Text);
             _ExpedientesBE.FechaRegistro=dtpFecha.Value;
             _ExpedientesBE.CodigoJuzgado=Convert.ToInt32(cboJuzgado.SelectedValue);
             _ExpedientesBE.CodigoEspecialista=Convert.ToInt32(cboEspecialista.SelectedValue);
@@ -178,7 +178,7 @@ namespace VelayChuVIEW
 
             if (_ExpedienteBL.ActualizarExpedientes(_ExpedientesBE))
             {
-                MessageBox.Show("El espediente se Actualizo con exito");
+                MessageBox.Show("El Expediente se actualizo con exito");
             }
             else
             {
