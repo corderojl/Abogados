@@ -172,7 +172,7 @@ namespace VelaychuADO
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "uspExpedientesAdicionar";
+            cmd.CommandText = "uspExpedienteAdicionar";
             try
             {
                 par1 = cmd.Parameters.Add(new SqlParameter("@NumeroExpediente", SqlDbType.VarChar, 50));
@@ -217,6 +217,61 @@ namespace VelaychuADO
                 cmd.Parameters.Clear();
             }
             return (IdEmpleado);
+        }
+        public bool ActualizarExpedientes(ExpedientesBE _ExpedientesBE)
+        {
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspExpedienteActualizar";
+            SqlParameter par1;
+            try
+            {
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpediente", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoExpediente"].Value = _ExpedientesBE.CodigoExpediente;
+                par1 = cmd.Parameters.Add(new SqlParameter("@NumeroExpediente", SqlDbType.VarChar, 50));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@NumeroExpediente"].Value = _ExpedientesBE.NumeroExpediente;
+                par1 = cmd.Parameters.Add(new SqlParameter("@FechaRegistro", SqlDbType.Date));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@FechaRegistro"].Value = _ExpedientesBE.FechaRegistro;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoCliente", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoCliente"].Value = _ExpedientesBE.CodigoCliente;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoJuzgado", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoJuzgado"].Value = _ExpedientesBE.CodigoJuzgado;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoEspecialista", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoEspecialista"].Value = _ExpedientesBE.CodigoEspecialista;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoSala", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoSala"].Value = _ExpedientesBE.CodigoSala;
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                vexito = true;
+
+            }
+            catch (SqlException x)
+            {
+                vexito = false;
+            }
+            catch (Exception x)
+            {
+                vexito = false;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+
+            return vexito;
+
         }
     }
 }

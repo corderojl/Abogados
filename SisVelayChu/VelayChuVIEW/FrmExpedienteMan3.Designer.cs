@@ -51,6 +51,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.lblCodigoCliente = new System.Windows.Forms.Label();
             this.gpbCliente.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContrato)).BeginInit();
@@ -64,6 +65,7 @@
             // gpbCliente
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.gpbCliente, 4);
+            this.gpbCliente.Controls.Add(this.lblCodigoCliente);
             this.gpbCliente.Controls.Add(this.txtCliente);
             this.gpbCliente.Controls.Add(this.label7);
             this.gpbCliente.Controls.Add(this.cboSala);
@@ -320,6 +322,7 @@
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar cambios";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnActualizar
             // 
@@ -331,6 +334,14 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // lblCodigoCliente
+            // 
+            this.lblCodigoCliente.AutoSize = true;
+            this.lblCodigoCliente.Location = new System.Drawing.Point(172, 19);
+            this.lblCodigoCliente.Name = "lblCodigoCliente";
+            this.lblCodigoCliente.Size = new System.Drawing.Size(0, 13);
+            this.lblCodigoCliente.TabIndex = 15;
             // 
             // FrmExpedienteMan3
             // 
@@ -380,5 +391,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Label lblCodigoCliente;
     }
 }

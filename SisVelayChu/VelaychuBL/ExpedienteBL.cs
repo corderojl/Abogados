@@ -32,5 +32,9 @@ namespace VelaychuBL
         {
             return _ExpedienteADO.InsertarExpedientes(_ExpedientesBE);
         }
+        public bool ActualizarExpedientes(ExpedientesBE _ExpedientesBE)
+        {
+            return _ExpedienteADO.ActualizarExpedientes(_ExpedientesBE);
+        }
     }
 }

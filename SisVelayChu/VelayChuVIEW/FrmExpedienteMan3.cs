@@ -164,6 +164,30 @@ namespace VelayChuVIEW
             btnActualizar.Enabled = true;
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+           ExpedientesBE _ExpedientesBE=new ExpedientesBE();
+            int _codigoExpediente;
+            _ExpedientesBE.NumeroExpediente=txtExpediente.Text;
+            _ExpedientesBE.CodigoCliente=Convert.ToInt32(lblCodigoCliente.Text);
+            _ExpedientesBE.FechaRegistro=dtpFecha.Value;
+            _ExpedientesBE.CodigoJuzgado=Convert.ToInt32(cboJuzgado.SelectedValue);
+            _ExpedientesBE.CodigoEspecialista=Convert.ToInt32(cboEspecialista.SelectedValue);
+            _ExpedientesBE.CodigoSala=Convert.ToInt32(cboSala.SelectedValue);
+            desactivarControles();
+
+            if (_ExpedienteBL.ActualizarExpedientes(_ExpedientesBE))
+            {
+                MessageBox.Show("El espediente se Actualizo con exito");
+            }
+            else
+            {
+                MessageBox.Show("Error, compruebe los datos");
+                desactivarControles();
+            }
+            
+        }
+
         //private void llenarComboMateria(int _CodigoMaterias)
         //{
         //    cboMateria.DataSource = _MateriaBL.ListMateria_All();
