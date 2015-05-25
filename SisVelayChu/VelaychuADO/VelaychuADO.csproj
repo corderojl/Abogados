@@ -49,6 +49,7 @@
     <Compile Include="DetalleExpedienteADO.cs" />
     <Compile Include="DistritoADO.cs" />
     <Compile Include="DocumentoADO.cs" />
+    <Compile Include="DocumentoClienteADO.cs" />
     <Compile Include="EspecialistaADO.cs" />
     <Compile Include="EstadosImpulsosADO.cs" />
     <Compile Include="EventoADO.cs" />

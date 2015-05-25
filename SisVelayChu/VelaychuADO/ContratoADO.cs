@@ -88,7 +88,7 @@ namespace VelaychuADO
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "uspBuscarContratoByExpediente";
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpediente", SqlDbType.VarChar, 150));
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpediente", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoExpediente"].Value = CodigoExpediente;
                 SqlDataAdapter miada = default(SqlDataAdapter);

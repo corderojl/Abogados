@@ -22,7 +22,9 @@ namespace VelayChuVIEW
         ExpedienteBL _ExpedienteBL = new ExpedienteBL();
 
         ContratoBL _ContratoBL = new ContratoBL();
-        DocumentoBL _DocumentoBL = new DocumentoBL();
+        DocumentoClienteBL _DocumentoClienteBL = new DocumentoClienteBL();
+
+
         DetalleExpedienteBL _DetalleExpedienteBL = new DetalleExpedienteBL();
 
         SalaBL _SalaBL = new SalaBL();
@@ -46,7 +48,6 @@ namespace VelayChuVIEW
         {
             try
             {
-
                 _ExpedientesBE = _ExpedienteBL.TraerExpediente(_codigo);
                 _ClienteBE = _ClienteBL.TraerCliente(_ExpedientesBE.CodigoCliente);
 
@@ -63,6 +64,7 @@ namespace VelayChuVIEW
                 dtpFecha.Value = _ExpedientesBE.FechaRegistro;
                 dtgContrato.DataSource = _ContratoBL.BuscarContratoByExpediente(_codigo);
                 dtgContrato.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dtgContrato.Columns[1].Visible = false;
                 //dtgExpediente.Columns[0].Width = 40;
                 //dtgExpediente.Columns[1].Width = 150;
                 //dtgExpediente.Columns[8].Width = 200;
@@ -104,8 +106,9 @@ namespace VelayChuVIEW
             try
             {
                 int _CodigoContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[0].Value);
+                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
                 llenarGrillaDetalles(_CodigoContrato);
-                llenarGrillaDocumentos(_CodigoContrato);
+                llenarGrillaDocumentos(_CodigoExpedienteContrato);
             }
             catch (Exception ex)
             {
@@ -114,9 +117,9 @@ namespace VelayChuVIEW
 
         }
 
-        private void llenarGrillaDocumentos(int _CodigoContrato)
+        private void llenarGrillaDocumentos(int _CodigoExpedienteContrato)
         {
-            dtgDocumento.DataSource = _DocumentoBL.ListarDocumentoByContrato(_CodigoContrato);
+            dtgDocumento.DataSource = _DocumentoClienteBL.BuscarDocumentoClienteByExpedienteContrato(_CodigoExpedienteContrato);
             dtgDocumento.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             //dtgExpediente.Columns[0].Width = 40;
             //dtgExpediente.Columns[1].Width = 150;

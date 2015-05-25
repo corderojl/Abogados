@@ -76,7 +76,7 @@ namespace VelaychuADO
             con.Close();
             return (lDocumentoBE);
         }
-        public DataTable ListarDocumentoByContrato(int CodigoContrato)
+        public DataTable ListarDocumentoByContrato(int _CodigoContrato)
         {
             DataSet dts = new DataSet();
             SqlParameter par1;
@@ -88,7 +88,7 @@ namespace VelaychuADO
                 cmd.CommandText = "uspListarDocumentoByContrato";
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoContrato", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoContrato"].Value = CodigoContrato;
+                cmd.Parameters["@CodigoContrato"].Value = _CodigoContrato;
                 SqlDataAdapter miada = default(SqlDataAdapter);
                 miada = new SqlDataAdapter(cmd);
                 miada.Fill(dts, "Sistemas");

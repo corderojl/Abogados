@@ -47,6 +47,7 @@
     <Compile Include="DetalleExpedienteBE.cs" />
     <Compile Include="DistritoBE.cs" />
     <Compile Include="DocumentoBE.cs" />
+    <Compile Include="DocumentosClienteBE.cs" />
     <Compile Include="EspecialistaBE.cs" />
     <Compile Include="EstadosImpulsosBE.cs" />
     <Compile Include="EventoBE.cs" />
