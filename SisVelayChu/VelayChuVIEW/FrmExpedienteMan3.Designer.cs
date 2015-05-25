@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gpbCliente = new System.Windows.Forms.GroupBox();
+            this.lblCodigoCliente = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cboSala = new System.Windows.Forms.ComboBox();
@@ -48,10 +49,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dtgDetalle = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.lblCodigoCliente = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gpbCliente.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContrato)).BeginInit();
@@ -87,6 +87,14 @@
             this.gpbCliente.TabIndex = 0;
             this.gpbCliente.TabStop = false;
             this.gpbCliente.Text = "Expediente";
+            // 
+            // lblCodigoCliente
+            // 
+            this.lblCodigoCliente.AutoSize = true;
+            this.lblCodigoCliente.Location = new System.Drawing.Point(172, 19);
+            this.lblCodigoCliente.Name = "lblCodigoCliente";
+            this.lblCodigoCliente.Size = new System.Drawing.Size(0, 13);
+            this.lblCodigoCliente.TabIndex = 15;
             // 
             // txtCliente
             // 
@@ -193,11 +201,11 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 3);
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 2);
             this.groupBox2.Controls.Add(this.dtgContrato);
             this.groupBox2.Location = new System.Drawing.Point(3, 115);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(597, 217);
+            this.groupBox2.Size = new System.Drawing.Size(450, 217);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contratos";
@@ -205,15 +213,13 @@
             // dtgContrato
             // 
             this.dtgContrato.AllowUserToAddRows = false;
-            this.dtgContrato.AllowUserToDeleteRows = false;
             this.dtgContrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgContrato.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgContrato.Location = new System.Drawing.Point(3, 16);
             this.dtgContrato.Name = "dtgContrato";
-            this.dtgContrato.ReadOnly = true;
             this.dtgContrato.RowHeadersVisible = false;
             this.dtgContrato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgContrato.Size = new System.Drawing.Size(591, 198);
+            this.dtgContrato.Size = new System.Drawing.Size(444, 198);
             this.dtgContrato.TabIndex = 0;
             this.dtgContrato.Click += new System.EventHandler(this.dtgContrato_Click);
             // 
@@ -224,9 +230,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox3, 2);
             this.groupBox3.Controls.Add(this.dtgDocumento);
-            this.groupBox3.Location = new System.Drawing.Point(606, 115);
+            this.groupBox3.Location = new System.Drawing.Point(582, 115);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(399, 217);
+            this.groupBox3.Size = new System.Drawing.Size(423, 217);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Documentos";
@@ -242,7 +248,7 @@
             this.dtgDocumento.ReadOnly = true;
             this.dtgDocumento.RowHeadersVisible = false;
             this.dtgDocumento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDocumento.Size = new System.Drawing.Size(393, 198);
+            this.dtgDocumento.Size = new System.Drawing.Size(417, 198);
             this.dtgDocumento.TabIndex = 0;
             // 
             // groupBox5
@@ -278,9 +284,9 @@
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.29762F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.20238F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.32143F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.gpbCliente, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 5);
@@ -302,16 +308,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 562);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // btnCancelar
+            // btnActualizar
             // 
-            this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelar.Location = new System.Drawing.Point(807, 59);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(198, 22);
-            this.btnCancelar.TabIndex = 6;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnActualizar.Location = new System.Drawing.Point(807, 3);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(198, 22);
+            this.btnActualizar.TabIndex = 4;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnGuardar
             // 
@@ -324,24 +330,16 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnActualizar
+            // btnCancelar
             // 
-            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnActualizar.Location = new System.Drawing.Point(807, 3);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(198, 22);
-            this.btnActualizar.TabIndex = 4;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // lblCodigoCliente
-            // 
-            this.lblCodigoCliente.AutoSize = true;
-            this.lblCodigoCliente.Location = new System.Drawing.Point(172, 19);
-            this.lblCodigoCliente.Name = "lblCodigoCliente";
-            this.lblCodigoCliente.Size = new System.Drawing.Size(0, 13);
-            this.lblCodigoCliente.TabIndex = 15;
+            this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancelar.Location = new System.Drawing.Point(807, 59);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(198, 22);
+            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FrmExpedienteMan3
             // 
