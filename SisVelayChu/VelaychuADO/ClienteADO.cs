@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using VelaychuBE;
+using System.Configuration;
 
 namespace VelaychuADO
 {
@@ -353,5 +354,6 @@ namespace VelaychuADO
             }
             return _ClienteBE;
         }
+       
     }
 }
