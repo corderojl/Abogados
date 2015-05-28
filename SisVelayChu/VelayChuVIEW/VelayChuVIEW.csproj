@@ -224,6 +224,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Datos\Nuevo SP 2.sql" />
     <Content Include="Datos\Nuevo SP.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
