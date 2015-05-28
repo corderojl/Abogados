@@ -48,6 +48,7 @@
     <Compile Include="DocumentosClienteBL.cs" />
     <Compile Include="EspecialistaBL.cs" />
     <Compile Include="ExpedienteBL.cs" />
+    <Compile Include="ExpedienteContratoBL.cs" />
     <Compile Include="GradoBL.cs" />
     <Compile Include="InstitucionBL.cs" />
     <Compile Include="JuzgadoBL.cs" />

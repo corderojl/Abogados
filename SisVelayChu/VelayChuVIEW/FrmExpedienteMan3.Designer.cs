@@ -52,6 +52,8 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cboContrato = new System.Windows.Forms.ComboBox();
+            this.btnAgregarContrato = new System.Windows.Forms.Button();
             this.gpbCliente.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContrato)).BeginInit();
@@ -213,14 +215,19 @@
             // dtgContrato
             // 
             this.dtgContrato.AllowUserToAddRows = false;
+            this.dtgContrato.AllowUserToDeleteRows = false;
+            this.dtgContrato.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgContrato.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dtgContrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgContrato.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgContrato.Location = new System.Drawing.Point(3, 16);
             this.dtgContrato.Name = "dtgContrato";
+            this.dtgContrato.ReadOnly = true;
             this.dtgContrato.RowHeadersVisible = false;
             this.dtgContrato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgContrato.Size = new System.Drawing.Size(444, 198);
             this.dtgContrato.TabIndex = 0;
+            
             this.dtgContrato.Click += new System.EventHandler(this.dtgContrato_Click);
             // 
             // groupBox3
@@ -241,6 +248,8 @@
             // 
             this.dtgDocumento.AllowUserToAddRows = false;
             this.dtgDocumento.AllowUserToDeleteRows = false;
+            this.dtgDocumento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgDocumento.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dtgDocumento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDocumento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDocumento.Location = new System.Drawing.Point(3, 16);
@@ -250,6 +259,7 @@
             this.dtgDocumento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDocumento.Size = new System.Drawing.Size(417, 198);
             this.dtgDocumento.TabIndex = 0;
+            this.dtgDocumento.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellContentDoubleClick);
             // 
             // groupBox5
             // 
@@ -269,6 +279,8 @@
             // 
             this.dtgDetalle.AllowUserToAddRows = false;
             this.dtgDetalle.AllowUserToDeleteRows = false;
+            this.dtgDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgDetalle.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dtgDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDetalle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDetalle.Location = new System.Drawing.Point(3, 16);
@@ -295,6 +307,8 @@
             this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.groupBox3, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cboContrato, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -340,6 +354,25 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // cboContrato
+            // 
+            this.cboContrato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboContrato.FormattingEnabled = true;
+            this.cboContrato.Location = new System.Drawing.Point(3, 87);
+            this.cboContrato.Name = "cboContrato";
+            this.cboContrato.Size = new System.Drawing.Size(195, 21);
+            this.cboContrato.TabIndex = 7;
+            // 
+            // btnAgregarContrato
+            // 
+            this.btnAgregarContrato.Location = new System.Drawing.Point(204, 87);
+            this.btnAgregarContrato.Name = "btnAgregarContrato";
+            this.btnAgregarContrato.Size = new System.Drawing.Size(113, 22);
+            this.btnAgregarContrato.TabIndex = 8;
+            this.btnAgregarContrato.Text = "Agregar Contrato";
+            this.btnAgregarContrato.UseVisualStyleBackColor = true;
+            this.btnAgregarContrato.Click += new System.EventHandler(this.btnAgregarContrato_Click);
             // 
             // FrmExpedienteMan3
             // 
@@ -390,5 +423,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Label lblCodigoCliente;
+        private System.Windows.Forms.ComboBox cboContrato;
+        private System.Windows.Forms.Button btnAgregarContrato;
     }
 }

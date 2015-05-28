@@ -76,6 +76,7 @@ namespace VelayChuVIEW
                 _miempl.Login = txtLogin.Text;
                 if (_UsuarioBL.ActualizarUsuario(_UsuarioBE))
                 {
+                    MessageBox.Show("El Usuario se actualizó con exito");
                     this.Close();
                 }
                 else

@@ -15,5 +15,13 @@ namespace VelaychuBL
         {
             return _DocumentoClienteADO.BuscarDocumentoClienteByExpedienteContrato(_CodigoExpedienteContrato);
         }
+        public bool CambiarDocumentoCliente(int _CodigoDocumentoCliente, bool _Presento)
+        {
+            if (_Presento == true)
+                _Presento = false;
+            else
+                _Presento = true;
+            return _DocumentoClienteADO.CambiarDocumentoCliente(_CodigoDocumentoCliente, _Presento);
+        }
     }
 }

@@ -51,6 +51,7 @@
     <Compile Include="EspecialistaBE.cs" />
     <Compile Include="EstadosImpulsosBE.cs" />
     <Compile Include="EventoBE.cs" />
+    <Compile Include="ExpedienteContratoBE.cs" />
     <Compile Include="ExpedientesBE.cs" />
     <Compile Include="GradoBE.cs" />
     <Compile Include="ImpulsosBE.cs" />

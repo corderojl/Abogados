@@ -13,6 +13,7 @@ namespace VelaychuADO
         SqlConnection cnx = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         DataView dtv = new DataView();
+        bool vexito;
 
         public DataTable BuscarDocumentoClienteByExpedienteContrato(int CodigoExpedienteContrato)
         {
@@ -45,6 +46,39 @@ namespace VelaychuADO
                 cmd.Parameters.Clear();
             }
             return dts.Tables["Sistemas"];
+        }
+        public bool CambiarDocumentoCliente(int _CodigoDocumentoCliente, bool _Presento)
+        {
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspDocumentosClienteCambiar";
+
+            try
+            {
+                cmd.Parameters.Add(new SqlParameter("@CodigoDocumentoCliente", SqlDbType.Int));
+                cmd.Parameters["@CodigoDocumentoCliente"].Value = _CodigoDocumentoCliente;
+                cmd.Parameters.Add(new SqlParameter("@Presento", SqlDbType.Int));
+                cmd.Parameters["@Presento"].Value = _Presento;
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                vexito = true;
+
+            }
+            catch (SqlException x)
+            {
+                vexito = false;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+
+            return vexito;
         }
     }
 }

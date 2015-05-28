@@ -17,13 +17,14 @@ namespace VelayChuVIEW
 
         ClienteBE _ClienteBE = new ClienteBE();
         ClienteBL _ClienteBL = new ClienteBL();
+        
 
         AsociacionBL _AsociacionBL = new AsociacionBL();
         ExpedienteBL _ExpedienteBL = new ExpedienteBL();
 
         ContratoBL _ContratoBL = new ContratoBL();
         DocumentoClienteBL _DocumentoClienteBL = new DocumentoClienteBL();
-
+        ExpedienteContratoBL _ExpedienteContratoBL = new ExpedienteContratoBL();
 
         DetalleExpedienteBL _DetalleExpedienteBL = new DetalleExpedienteBL();
 
@@ -62,19 +63,31 @@ namespace VelayChuVIEW
                 llenarComboSala(_ExpedientesBE.CodigoSala);
                 txtExpediente.Text = _ExpedientesBE.NumeroExpediente;
                 dtpFecha.Value = _ExpedientesBE.FechaRegistro;
-                dtgContrato.DataSource = _ContratoBL.BuscarContratoByExpediente(_codigo);
-                dtgContrato.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                dtgContrato.Columns[1].Visible = false;
+                llenarGrillaContratos();
+                cboContrato.DataSource = _ContratoBL.ListarCON_ContratoOAct();
+                cboContrato.DisplayMember = "DescripcionContrato";
+                cboContrato.ValueMember = "CodigoContrato";
+                //DataGridViewComboBoxColumn cboContrato = new DataGridViewComboBoxColumn();
+                //dtgContrato.Columns.Insert(3, cboContrato);
+                //dtgContrato.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                
                 //dtgExpediente.Columns[0].Width = 40;
                 //dtgExpediente.Columns[1].Width = 150;
                 //dtgExpediente.Columns[8].Width = 200;
-                dtgContrato.Refresh();
+                llenarGrillas();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void llenarGrillaContratos()
+        {
+            dtgContrato.DataSource = _ContratoBL.BuscarContratoByExpediente(_codigo);
+            dtgContrato.Columns[1].Visible = false;
+            dtgContrato.Refresh();
         }
 
         private void llenarComboSala(int _CodigoSalas)
@@ -103,6 +116,11 @@ namespace VelayChuVIEW
 
         private void dtgContrato_Click(object sender, EventArgs e)
         {
+            llenarGrillas();
+        }
+
+        private void llenarGrillas()
+        {
             try
             {
                 int _CodigoContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[0].Value);
@@ -114,16 +132,15 @@ namespace VelayChuVIEW
             {
 
             }
-
         }
 
         private void llenarGrillaDocumentos(int _CodigoExpedienteContrato)
         {
+            
             dtgDocumento.DataSource = _DocumentoClienteBL.BuscarDocumentoClienteByExpedienteContrato(_CodigoExpedienteContrato);
             dtgDocumento.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            //dtgExpediente.Columns[0].Width = 40;
-            //dtgExpediente.Columns[1].Width = 150;
-            //dtgExpediente.Columns[8].Width = 200;
+           
+            
             dtgDocumento.Refresh();
         }
 
@@ -131,9 +148,7 @@ namespace VelayChuVIEW
         {
             dtgDetalle.DataSource = _DetalleExpedienteBL.ListarDetalleExpedienteByContrato(_CodigoContrato);
             dtgDetalle.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            //dtgExpediente.Columns[0].Width = 40;
-            //dtgExpediente.Columns[1].Width = 150;
-            //dtgExpediente.Columns[8].Width = 200;
+           
             dtgDetalle.Refresh();
         }
 
@@ -189,6 +204,31 @@ namespace VelayChuVIEW
                 desactivarControles();
             }
             
+        }
+
+        private void dtgDocumento_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int _CodigoDocumentoCliente = Convert.ToInt32(dtgDocumento.CurrentRow.Cells[0].Value);
+            bool _Presento = Convert.ToBoolean(dtgDocumento.CurrentRow.Cells[2].Value);
+            if (_DocumentoClienteBL.CambiarDocumentoCliente(_CodigoDocumentoCliente, _Presento))
+            {
+                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
+                
+                llenarGrillaDocumentos(_CodigoExpedienteContrato);
+                dtgDocumento.Refresh();
+            }
+            else
+                MessageBox.Show("No se puede cambiar el estado");
+        }
+
+
+        private void btnAgregarContrato_Click(object sender, EventArgs e)
+        {
+            ExpedienteContratoBE _ExpedienteContratoBE=new ExpedienteContratoBE();
+            _ExpedienteContratoBE.CodigoContrato=int.Parse(cboContrato.SelectedValue.ToString());
+            _ExpedienteContratoBE.CodigoExpediente=_codigo;
+            _ExpedienteContratoBL.InsertarExpedienteContrato(_ExpedienteContratoBE);
+            llenarGrillaContratos();
         }
 
         //private void llenarComboMateria(int _CodigoMaterias)

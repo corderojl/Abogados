@@ -54,6 +54,7 @@
     <Compile Include="EstadosImpulsosADO.cs" />
     <Compile Include="EventoADO.cs" />
     <Compile Include="ExpedienteADO.cs" />
+    <Compile Include="ExpedienteContratoADO.cs" />
     <Compile Include="GradoADO.cs" />
     <Compile Include="InstitucionADO.cs" />
     <Compile Include="JuzgadoADO.cs" />
