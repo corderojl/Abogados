@@ -66,7 +66,7 @@
             // 
             // gpbCliente
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.gpbCliente, 4);
+            this.tableLayoutPanel1.SetColumnSpan(this.gpbCliente, 7);
             this.gpbCliente.Controls.Add(this.lblCodigoCliente);
             this.gpbCliente.Controls.Add(this.txtCliente);
             this.gpbCliente.Controls.Add(this.label7);
@@ -84,8 +84,8 @@
             this.gpbCliente.Enabled = false;
             this.gpbCliente.Location = new System.Drawing.Point(3, 3);
             this.gpbCliente.Name = "gpbCliente";
-            this.tableLayoutPanel1.SetRowSpan(this.gpbCliente, 3);
-            this.gpbCliente.Size = new System.Drawing.Size(798, 78);
+            this.tableLayoutPanel1.SetRowSpan(this.gpbCliente, 2);
+            this.gpbCliente.Size = new System.Drawing.Size(876, 74);
             this.gpbCliente.TabIndex = 0;
             this.gpbCliente.TabStop = false;
             this.gpbCliente.Text = "Expediente";
@@ -205,9 +205,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 2);
             this.groupBox2.Controls.Add(this.dtgContrato);
-            this.groupBox2.Location = new System.Drawing.Point(3, 115);
+            this.groupBox2.Location = new System.Drawing.Point(3, 163);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 217);
+            this.tableLayoutPanel1.SetRowSpan(this.groupBox2, 4);
+            this.groupBox2.Size = new System.Drawing.Size(246, 154);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contratos";
@@ -225,9 +226,8 @@
             this.dtgContrato.ReadOnly = true;
             this.dtgContrato.RowHeadersVisible = false;
             this.dtgContrato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgContrato.Size = new System.Drawing.Size(444, 198);
+            this.dtgContrato.Size = new System.Drawing.Size(240, 135);
             this.dtgContrato.TabIndex = 0;
-            
             this.dtgContrato.Click += new System.EventHandler(this.dtgContrato_Click);
             // 
             // groupBox3
@@ -237,9 +237,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox3, 2);
             this.groupBox3.Controls.Add(this.dtgDocumento);
-            this.groupBox3.Location = new System.Drawing.Point(582, 115);
+            this.groupBox3.Location = new System.Drawing.Point(633, 163);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(423, 217);
+            this.tableLayoutPanel1.SetRowSpan(this.groupBox3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(246, 154);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Documentos";
@@ -257,7 +258,7 @@
             this.dtgDocumento.ReadOnly = true;
             this.dtgDocumento.RowHeadersVisible = false;
             this.dtgDocumento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDocumento.Size = new System.Drawing.Size(417, 198);
+            this.dtgDocumento.Size = new System.Drawing.Size(240, 135);
             this.dtgDocumento.TabIndex = 0;
             this.dtgDocumento.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellContentDoubleClick);
             // 
@@ -268,9 +269,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox5, 5);
             this.groupBox5.Controls.Add(this.dtgDetalle);
-            this.groupBox5.Location = new System.Drawing.Point(3, 338);
+            this.groupBox5.Location = new System.Drawing.Point(3, 403);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1002, 221);
+            this.tableLayoutPanel1.SetRowSpan(this.groupBox5, 4);
+            this.groupBox5.Size = new System.Drawing.Size(624, 156);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalles";
@@ -288,46 +290,57 @@
             this.dtgDetalle.ReadOnly = true;
             this.dtgDetalle.RowHeadersVisible = false;
             this.dtgDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDetalle.Size = new System.Drawing.Size(996, 202);
+            this.dtgDetalle.Size = new System.Drawing.Size(618, 137);
             this.dtgDetalle.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.29762F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.20238F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.32143F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnCount = 8;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.Controls.Add(this.gpbCliente, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 7, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 7, 2);
             this.tableLayoutPanel1.Controls.Add(this.cboContrato, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 5, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.102041F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.102041F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.102041F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.102041F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.79592F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.79592F));
+            this.tableLayoutPanel1.RowCount = 14;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.144829F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.144829F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.144829F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.144829F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.141971F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.141971F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.141971F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.141971F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.141971F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.141971F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.141971F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142295F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142295F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142295F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 562);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // btnActualizar
             // 
             this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnActualizar.Location = new System.Drawing.Point(807, 3);
+            this.btnActualizar.Location = new System.Drawing.Point(885, 3);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(198, 22);
+            this.btnActualizar.Size = new System.Drawing.Size(120, 34);
             this.btnActualizar.TabIndex = 4;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -336,9 +349,9 @@
             // btnGuardar
             // 
             this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnGuardar.Location = new System.Drawing.Point(807, 31);
+            this.btnGuardar.Location = new System.Drawing.Point(885, 43);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(198, 22);
+            this.btnGuardar.Size = new System.Drawing.Size(120, 34);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar cambios";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -347,9 +360,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelar.Location = new System.Drawing.Point(807, 59);
+            this.btnCancelar.Location = new System.Drawing.Point(885, 83);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(198, 22);
+            this.btnCancelar.Size = new System.Drawing.Size(120, 34);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -359,14 +372,14 @@
             // 
             this.cboContrato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboContrato.FormattingEnabled = true;
-            this.cboContrato.Location = new System.Drawing.Point(3, 87);
+            this.cboContrato.Location = new System.Drawing.Point(3, 129);
             this.cboContrato.Name = "cboContrato";
-            this.cboContrato.Size = new System.Drawing.Size(195, 21);
+            this.cboContrato.Size = new System.Drawing.Size(120, 21);
             this.cboContrato.TabIndex = 7;
             // 
             // btnAgregarContrato
             // 
-            this.btnAgregarContrato.Location = new System.Drawing.Point(204, 87);
+            this.btnAgregarContrato.Location = new System.Drawing.Point(129, 123);
             this.btnAgregarContrato.Name = "btnAgregarContrato";
             this.btnAgregarContrato.Size = new System.Drawing.Size(113, 22);
             this.btnAgregarContrato.TabIndex = 8;
