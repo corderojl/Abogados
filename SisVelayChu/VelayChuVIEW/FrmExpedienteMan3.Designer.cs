@@ -203,12 +203,12 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 2);
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 4);
             this.groupBox2.Controls.Add(this.dtgContrato);
             this.groupBox2.Location = new System.Drawing.Point(3, 163);
             this.groupBox2.Name = "groupBox2";
             this.tableLayoutPanel1.SetRowSpan(this.groupBox2, 4);
-            this.groupBox2.Size = new System.Drawing.Size(246, 154);
+            this.groupBox2.Size = new System.Drawing.Size(498, 154);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contratos";
@@ -226,7 +226,7 @@
             this.dtgContrato.ReadOnly = true;
             this.dtgContrato.RowHeadersVisible = false;
             this.dtgContrato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgContrato.Size = new System.Drawing.Size(240, 135);
+            this.dtgContrato.Size = new System.Drawing.Size(492, 135);
             this.dtgContrato.TabIndex = 0;
             this.dtgContrato.Click += new System.EventHandler(this.dtgContrato_Click);
             // 
@@ -235,12 +235,12 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.groupBox3, 2);
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox3, 3);
             this.groupBox3.Controls.Add(this.dtgDocumento);
             this.groupBox3.Location = new System.Drawing.Point(633, 163);
             this.groupBox3.Name = "groupBox3";
             this.tableLayoutPanel1.SetRowSpan(this.groupBox3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(246, 154);
+            this.groupBox3.Size = new System.Drawing.Size(372, 154);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Documentos";
@@ -258,7 +258,7 @@
             this.dtgDocumento.ReadOnly = true;
             this.dtgDocumento.RowHeadersVisible = false;
             this.dtgDocumento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDocumento.Size = new System.Drawing.Size(240, 135);
+            this.dtgDocumento.Size = new System.Drawing.Size(366, 135);
             this.dtgDocumento.TabIndex = 0;
             this.dtgDocumento.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellContentDoubleClick);
             // 
@@ -267,12 +267,12 @@
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.groupBox5, 5);
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox5, 7);
             this.groupBox5.Controls.Add(this.dtgDetalle);
             this.groupBox5.Location = new System.Drawing.Point(3, 403);
             this.groupBox5.Name = "groupBox5";
             this.tableLayoutPanel1.SetRowSpan(this.groupBox5, 4);
-            this.groupBox5.Size = new System.Drawing.Size(624, 156);
+            this.groupBox5.Size = new System.Drawing.Size(876, 156);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalles";
@@ -290,7 +290,7 @@
             this.dtgDetalle.ReadOnly = true;
             this.dtgDetalle.RowHeadersVisible = false;
             this.dtgDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDetalle.Size = new System.Drawing.Size(618, 137);
+            this.dtgDetalle.Size = new System.Drawing.Size(870, 137);
             this.dtgDetalle.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -309,11 +309,11 @@
             this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 7, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 7, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cboContrato, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.groupBox3, 5, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cboContrato, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 2, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -379,9 +379,10 @@
             // 
             // btnAgregarContrato
             // 
-            this.btnAgregarContrato.Location = new System.Drawing.Point(129, 123);
+            this.btnAgregarContrato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarContrato.Location = new System.Drawing.Point(255, 129);
             this.btnAgregarContrato.Name = "btnAgregarContrato";
-            this.btnAgregarContrato.Size = new System.Drawing.Size(113, 22);
+            this.btnAgregarContrato.Size = new System.Drawing.Size(120, 22);
             this.btnAgregarContrato.TabIndex = 8;
             this.btnAgregarContrato.Text = "Agregar Contrato";
             this.btnAgregarContrato.UseVisualStyleBackColor = true;

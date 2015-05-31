@@ -15,5 +15,10 @@ namespace VelaychuBL
         {
            return _ExpedienteContratoADO.InsertarExpedienteContrato(_ExpedienteContratoBE);
         }
+
+        public bool EliminarExpedienteContrato(int _CodigoExpedienteContrato)
+        {
+            return _ExpedienteContratoADO.EliminarExpedienteContrato(_CodigoExpedienteContrato);
+        }
     }
 }

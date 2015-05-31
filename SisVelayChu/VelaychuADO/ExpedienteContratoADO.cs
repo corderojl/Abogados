@@ -14,7 +14,7 @@ namespace VelaychuADO
         SqlConnection cnx = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         DataView dtv = new DataView();
-        
+        bool vexito;
 
         
         public int InsertarExpedienteContrato(ExpedienteContratoBE _ExpedienteContratoBE)
@@ -57,6 +57,38 @@ namespace VelaychuADO
                 cmd.Parameters.Clear();
             }
             return (IdEmpleado);
+        }
+
+        public bool EliminarExpedienteContrato(int _CodigoExpedienteContrato)
+        {
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspExpedienteContratoEliminar";
+
+            try
+            {
+                cmd.Parameters.Add(new SqlParameter("@CodigoExpedienteContrato", SqlDbType.Int));
+                cmd.Parameters["@CodigoExpedienteContrato"].Value = _CodigoExpedienteContrato;
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                vexito = true;
+
+            }
+            catch (SqlException x)
+            {
+                vexito = false;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+
+            return vexito;
         }
     }
 }
