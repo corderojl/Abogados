@@ -97,5 +97,14 @@ namespace VelayChuVIEW
 
         }
 
+        private void btnAgregarContrato_Click(object sender, EventArgs e)
+        {
+            ExpedienteContratoBE _ExpedienteContratoBE = new ExpedienteContratoBE();
+            _ExpedienteContratoBE.CodigoContrato = int.Parse(cboContratos.SelectedValue.ToString());
+            //_ExpedienteContratoBE.CodigoExpediente = _codigo;
+            //_ExpedienteContratoBL.InsertarExpedienteContrato(_ExpedienteContratoBE);
+            //llenarGrillaContratos();
+        }
+
     }
 }
