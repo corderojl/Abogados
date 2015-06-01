@@ -33,6 +33,8 @@
             this.cboClientes = new System.Windows.Forms.ComboBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lstInformacionCliente = new System.Windows.Forms.ListBox();
+            this.cboContratos = new System.Windows.Forms.ComboBox();
+            this.btnAgregarContrato = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +50,8 @@
             this.tableLayoutPanel1.Controls.Add(this.cboClientes, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnBuscarCliente, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.lstInformacionCliente, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cboContratos, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 3, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -61,6 +65,11 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(668, 465);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -98,11 +107,38 @@
             // 
             // lstInformacionCliente
             // 
+            this.tableLayoutPanel1.SetColumnSpan(this.lstInformacionCliente, 3);
+            this.lstInformacionCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstInformacionCliente.Enabled = false;
+            this.lstInformacionCliente.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstInformacionCliente.FormattingEnabled = true;
+            this.lstInformacionCliente.ItemHeight = 14;
             this.lstInformacionCliente.Location = new System.Drawing.Point(136, 47);
             this.lstInformacionCliente.Name = "lstInformacionCliente";
-            this.lstInformacionCliente.Size = new System.Drawing.Size(120, 43);
+            this.tableLayoutPanel1.SetRowSpan(this.lstInformacionCliente, 3);
+            this.lstInformacionCliente.Size = new System.Drawing.Size(393, 154);
             this.lstInformacionCliente.TabIndex = 7;
+            // 
+            // cboContratos
+            // 
+            this.cboContratos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.cboContratos, 2);
+            this.cboContratos.FormattingEnabled = true;
+            this.cboContratos.Location = new System.Drawing.Point(136, 219);
+            this.cboContratos.Name = "cboContratos";
+            this.cboContratos.Size = new System.Drawing.Size(260, 21);
+            this.cboContratos.TabIndex = 8;
+            // 
+            // btnAgregarContrato
+            // 
+            this.btnAgregarContrato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarContrato.Location = new System.Drawing.Point(402, 215);
+            this.btnAgregarContrato.Name = "btnAgregarContrato";
+            this.btnAgregarContrato.Size = new System.Drawing.Size(127, 29);
+            this.btnAgregarContrato.TabIndex = 6;
+            this.btnAgregarContrato.Text = "Agregar Contrato";
+            this.btnAgregarContrato.UseVisualStyleBackColor = true;
+            this.btnAgregarContrato.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // FrmExpedienteMan2
             // 
@@ -126,6 +162,8 @@
         private System.Windows.Forms.ComboBox cboClientes;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.ListBox lstInformacionCliente;
+        private System.Windows.Forms.ComboBox cboContratos;
+        private System.Windows.Forms.Button btnAgregarContrato;
 
     }
 }

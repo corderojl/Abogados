@@ -17,6 +17,7 @@ namespace VelayChuVIEW
     {
         ClienteBE _ClienteBE = new ClienteBE();
         ClienteBL _ClienteBL = new ClienteBL();
+        ContratoBL _ContratoBL = new ContratoBL();
         
         public FrmExpedienteMan2()
         {
@@ -29,6 +30,7 @@ namespace VelayChuVIEW
             {
 
                 llenarCombo();
+                LlenarComboContratos();
                 
             }
             catch (Exception ex)
@@ -52,7 +54,12 @@ namespace VelayChuVIEW
             cboClientes.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
-
+        private void LlenarComboContratos()
+        {
+            cboContratos.DataSource = _ContratoBL.ListarCON_ContratoOAct();
+            cboContratos.DisplayMember = "DescripcionContrato";
+            cboContratos.ValueMember = "CodigoContrato";
+        }
 
         public static AutoCompleteStringCollection LoadAutoComplete()
         {
@@ -78,15 +85,15 @@ namespace VelayChuVIEW
             int codigo = Convert.ToInt32(cboClientes.SelectedValue.ToString());
             _ClienteBE = _ClienteBL.TraerInformacionCliente(codigo);
 
-            lstInformacionCliente.Items.Add("Cliente: "+_ClienteBE.NombreCompleto);
-            lstInformacionCliente.Items.Add("Dirección: " + _ClienteBE.DirecccionCompleta);
-            lstInformacionCliente.Items.Add("Telefono: " + _ClienteBE.TelefonoFijo);
-            lstInformacionCliente.Items.Add("Celular #1: " + _ClienteBE.TelefonoCelular1);
-            lstInformacionCliente.Items.Add("Celular #2: " + _ClienteBE.TelefonoCelular2);
-            lstInformacionCliente.Items.Add("Asociacion: " + _ClienteBE.NombreAsociaccion);
-            lstInformacionCliente.Items.Add("Grado: " + _ClienteBE.DescripcionGrado);
-            lstInformacionCliente.Items.Add("Pension: " + _ClienteBE.DescripcionPension);
-            lstInformacionCliente.Items.Add("Institucion: " + _ClienteBE.DescripcionInstitucion);
+            lstInformacionCliente.Items.Add("Cliente        : "+_ClienteBE.NombreCompleto);
+            lstInformacionCliente.Items.Add("Dirección      : " + _ClienteBE.DirecccionCompleta);
+            lstInformacionCliente.Items.Add("Telefono       : " + _ClienteBE.TelefonoFijo);
+            lstInformacionCliente.Items.Add("Celular #1     : " + _ClienteBE.TelefonoCelular1);
+            lstInformacionCliente.Items.Add("Celular #2     : " + _ClienteBE.TelefonoCelular2);
+            lstInformacionCliente.Items.Add("Asociacion     : " + _ClienteBE.NombreAsociaccion);
+            lstInformacionCliente.Items.Add("Grado          : " + _ClienteBE.DescripcionGrado);
+            lstInformacionCliente.Items.Add("Pension        : " + _ClienteBE.DescripcionPension);
+            lstInformacionCliente.Items.Add("Institucion    : " + _ClienteBE.DescripcionInstitucion);
 
         }
 
