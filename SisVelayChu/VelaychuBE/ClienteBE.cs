@@ -11,10 +11,14 @@ namespace VelaychuBE
         public string NombreCompleto { get; set; }
         public int CodigoTipoDocumento { get; set; }
         public int CodigoAsociacion { get; set; }
+        public string NombreAsociaccion { get; set; }
         public int CodigoTipoCliente { get; set; }
         public int CodigoGrado { get; set; }
+        public string DescripcionGrado { get; set; }
         public int CodigoInstitucion { get; set; }
+        public string DescripcionInstitucion { get; set; }
         public int CodigoPension { get; set; }
+        public string DescripcionPension { get; set; }
         public string NumeroDocumento { get; set; }
         public string DirecccionCompleta { get; set; }
         public string CodigoDepartamento { get; set; }
