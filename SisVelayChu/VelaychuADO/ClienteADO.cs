@@ -354,6 +354,60 @@ namespace VelaychuADO
             }
             return _ClienteBE;
         }
-       
+
+
+        public ClienteBE TraerInformacionCliente(int _Cliente_id)
+        {
+            SqlDataReader dtr = default(SqlDataReader);
+            ClienteBE _ClienteBE = new ClienteBE();
+            DataSet dts = new DataSet();
+            try
+            {
+                cnx.ConnectionString = MiConexion.GetCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "uspClienteTraerInformacionr";
+                cmd.Parameters.Add(new SqlParameter("@CodigoCliente", SqlDbType.Int));
+                cmd.Parameters["@CodigoCliente"].Value = _Cliente_id;
+                cnx.Open();
+                dtr = cmd.ExecuteReader();
+                if (dtr.HasRows == true)
+                {
+                    dtr.Read();
+                    var _with1 = _ClienteBE;
+                    _with1.CodigoCliente = Convert.ToInt16(dtr.GetValue(dtr.GetOrdinal("CodigoCliente")));
+                    _with1.NombreCompleto = dtr.GetValue(dtr.GetOrdinal("NombreCompleto")).ToString();
+
+                    _with1.NombreAsociaccion = dtr.GetValue(dtr.GetOrdinal("NombreAsociaccion")).ToString();
+                    _with1.DescripcionGrado = dtr.GetValue(dtr.GetOrdinal("DescripcionGrado")).ToString();
+                    _with1.DescripcionPension = dtr.GetValue(dtr.GetOrdinal("DescripcionPension")).ToString();
+                    _with1.DescripcionInstitucion = dtr.GetValue(dtr.GetOrdinal("DescripcionInstitucion")).ToString();
+
+
+                    _with1.DirecccionCompleta = dtr.GetValue(dtr.GetOrdinal("DirecccionCompleta")).ToString();
+                    //_with1.CodigoDepartamento = (dtr.GetValue(dtr.GetOrdinal("CodigoDepartamento"))).ToString();
+                    //_with1.CodigoProvincia = (dtr.GetValue(dtr.GetOrdinal("CodigoProvincia"))).ToString();
+                    //_with1.CodigoDistrito = (dtr.GetValue(dtr.GetOrdinal("CodigoDistrito"))).ToString();
+                    _with1.TelefonoFijo = dtr.GetValue(dtr.GetOrdinal("TelefonoFijo")).ToString();
+                    _with1.TelefonoCelular1 = dtr.GetValue(dtr.GetOrdinal("TelefonoCelular1")).ToString();
+                    _with1.TelefonoCelular1 = dtr.GetValue(dtr.GetOrdinal("TelefonoCelular1")).ToString();
+                    //_with1.Email = dtr.GetValue(dtr.GetOrdinal("Email")).ToString();
+                    //_with1.Activo = Convert.ToBoolean(dtr.GetValue(dtr.GetOrdinal("Activo")));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return _ClienteBE;
+        }
     }
 }
