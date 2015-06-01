@@ -59,7 +59,7 @@ namespace VelaychuADO
                 lContratoBE = new List<ContratoBE>();
                 int posCodigoContrato = drd.GetOrdinal("CodigoContrato");
                 int posDescripcionContrato = drd.GetOrdinal("DescripcionContrato");
-                int posAbreviaturaContrato = drd.GetOrdinal("AbreviaturaContrato");
+                //int posAbreviaturaContrato = drd.GetOrdinal("AbreviaturaContrato");
                 int posPorcentaje = drd.GetOrdinal("Porcentaje");
                 //int posactivo = drd.GetOrdinal("activo");
                 ContratoBE oContratoBE = null;
@@ -68,7 +68,7 @@ namespace VelaychuADO
                     oContratoBE = new ContratoBE();
                     oContratoBE.CodigoContrato = drd.GetInt32(posCodigoContrato);
                     oContratoBE.DescripcionContrato = drd.GetString(posDescripcionContrato);
-                    oContratoBE.AbreviaturaContrato = drd.GetString(posAbreviaturaContrato);
+                    //oContratoBE.AbreviaturaContrato = drd.GetString(posAbreviaturaContrato);
                     oContratoBE.Porcentaje = drd.GetDecimal(posPorcentaje);
                     //obeEmpleadoBE.activo = drd.GetBoolean(posactivo);
                     lContratoBE.Add(oContratoBE);
