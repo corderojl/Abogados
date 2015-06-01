@@ -30,6 +30,12 @@ namespace VelaychuBL
         {
             return _ClienteADO.TraerCliente(_codigo);
         }
+
+        public ClienteBE TraerInformacionCliente(int codigoCliente)
+        {
+            return _ClienteADO.TraerInformacionCliente(codigoCliente);
+        }
+
         public bool DeshabilitarCliente(int _codigo)
         {
             return _ClienteADO.DeshabilitarCliente(_codigo);
