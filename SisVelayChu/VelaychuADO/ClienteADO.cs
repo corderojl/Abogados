@@ -366,7 +366,7 @@ namespace VelaychuADO
                 cnx.ConnectionString = MiConexion.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "uspClienteTraerInformacionr";
+                cmd.CommandText = "uspClienteTraerInformacion";
                 cmd.Parameters.Add(new SqlParameter("@CodigoCliente", SqlDbType.Int));
                 cmd.Parameters["@CodigoCliente"].Value = _Cliente_id;
                 cnx.Open();
