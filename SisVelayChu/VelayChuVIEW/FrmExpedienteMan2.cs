@@ -15,6 +15,7 @@ namespace VelayChuVIEW
 {
     public partial class FrmExpedienteMan2 : Form
     {
+        ClienteBE _ClienteBE = new ClienteBE();
         ClienteBL _ClienteBL = new ClienteBL();
         
         public FrmExpedienteMan2()
@@ -26,20 +27,7 @@ namespace VelayChuVIEW
         {
             try
             {
-                string connectionString="Data Source=.\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=db_velaychu" ;
-                SqlConnection con = new SqlConnection(connectionString);
-                con.Open();
-                string query = "Select nombrecompleto from cliente";
-                SqlCommand cmd = new SqlCommand(query,con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                AutoCompleteStringCollection mycollection = new AutoCompleteStringCollection();
 
-                while (dr.Read())
-                {
-                    mycollection.Add(dr.GetString(0));
-                }
-                txtNombreCliente.AutoCompleteCustomSource = mycollection;
-                con.Close();
                 llenarCombo();
                 
             }
@@ -52,17 +40,20 @@ namespace VelayChuVIEW
 
         private void llenarCombo()
         {
-            comboBox1.DataSource = _ClienteBL.ListarClienteO_Act();
-            comboBox1.DisplayMember = "NombreCompleto";
-            comboBox1.ValueMember = "CodigoCliente";
+            cboClientes.DataSource = _ClienteBL.ListarClienteO_Act();
+            cboClientes.DisplayMember = "NombreCompleto";
+            cboClientes.ValueMember = "CodigoCliente";
 
             //
             // cargo la lista de items para el autocomplete
             //
-            comboBox1.AutoCompleteCustomSource = LoadAutoComplete();
-            comboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            cboClientes.AutoCompleteCustomSource = LoadAutoComplete();
+            cboClientes.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cboClientes.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
+
+
+
         public static AutoCompleteStringCollection LoadAutoComplete()
         {
             ClienteBL _ClienteBL=new ClienteBL();
@@ -78,9 +69,25 @@ namespace VelayChuVIEW
             return stringCol;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(comboBox1.SelectedValue.ToString());
+            //MessageBox.Show(cboClientes.SelectedValue.ToString());
+
+            int codigo = Convert.ToInt32(cboClientes.SelectedValue.ToString());
+            _ClienteBE = _ClienteBL.TraerInformacionCliente(codigo);
+
+            lstInformacionCliente.Items.Add("Cliente: "+_ClienteBE.NombreCompleto);
+            lstInformacionCliente.Items.Add("Dirección: " + _ClienteBE.DirecccionCompleta);
+            lstInformacionCliente.Items.Add("Telefono: " + _ClienteBE.TelefonoFijo);
+            lstInformacionCliente.Items.Add("Celular #1: " + _ClienteBE.TelefonoCelular1);
+            lstInformacionCliente.Items.Add("Celular #2: " + _ClienteBE.TelefonoCelular2);
+            lstInformacionCliente.Items.Add("Asociacion: " + _ClienteBE.NombreAsociaccion);
+            lstInformacionCliente.Items.Add("Grado: " + _ClienteBE.DescripcionGrado);
+            lstInformacionCliente.Items.Add("Pension: " + _ClienteBE.DescripcionPension);
+            lstInformacionCliente.Items.Add("Institucion: " + _ClienteBE.DescripcionInstitucion);
+
         }
 
     }
