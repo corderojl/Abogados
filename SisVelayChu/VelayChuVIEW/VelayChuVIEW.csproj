@@ -74,6 +74,12 @@
     <Compile Include="FrmClienteMan3.Designer.cs">
       <DependentUpon>FrmClienteMan3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEtapaMan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEtapaMan1.Designer.cs">
+      <DependentUpon>FrmEtapaMan1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmExpedienteMan1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteMan3.resx">
       <DependentUpon>FrmClienteMan3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEtapaMan1.resx">
+      <DependentUpon>FrmEtapaMan1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmExpedienteMan1.resx">
       <DependentUpon>FrmExpedienteMan1.cs</DependentUpon>
