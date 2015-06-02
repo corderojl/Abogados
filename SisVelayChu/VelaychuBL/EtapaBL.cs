@@ -20,5 +20,9 @@ namespace VelaychuBL
         {
             return _EtapaADO.ListEtapa_All();
         }
+        public object BuscaEtapaByDescripcion(string _descripcion)
+        {
+            return _EtapaADO.BuscarEtapaByDescripcion(_descripcion);
+        }
     }
 }
