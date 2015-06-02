@@ -103,5 +103,13 @@ namespace VelayChuVIEW
             FrmTipoDocumentoMan1.Show();              
             
         }
+
+        private void tipoDePensionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPensionMan1 FrmPensionMan1;
+            FrmPensionMan1 = new FrmPensionMan1();
+            FrmPensionMan1.MdiParent = this;
+            FrmPensionMan1.Show();   
+        }
     }
 }

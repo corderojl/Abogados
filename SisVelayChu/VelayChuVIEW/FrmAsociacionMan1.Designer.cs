@@ -83,12 +83,19 @@
             // 
             // dtgAsociacion
             // 
-            this.dtgAsociacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAsociacion.AllowUserToAddRows = false;
+            this.dtgAsociacion.AllowUserToDeleteRows = false;
+            this.dtgAsociacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgAsociacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.tableLayoutPanel1.SetColumnSpan(this.dtgAsociacion, 5);
             this.dtgAsociacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgAsociacion.Location = new System.Drawing.Point(3, 58);
             this.dtgAsociacion.Name = "dtgAsociacion";
+            this.dtgAsociacion.ReadOnly = true;
+            this.dtgAsociacion.RowHeadersVisible = false;
+            this.dtgAsociacion.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.tableLayoutPanel1.SetRowSpan(this.dtgAsociacion, 4);
+            this.dtgAsociacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgAsociacion.Size = new System.Drawing.Size(572, 214);
             this.dtgAsociacion.TabIndex = 14;
             // 

@@ -83,12 +83,19 @@
             // 
             // dtgGrado
             // 
+            this.dtgGrado.AllowUserToAddRows = false;
+            this.dtgGrado.AllowUserToDeleteRows = false;
+            this.dtgGrado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgGrado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dtgGrado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dtgGrado, 5);
             this.dtgGrado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgGrado.Location = new System.Drawing.Point(3, 56);
             this.dtgGrado.Name = "dtgGrado";
+            this.dtgGrado.ReadOnly = true;
+            this.dtgGrado.RowHeadersVisible = false;
             this.tableLayoutPanel1.SetRowSpan(this.dtgGrado, 4);
+            this.dtgGrado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgGrado.Size = new System.Drawing.Size(569, 206);
             this.dtgGrado.TabIndex = 15;
             // 

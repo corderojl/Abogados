@@ -32,17 +32,18 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoContratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaAsociacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaInstitucionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarExpedienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaAsociacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaInstitucionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDePensionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +68,8 @@
             this.nuevaInstitucionToolStripMenuItem,
             this.gradoToolStripMenuItem,
             this.tipoClienteToolStripMenuItem,
-            this.tipoDocumentoToolStripMenuItem});
+            this.tipoDocumentoToolStripMenuItem,
+            this.tipoDePensionToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.archivoToolStripMenuItem.Text = "Mantenimiento";
@@ -78,6 +80,41 @@
             this.nuevoContratoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.nuevoContratoToolStripMenuItem.Text = "Usuario";
             this.nuevoContratoToolStripMenuItem.Click += new System.EventHandler(this.nuevoContratoToolStripMenuItem_Click);
+            // 
+            // nuevaAsociacionToolStripMenuItem
+            // 
+            this.nuevaAsociacionToolStripMenuItem.Name = "nuevaAsociacionToolStripMenuItem";
+            this.nuevaAsociacionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.nuevaAsociacionToolStripMenuItem.Text = "Asociacion";
+            this.nuevaAsociacionToolStripMenuItem.Click += new System.EventHandler(this.nuevaAsociacionToolStripMenuItem_Click);
+            // 
+            // nuevaInstitucionToolStripMenuItem
+            // 
+            this.nuevaInstitucionToolStripMenuItem.Name = "nuevaInstitucionToolStripMenuItem";
+            this.nuevaInstitucionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.nuevaInstitucionToolStripMenuItem.Text = "Institucion";
+            this.nuevaInstitucionToolStripMenuItem.Click += new System.EventHandler(this.nuevaInstitucionToolStripMenuItem_Click);
+            // 
+            // gradoToolStripMenuItem
+            // 
+            this.gradoToolStripMenuItem.Name = "gradoToolStripMenuItem";
+            this.gradoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.gradoToolStripMenuItem.Text = "Grado";
+            this.gradoToolStripMenuItem.Click += new System.EventHandler(this.gradoToolStripMenuItem_Click);
+            // 
+            // tipoClienteToolStripMenuItem
+            // 
+            this.tipoClienteToolStripMenuItem.Name = "tipoClienteToolStripMenuItem";
+            this.tipoClienteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.tipoClienteToolStripMenuItem.Text = "Tipo Cliente";
+            this.tipoClienteToolStripMenuItem.Click += new System.EventHandler(this.tipoClienteToolStripMenuItem_Click);
+            // 
+            // tipoDocumentoToolStripMenuItem
+            // 
+            this.tipoDocumentoToolStripMenuItem.Name = "tipoDocumentoToolStripMenuItem";
+            this.tipoDocumentoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.tipoDocumentoToolStripMenuItem.Text = "Tipo Documento";
+            this.tipoDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDocumentoToolStripMenuItem_Click);
             // 
             // empleadoToolStripMenuItem
             // 
@@ -122,40 +159,12 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // nuevaAsociacionToolStripMenuItem
+            // tipoDePensionToolStripMenuItem
             // 
-            this.nuevaAsociacionToolStripMenuItem.Name = "nuevaAsociacionToolStripMenuItem";
-            this.nuevaAsociacionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.nuevaAsociacionToolStripMenuItem.Text = "Asociacion";
-            this.nuevaAsociacionToolStripMenuItem.Click += new System.EventHandler(this.nuevaAsociacionToolStripMenuItem_Click);
-            // 
-            // nuevaInstitucionToolStripMenuItem
-            // 
-            this.nuevaInstitucionToolStripMenuItem.Name = "nuevaInstitucionToolStripMenuItem";
-            this.nuevaInstitucionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.nuevaInstitucionToolStripMenuItem.Text = "Institucion";
-            this.nuevaInstitucionToolStripMenuItem.Click += new System.EventHandler(this.nuevaInstitucionToolStripMenuItem_Click);
-            // 
-            // gradoToolStripMenuItem
-            // 
-            this.gradoToolStripMenuItem.Name = "gradoToolStripMenuItem";
-            this.gradoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.gradoToolStripMenuItem.Text = "Grado";
-            this.gradoToolStripMenuItem.Click += new System.EventHandler(this.gradoToolStripMenuItem_Click);
-            // 
-            // tipoClienteToolStripMenuItem
-            // 
-            this.tipoClienteToolStripMenuItem.Name = "tipoClienteToolStripMenuItem";
-            this.tipoClienteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.tipoClienteToolStripMenuItem.Text = "Tipo Cliente";
-            this.tipoClienteToolStripMenuItem.Click += new System.EventHandler(this.tipoClienteToolStripMenuItem_Click);
-            // 
-            // tipoDocumentoToolStripMenuItem
-            // 
-            this.tipoDocumentoToolStripMenuItem.Name = "tipoDocumentoToolStripMenuItem";
-            this.tipoDocumentoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.tipoDocumentoToolStripMenuItem.Text = "Tipo Documento";
-            this.tipoDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDocumentoToolStripMenuItem_Click);
+            this.tipoDePensionToolStripMenuItem.Name = "tipoDePensionToolStripMenuItem";
+            this.tipoDePensionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.tipoDePensionToolStripMenuItem.Text = "Tipo de Pension";
+            this.tipoDePensionToolStripMenuItem.Click += new System.EventHandler(this.tipoDePensionToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -192,5 +201,6 @@
         private System.Windows.Forms.ToolStripMenuItem gradoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDocumentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDePensionToolStripMenuItem;
     }
 }

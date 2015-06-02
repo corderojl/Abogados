@@ -83,12 +83,19 @@
             // 
             // dtgPension
             // 
+            this.dtgPension.AllowUserToAddRows = false;
+            this.dtgPension.AllowUserToDeleteRows = false;
+            this.dtgPension.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgPension.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dtgPension.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dtgPension, 5);
             this.dtgPension.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgPension.Location = new System.Drawing.Point(3, 57);
             this.dtgPension.Name = "dtgPension";
+            this.dtgPension.ReadOnly = true;
+            this.dtgPension.RowHeadersVisible = false;
             this.tableLayoutPanel1.SetRowSpan(this.dtgPension, 4);
+            this.dtgPension.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPension.Size = new System.Drawing.Size(452, 210);
             this.dtgPension.TabIndex = 0;
             // 
