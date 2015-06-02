@@ -66,6 +66,8 @@
             // 
             // gpbCliente
             // 
+            this.gpbCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.gpbCliente, 7);
             this.gpbCliente.Controls.Add(this.lblCodigoCliente);
             this.gpbCliente.Controls.Add(this.txtCliente);
@@ -80,7 +82,6 @@
             this.gpbCliente.Controls.Add(this.txtExpediente);
             this.gpbCliente.Controls.Add(this.label1);
             this.gpbCliente.Controls.Add(this.dtpFecha);
-            this.gpbCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gpbCliente.Enabled = false;
             this.gpbCliente.Location = new System.Drawing.Point(3, 3);
             this.gpbCliente.Name = "gpbCliente";
@@ -269,10 +270,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox5, 7);
             this.groupBox5.Controls.Add(this.dtgDetalle);
-            this.groupBox5.Location = new System.Drawing.Point(3, 403);
+            this.groupBox5.Location = new System.Drawing.Point(3, 363);
             this.groupBox5.Name = "groupBox5";
-            this.tableLayoutPanel1.SetRowSpan(this.groupBox5, 4);
-            this.groupBox5.Size = new System.Drawing.Size(876, 156);
+            this.tableLayoutPanel1.SetRowSpan(this.groupBox5, 5);
+            this.groupBox5.Size = new System.Drawing.Size(876, 196);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalles";
@@ -290,8 +291,9 @@
             this.dtgDetalle.ReadOnly = true;
             this.dtgDetalle.RowHeadersVisible = false;
             this.dtgDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDetalle.Size = new System.Drawing.Size(870, 137);
+            this.dtgDetalle.Size = new System.Drawing.Size(870, 177);
             this.dtgDetalle.TabIndex = 0;
+            this.dtgDetalle.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgDetalle_ColumnHeaderMouseClick);
             // 
             // tableLayoutPanel1
             // 
@@ -309,11 +311,11 @@
             this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 7, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 7, 2);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.groupBox3, 5, 4);
             this.tableLayoutPanel1.Controls.Add(this.cboContrato, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";

@@ -14,5 +14,8 @@ namespace VelaychuBE
         public DateTime Fecha { get; set; }
         public string Estado { get; set; }
         public int CodigoUsuario { get; set; }
+        public DateTime FechaImpulso { get; set; }
+        public int CodigoUsuarioImpulso { get; set; }
+        
     }
 }

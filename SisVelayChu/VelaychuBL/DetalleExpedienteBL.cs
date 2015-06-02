@@ -24,5 +24,17 @@ namespace VelaychuBL
         {
             return _DetalleExpedienteADO.ListarDetalleExpedienteByContrato(_CodigoContrato);
         }
+        public DetalleExpedienteBE TraerExpediente(int _CodigoDetalleExpediente)
+        {
+            return _DetalleExpedienteADO.TraerExpediente(_CodigoDetalleExpediente);
+        }
+        public int InsertarDetalleExpediente(DetalleExpedienteBE _DetalleExpedienteBE)
+        {
+            return _DetalleExpedienteADO.InsertarDetalleExpediente(_DetalleExpedienteBE);
+        }
+        public bool ActualizarDetalleExpediente(DetalleExpedienteBE _DetalleExpedienteBE)
+        {
+            return _DetalleExpedienteADO.ActualizarDetalleExpediente(_DetalleExpedienteBE);
+        }
     }
 }

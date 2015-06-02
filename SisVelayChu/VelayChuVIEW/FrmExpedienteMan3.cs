@@ -83,8 +83,7 @@ namespace VelayChuVIEW
                 //dtgExpediente.Columns[0].Width = 40;
                 //dtgExpediente.Columns[1].Width = 150;
                 //dtgExpediente.Columns[8].Width = 200;
-                llenarGrillas();
-
+                //llenarGrillas();
             }
             catch (Exception ex)
             {
@@ -105,7 +104,7 @@ namespace VelayChuVIEW
                                          MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-               // MessageBox.Show(dtgContrato.CurrentRow.Cells[2].Value.ToString());
+                // MessageBox.Show(dtgContrato.CurrentRow.Cells[2].Value.ToString());
                 int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
                 res = _ExpedienteContratoBL.EliminarExpedienteContrato(_CodigoExpedienteContrato);
                 if (res)
@@ -117,7 +116,7 @@ namespace VelayChuVIEW
         private void llenarGrillaContratos()
         {
             dtgContrato.DataSource = _ContratoBL.BuscarContratoByExpediente(_codigo);
-            
+
 
             dtgContrato.Refresh();
         }
@@ -156,9 +155,10 @@ namespace VelayChuVIEW
             try
             {
                 int _CodigoContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
-                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
+                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
                 llenarGrillaDetalles(_CodigoContrato);
                 llenarGrillaDocumentos(_CodigoExpedienteContrato);
+                
             }
             catch (Exception ex)
             {
@@ -170,18 +170,40 @@ namespace VelayChuVIEW
         {
 
             dtgDocumento.DataSource = _DocumentoClienteBL.BuscarDocumentoClienteByExpedienteContrato(_CodigoExpedienteContrato);
+
             dtgDocumento.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
-
             dtgDocumento.Refresh();
         }
 
         private void llenarGrillaDetalles(int _CodigoContrato)
         {
             dtgDetalle.DataSource = _DetalleExpedienteBL.ListarDetalleExpedienteByContrato(_CodigoContrato);
+            Pintarfilas();
             dtgDetalle.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
             dtgDetalle.Refresh();
+        }
+
+        private void Pintarfilas()
+        {
+            string val = "";
+            for (int i = 0; i < dtgDetalle.Rows.Count; i++)
+            {
+                val = dtgDetalle.Rows[i].Cells[7].Value.ToString();
+                if (val == "Rojo")
+                    dtgDetalle.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                else if (val == "Amarillo")
+                    dtgDetalle.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+                else if (val == "Verde")
+                    dtgDetalle.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                else if (val == "Lila")
+                    dtgDetalle.Rows[i].DefaultCellStyle.BackColor = Color.Violet;
+                else if (val == "Fucsia")
+                    dtgDetalle.Rows[i].DefaultCellStyle.BackColor = Color.Fuchsia;
+                else if (val == "Morado")
+                    dtgDetalle.Rows[i].DefaultCellStyle.BackColor = Color.Purple;
+
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -262,6 +284,12 @@ namespace VelayChuVIEW
             _ExpedienteContratoBL.InsertarExpedienteContrato(_ExpedienteContratoBE);
             llenarGrillaContratos();
         }
+
+        private void dtgDetalle_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Pintarfilas();
+        }
+
 
         //private void llenarComboMateria(int _CodigoMaterias)
         //{
