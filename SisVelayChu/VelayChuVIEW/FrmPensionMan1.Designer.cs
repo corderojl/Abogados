@@ -32,6 +32,7 @@
             this.txtPension = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgPension = new System.Windows.Forms.DataGridView();
+            this.btnInsertar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPension)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +48,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtPension, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dtgPension, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -99,6 +101,16 @@
             this.dtgPension.Size = new System.Drawing.Size(452, 210);
             this.dtgPension.TabIndex = 0;
             // 
+            // btnInsertar
+            // 
+            this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsertar.Location = new System.Drawing.Point(94, 287);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(85, 23);
+            this.btnInsertar.TabIndex = 17;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.UseVisualStyleBackColor = true;
+            // 
             // FrmPensionMan1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,5 +133,6 @@
         private System.Windows.Forms.DataGridView dtgPension;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPension;
+        private System.Windows.Forms.Button btnInsertar;
     }
 }

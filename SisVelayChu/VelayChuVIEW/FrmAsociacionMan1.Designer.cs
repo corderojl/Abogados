@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAsociacion = new System.Windows.Forms.TextBox();
             this.dtgAsociacion = new System.Windows.Forms.DataGridView();
+            this.btnInsertar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAsociacion)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +48,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtAsociacion, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dtgAsociacion, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -99,6 +101,16 @@
             this.dtgAsociacion.Size = new System.Drawing.Size(572, 214);
             this.dtgAsociacion.TabIndex = 14;
             // 
+            // btnInsertar
+            // 
+            this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsertar.Location = new System.Drawing.Point(118, 294);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(109, 23);
+            this.btnInsertar.TabIndex = 15;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.UseVisualStyleBackColor = true;
+            // 
             // FrmAsociacionMan1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,5 +133,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAsociacion;
         private System.Windows.Forms.DataGridView dtgAsociacion;
+        private System.Windows.Forms.Button btnInsertar;
     }
 }
