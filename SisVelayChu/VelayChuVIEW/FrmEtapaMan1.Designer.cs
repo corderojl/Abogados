@@ -31,9 +31,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEtapa = new System.Windows.Forms.TextBox();
-            this.dtgEtapa = new System.Windows.Forms.DataGridView();
+            this.C = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgEtapa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -46,7 +46,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtEtapa, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dtgEtapa, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.C, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -79,24 +79,25 @@
             this.txtEtapa.Name = "txtEtapa";
             this.txtEtapa.Size = new System.Drawing.Size(294, 20);
             this.txtEtapa.TabIndex = 15;
+            this.txtEtapa.TextChanged += new System.EventHandler(this.txtEtapa_TextChanged);
             // 
-            // dtgEtapa
+            // C
             // 
-            this.dtgEtapa.AllowUserToAddRows = false;
-            this.dtgEtapa.AllowUserToDeleteRows = false;
-            this.dtgEtapa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgEtapa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dtgEtapa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.dtgEtapa, 5);
-            this.dtgEtapa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgEtapa.Location = new System.Drawing.Point(3, 68);
-            this.dtgEtapa.Name = "dtgEtapa";
-            this.dtgEtapa.ReadOnly = true;
-            this.dtgEtapa.RowHeadersVisible = false;
-            this.tableLayoutPanel1.SetRowSpan(this.dtgEtapa, 4);
-            this.dtgEtapa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgEtapa.Size = new System.Drawing.Size(496, 254);
-            this.dtgEtapa.TabIndex = 16;
+            this.C.AllowUserToAddRows = false;
+            this.C.AllowUserToDeleteRows = false;
+            this.C.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.C.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.C.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.C, 5);
+            this.C.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.C.Location = new System.Drawing.Point(3, 68);
+            this.C.Name = "C";
+            this.C.ReadOnly = true;
+            this.C.RowHeadersVisible = false;
+            this.tableLayoutPanel1.SetRowSpan(this.C, 4);
+            this.C.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.C.Size = new System.Drawing.Size(496, 254);
+            this.C.TabIndex = 16;
             // 
             // FrmEtapaMan1
             // 
@@ -106,9 +107,10 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmEtapaMan1";
             this.Text = "FrmEtapaMan1";
+            this.Load += new System.EventHandler(this.FrmEtapaMan1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgEtapa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -118,6 +120,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEtapa;
-        private System.Windows.Forms.DataGridView dtgEtapa;
+        private System.Windows.Forms.DataGridView C;
     }
 }
