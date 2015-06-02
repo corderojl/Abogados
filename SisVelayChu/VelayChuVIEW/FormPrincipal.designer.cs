@@ -37,13 +37,17 @@
             this.gradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDePensionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarExpedienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoDePensionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expedientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.etapaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +73,8 @@
             this.gradoToolStripMenuItem,
             this.tipoClienteToolStripMenuItem,
             this.tipoDocumentoToolStripMenuItem,
-            this.tipoDePensionToolStripMenuItem});
+            this.tipoDePensionToolStripMenuItem,
+            this.expedientesToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.archivoToolStripMenuItem.Text = "Mantenimiento";
@@ -116,6 +121,13 @@
             this.tipoDocumentoToolStripMenuItem.Text = "Tipo Documento";
             this.tipoDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDocumentoToolStripMenuItem_Click);
             // 
+            // tipoDePensionToolStripMenuItem
+            // 
+            this.tipoDePensionToolStripMenuItem.Name = "tipoDePensionToolStripMenuItem";
+            this.tipoDePensionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.tipoDePensionToolStripMenuItem.Text = "Tipo de Pension";
+            this.tipoDePensionToolStripMenuItem.Click += new System.EventHandler(this.tipoDePensionToolStripMenuItem_Click);
+            // 
             // empleadoToolStripMenuItem
             // 
             this.empleadoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -159,12 +171,34 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // tipoDePensionToolStripMenuItem
+            // expedientesToolStripMenuItem
             // 
-            this.tipoDePensionToolStripMenuItem.Name = "tipoDePensionToolStripMenuItem";
-            this.tipoDePensionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.tipoDePensionToolStripMenuItem.Text = "Tipo de Pension";
-            this.tipoDePensionToolStripMenuItem.Click += new System.EventHandler(this.tipoDePensionToolStripMenuItem_Click);
+            this.expedientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contratoToolStripMenuItem,
+            this.eventoToolStripMenuItem,
+            this.etapaToolStripMenuItem});
+            this.expedientesToolStripMenuItem.Name = "expedientesToolStripMenuItem";
+            this.expedientesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.expedientesToolStripMenuItem.Text = "Expedientes";
+            // 
+            // contratoToolStripMenuItem
+            // 
+            this.contratoToolStripMenuItem.Name = "contratoToolStripMenuItem";
+            this.contratoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.contratoToolStripMenuItem.Text = "Contrato";
+            // 
+            // eventoToolStripMenuItem
+            // 
+            this.eventoToolStripMenuItem.Name = "eventoToolStripMenuItem";
+            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eventoToolStripMenuItem.Text = "Evento";
+            // 
+            // etapaToolStripMenuItem
+            // 
+            this.etapaToolStripMenuItem.Name = "etapaToolStripMenuItem";
+            this.etapaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.etapaToolStripMenuItem.Text = "Etapa";
+            this.etapaToolStripMenuItem.Click += new System.EventHandler(this.etapaToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -202,5 +236,9 @@
         private System.Windows.Forms.ToolStripMenuItem tipoClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDocumentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDePensionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expedientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contratoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem etapaToolStripMenuItem;
     }
 }

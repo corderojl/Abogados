@@ -111,5 +111,13 @@ namespace VelayChuVIEW
             FrmPensionMan1.MdiParent = this;
             FrmPensionMan1.Show();   
         }
+
+        private void etapaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEtapaMan1 FrmEtapaMan1;
+            FrmEtapaMan1 = new FrmEtapaMan1();
+            FrmEtapaMan1.MdiParent = this;
+            FrmEtapaMan1.Show();   
+        }
     }
 }
