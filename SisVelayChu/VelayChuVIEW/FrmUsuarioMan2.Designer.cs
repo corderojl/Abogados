@@ -64,7 +64,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.18182F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.81818F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
@@ -96,7 +96,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 13);
+            this.label1.Size = new System.Drawing.Size(128, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombres:";
             // 
@@ -104,9 +104,9 @@
             // 
             this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtNombre, 2);
-            this.txtNombre.Location = new System.Drawing.Point(138, 51);
+            this.txtNombre.Location = new System.Drawing.Point(137, 51);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(352, 20);
+            this.txtNombre.Size = new System.Drawing.Size(353, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // label4
@@ -115,7 +115,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 13);
+            this.label4.Size = new System.Drawing.Size(128, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Cargo:";
             // 
@@ -123,15 +123,15 @@
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtEmail, 2);
-            this.txtEmail.Location = new System.Drawing.Point(138, 125);
+            this.txtEmail.Location = new System.Drawing.Point(137, 125);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(352, 20);
+            this.txtEmail.Size = new System.Drawing.Size(353, 20);
             this.txtEmail.TabIndex = 6;
             // 
             // btnGrabar
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGrabar.Location = new System.Drawing.Point(138, 240);
+            this.btnGrabar.Location = new System.Drawing.Point(137, 240);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(171, 27);
             this.btnGrabar.TabIndex = 9;
@@ -142,9 +142,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(315, 240);
+            this.btnCancelar.Location = new System.Drawing.Point(314, 240);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(175, 27);
+            this.btnCancelar.Size = new System.Drawing.Size(176, 27);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 129);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 13);
+            this.label7.Size = new System.Drawing.Size(128, 13);
             this.label7.TabIndex = 4;
             this.label7.Text = "Emaill:";
             // 
@@ -165,14 +165,14 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 168);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 13);
+            this.label8.Size = new System.Drawing.Size(128, 13);
             this.label8.TabIndex = 7;
             this.label8.Text = "Nombre de usuario:";
             // 
             // txtLogin
             // 
             this.txtLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLogin.Location = new System.Drawing.Point(138, 164);
+            this.txtLogin.Location = new System.Drawing.Point(137, 164);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(171, 20);
             this.txtLogin.TabIndex = 8;
@@ -181,7 +181,7 @@
             // 
             this.cboCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCargo.FormattingEnabled = true;
-            this.cboCargo.Location = new System.Drawing.Point(138, 86);
+            this.cboCargo.Location = new System.Drawing.Point(137, 86);
             this.cboCargo.Name = "cboCargo";
             this.cboCargo.Size = new System.Drawing.Size(171, 21);
             this.cboCargo.TabIndex = 3;

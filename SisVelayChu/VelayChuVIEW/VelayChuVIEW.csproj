@@ -56,6 +56,18 @@
     <Compile Include="FrmAsociacionMan1.Designer.cs">
       <DependentUpon>FrmAsociacionMan1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAsociacionMan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAsociacionMan2.Designer.cs">
+      <DependentUpon>FrmAsociacionMan2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAsociacionMan3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAsociacionMan3.Designer.cs">
+      <DependentUpon>FrmAsociacionMan3.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClienteMan1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +91,18 @@
     </Compile>
     <Compile Include="FrmEtapaMan1.Designer.cs">
       <DependentUpon>FrmEtapaMan1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEtapaMan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEtapaMan2.Designer.cs">
+      <DependentUpon>FrmEtapaMan2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEtapaMan3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEtapaMan3.Designer.cs">
+      <DependentUpon>FrmEtapaMan3.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmExpedienteMan1.cs">
       <SubType>Form</SubType>
@@ -104,11 +128,35 @@
     <Compile Include="FrmGradoMan1.Designer.cs">
       <DependentUpon>FrmGradoMan1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGradoMan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGradoMan2.Designer.cs">
+      <DependentUpon>FrmGradoMan2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGradoMan3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGradoMan3.Designer.cs">
+      <DependentUpon>FrmGradoMan3.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmInstitucionMan1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmInstitucionMan1.Designer.cs">
       <DependentUpon>FrmInstitucionMan1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInstitucionMan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInstitucionMan2.Designer.cs">
+      <DependentUpon>FrmInstitucionMan2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInstitucionMan3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInstitucionMan3.Designer.cs">
+      <DependentUpon>FrmInstitucionMan3.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPensionMan1.cs">
       <SubType>Form</SubType>
@@ -116,17 +164,53 @@
     <Compile Include="FrmPensionMan1.Designer.cs">
       <DependentUpon>FrmPensionMan1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPensionMan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPensionMan2.Designer.cs">
+      <DependentUpon>FrmPensionMan2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPensionMan3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPensionMan3.Designer.cs">
+      <DependentUpon>FrmPensionMan3.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTipoClienteMan1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTipoClienteMan1.Designer.cs">
       <DependentUpon>FrmTipoClienteMan1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTipoClienteMan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTipoClienteMan2.Designer.cs">
+      <DependentUpon>FrmTipoClienteMan2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTipoClienteMan3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTipoClienteMan3.Designer.cs">
+      <DependentUpon>FrmTipoClienteMan3.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTipoDocumentoMan1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTipoDocumentoMan1.Designer.cs">
       <DependentUpon>FrmTipoDocumentoMan1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTipoDocumentoMan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTipoDocumentoMan2.Designer.cs">
+      <DependentUpon>FrmTipoDocumentoMan2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTipoDocumentoMan3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTipoDocumentoMan3.Designer.cs">
+      <DependentUpon>FrmTipoDocumentoMan3.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUsuarioMan1.cs">
       <SubType>Form</SubType>
@@ -154,6 +238,12 @@
     <EmbeddedResource Include="FrmAsociacionMan1.resx">
       <DependentUpon>FrmAsociacionMan1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAsociacionMan2.resx">
+      <DependentUpon>FrmAsociacionMan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAsociacionMan3.resx">
+      <DependentUpon>FrmAsociacionMan3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteMan1.resx">
       <DependentUpon>FrmClienteMan1.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEtapaMan1.resx">
       <DependentUpon>FrmEtapaMan1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEtapaMan2.resx">
+      <DependentUpon>FrmEtapaMan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEtapaMan3.resx">
+      <DependentUpon>FrmEtapaMan3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmExpedienteMan1.resx">
       <DependentUpon>FrmExpedienteMan1.cs</DependentUpon>
@@ -178,17 +274,47 @@
     <EmbeddedResource Include="FrmGradoMan1.resx">
       <DependentUpon>FrmGradoMan1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGradoMan2.resx">
+      <DependentUpon>FrmGradoMan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGradoMan3.resx">
+      <DependentUpon>FrmGradoMan3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInstitucionMan1.resx">
       <DependentUpon>FrmInstitucionMan1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInstitucionMan2.resx">
+      <DependentUpon>FrmInstitucionMan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInstitucionMan3.resx">
+      <DependentUpon>FrmInstitucionMan3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPensionMan1.resx">
       <DependentUpon>FrmPensionMan1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPensionMan2.resx">
+      <DependentUpon>FrmPensionMan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPensionMan3.resx">
+      <DependentUpon>FrmPensionMan3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTipoClienteMan1.resx">
       <DependentUpon>FrmTipoClienteMan1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTipoClienteMan2.resx">
+      <DependentUpon>FrmTipoClienteMan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTipoClienteMan3.resx">
+      <DependentUpon>FrmTipoClienteMan3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTipoDocumentoMan1.resx">
       <DependentUpon>FrmTipoDocumentoMan1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTipoDocumentoMan2.resx">
+      <DependentUpon>FrmTipoDocumentoMan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTipoDocumentoMan3.resx">
+      <DependentUpon>FrmTipoDocumentoMan3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarioMan1.resx">
       <DependentUpon>FrmUsuarioMan1.cs</DependentUpon>

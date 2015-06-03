@@ -46,5 +46,19 @@ namespace VelayChuVIEW
         {
             FiltrarDatos();
         }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            FrmTipoDocumentoMan2 fFrmTipoDocumentoMan2 = new FrmTipoDocumentoMan2();
+            fFrmTipoDocumentoMan2.MdiParent = this.MdiParent;
+            fFrmTipoDocumentoMan2.Show(); 
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            FrmTipoDocumentoMan3 fFrmTipoDocumentoMan3 = new FrmTipoDocumentoMan3();
+            fFrmTipoDocumentoMan3.MdiParent = this.MdiParent;
+            fFrmTipoDocumentoMan3.Show(); 
+        }
     }
 }

@@ -49,5 +49,19 @@ namespace VelayChuVIEW
             }
         }
 
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            FrmEtapaMan2 fFrmEtapaMan2 = new FrmEtapaMan2();
+            fFrmEtapaMan2.MdiParent = this.MdiParent;
+            fFrmEtapaMan2.Show();  
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            FrmEtapaMan3 fFrmEtapaMan3 = new FrmEtapaMan3();
+            fFrmEtapaMan3.MdiParent = this.MdiParent;
+            fFrmEtapaMan3.Show();  
+        }
+
     }
 }
