@@ -155,7 +155,7 @@ namespace VelayChuVIEW
             try
             {
                 int _CodigoContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
-                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
+                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
                 llenarGrillaDetalles(_CodigoContrato);
                 llenarGrillaDocumentos(_CodigoExpedienteContrato);
                 
