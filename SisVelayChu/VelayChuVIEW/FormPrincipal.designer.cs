@@ -38,25 +38,25 @@
             this.tipoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDePensionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expedientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.etapaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarExpedienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.expedientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.etapaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
             this.empleadoToolStripMenuItem,
             this.toolStripMenuItem2,
+            this.archivoToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -128,6 +128,35 @@
             this.tipoDePensionToolStripMenuItem.Text = "Tipo de Pension";
             this.tipoDePensionToolStripMenuItem.Click += new System.EventHandler(this.tipoDePensionToolStripMenuItem_Click);
             // 
+            // expedientesToolStripMenuItem
+            // 
+            this.expedientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contratoToolStripMenuItem,
+            this.eventoToolStripMenuItem,
+            this.etapaToolStripMenuItem});
+            this.expedientesToolStripMenuItem.Name = "expedientesToolStripMenuItem";
+            this.expedientesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.expedientesToolStripMenuItem.Text = "Expedientes";
+            // 
+            // contratoToolStripMenuItem
+            // 
+            this.contratoToolStripMenuItem.Name = "contratoToolStripMenuItem";
+            this.contratoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.contratoToolStripMenuItem.Text = "Contrato";
+            // 
+            // eventoToolStripMenuItem
+            // 
+            this.eventoToolStripMenuItem.Name = "eventoToolStripMenuItem";
+            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.eventoToolStripMenuItem.Text = "Evento";
+            // 
+            // etapaToolStripMenuItem
+            // 
+            this.etapaToolStripMenuItem.Name = "etapaToolStripMenuItem";
+            this.etapaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.etapaToolStripMenuItem.Text = "Etapa";
+            this.etapaToolStripMenuItem.Click += new System.EventHandler(this.etapaToolStripMenuItem_Click);
+            // 
             // empleadoToolStripMenuItem
             // 
             this.empleadoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -170,35 +199,6 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // expedientesToolStripMenuItem
-            // 
-            this.expedientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.contratoToolStripMenuItem,
-            this.eventoToolStripMenuItem,
-            this.etapaToolStripMenuItem});
-            this.expedientesToolStripMenuItem.Name = "expedientesToolStripMenuItem";
-            this.expedientesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.expedientesToolStripMenuItem.Text = "Expedientes";
-            // 
-            // contratoToolStripMenuItem
-            // 
-            this.contratoToolStripMenuItem.Name = "contratoToolStripMenuItem";
-            this.contratoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.contratoToolStripMenuItem.Text = "Contrato";
-            // 
-            // eventoToolStripMenuItem
-            // 
-            this.eventoToolStripMenuItem.Name = "eventoToolStripMenuItem";
-            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.eventoToolStripMenuItem.Text = "Evento";
-            // 
-            // etapaToolStripMenuItem
-            // 
-            this.etapaToolStripMenuItem.Name = "etapaToolStripMenuItem";
-            this.etapaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.etapaToolStripMenuItem.Text = "Etapa";
-            this.etapaToolStripMenuItem.Click += new System.EventHandler(this.etapaToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
