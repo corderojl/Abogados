@@ -45,7 +45,7 @@ namespace VelaychuADO
             return dts.Tables["Sistemas"];
         }
 
-        public List<EventoBE> ListEvento_All()
+        public List<EventoBE> ListEventoObj()
         {
             string conexion = MiConexion.GetCnx();
             List<EventoBE> lEventoBE = null;

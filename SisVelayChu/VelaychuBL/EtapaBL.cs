@@ -12,13 +12,13 @@ namespace VelaychuBL
     {
         EtapaADO _EtapaADO = new EtapaADO();
 
-        public DataTable ListarCON_Etapa()
+        public DataTable ListarEtapa()
         {
             return _EtapaADO.ListarDataTableEtapa_All();
         }
-        public List<EtapaBE> ListarCON_EtapaAct()
+        public List<EtapaBE> ListarEtapaObj()
         {
-            return _EtapaADO.ListEtapa_All();
+            return _EtapaADO.ListEtapaOBJ();
         }
         public object BuscaEtapaByDescripcion(string _descripcion)
         {

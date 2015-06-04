@@ -54,6 +54,9 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cboContrato = new System.Windows.Forms.ComboBox();
             this.btnAgregarContrato = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.gpbCliente.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContrato)).BeginInit();
@@ -270,10 +273,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox5, 7);
             this.groupBox5.Controls.Add(this.dtgDetalle);
-            this.groupBox5.Location = new System.Drawing.Point(3, 363);
+            this.groupBox5.Location = new System.Drawing.Point(3, 323);
             this.groupBox5.Name = "groupBox5";
             this.tableLayoutPanel1.SetRowSpan(this.groupBox5, 5);
-            this.groupBox5.Size = new System.Drawing.Size(876, 196);
+            this.groupBox5.Size = new System.Drawing.Size(876, 194);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalles";
@@ -291,7 +294,7 @@
             this.dtgDetalle.ReadOnly = true;
             this.dtgDetalle.RowHeadersVisible = false;
             this.dtgDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDetalle.Size = new System.Drawing.Size(870, 177);
+            this.dtgDetalle.Size = new System.Drawing.Size(870, 175);
             this.dtgDetalle.TabIndex = 0;
             this.dtgDetalle.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgDetalle_ColumnHeaderMouseClick);
             // 
@@ -315,7 +318,10 @@
             this.tableLayoutPanel1.Controls.Add(this.groupBox3, 5, 4);
             this.tableLayoutPanel1.Controls.Add(this.cboContrato, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 7, 9);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 7, 10);
+            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 7, 13);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -390,6 +396,39 @@
             this.btnAgregarContrato.UseVisualStyleBackColor = true;
             this.btnAgregarContrato.Click += new System.EventHandler(this.btnAgregarContrato_Click);
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Location = new System.Drawing.Point(885, 363);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 34);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Nuevo Detalle";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Location = new System.Drawing.Point(885, 403);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 34);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Actualizar Detalle";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSalir.Location = new System.Drawing.Point(885, 523);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(120, 36);
+            this.btnSalir.TabIndex = 11;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FrmExpedienteMan3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,5 +480,8 @@
         private System.Windows.Forms.Label lblCodigoCliente;
         private System.Windows.Forms.ComboBox cboContrato;
         private System.Windows.Forms.Button btnAgregarContrato;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

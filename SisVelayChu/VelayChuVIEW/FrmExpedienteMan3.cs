@@ -116,8 +116,6 @@ namespace VelayChuVIEW
         private void llenarGrillaContratos()
         {
             dtgContrato.DataSource = _ContratoBL.BuscarContratoByExpediente(_codigo);
-
-
             dtgContrato.Refresh();
         }
 
@@ -180,7 +178,6 @@ namespace VelayChuVIEW
             dtgDetalle.DataSource = _DetalleExpedienteBL.ListarDetalleExpedienteByContrato(_CodigoContrato);
             Pintarfilas();
             dtgDetalle.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
             dtgDetalle.Refresh();
         }
 
@@ -288,6 +285,42 @@ namespace VelayChuVIEW
         private void dtgDetalle_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Pintarfilas();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmDetalleExpedienteMan2 _FrmDetalleExpedienteMan2 = new FrmDetalleExpedienteMan2();
+                _FrmDetalleExpedienteMan2.CodigoContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
+                _FrmDetalleExpedienteMan2.MdiParent = this.MdiParent;
+                _FrmDetalleExpedienteMan2.Show();
+                llenarGrillaDetalles(Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe seleccionar un espediente");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmDetalleExpedienteMan3 _FrmDetalleExpedienteMan3 = new FrmDetalleExpedienteMan3();
+                _FrmDetalleExpedienteMan3.CodigoDetalleExpediente = Convert.ToInt32(dtgDetalle.CurrentRow.Cells[0].Value);
+                _FrmDetalleExpedienteMan3.MdiParent = this.MdiParent;
+                _FrmDetalleExpedienteMan3.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe seleccionar un espediente");
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 

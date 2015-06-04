@@ -46,7 +46,7 @@ namespace VelaychuADO
             return dts.Tables["Sistemas"];
         }
 
-        public List<EtapaBE> ListEtapa_All()
+        public List<EtapaBE> ListEtapaOBJ()
         {
             string conexion = MiConexion.GetCnx();
             List<EtapaBE> lEtapaBE = null;
