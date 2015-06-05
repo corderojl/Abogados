@@ -115,6 +115,7 @@ namespace VelayChuVIEW
             catch (Exception ex)
             {
                 MessageBox.Show("Se a producido el siguiente error: " + ex.Message);
+
             }
         }
 

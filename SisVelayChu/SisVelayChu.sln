@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelaychuADO", "VelaychuADO\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelayChuVIEW", "VelayChuVIEW\VelayChuVIEW.csproj", "{90DC191C-3EC0-40CA-A65A-C68C94332F0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelayChuEmail", "VelayChuEmail\VelayChuEmail.csproj", "{34C1D802-D458-43F7-A709-60753DB25373}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -35,6 +37,10 @@ Global
 		{90DC191C-3EC0-40CA-A65A-C68C94332F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90DC191C-3EC0-40CA-A65A-C68C94332F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90DC191C-3EC0-40CA-A65A-C68C94332F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34C1D802-D458-43F7-A709-60753DB25373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34C1D802-D458-43F7-A709-60753DB25373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34C1D802-D458-43F7-A709-60753DB25373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34C1D802-D458-43F7-A709-60753DB25373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

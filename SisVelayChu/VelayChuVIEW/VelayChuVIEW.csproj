@@ -242,6 +242,7 @@
     <Compile Include="FrmUsuarioMan3.Designer.cs">
       <DependentUpon>FrmUsuarioMan3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FSLogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormPrincipal.resx">
