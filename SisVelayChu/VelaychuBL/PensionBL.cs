@@ -25,5 +25,10 @@ namespace VelaychuBL
         {
             return _PensionADO.BuscarPensionByDescripcion(_descripcion);
         }
+
+        public int InsertarPension(PensionBE _PensionBE)
+        {
+            return _PensionADO.InsertarPension(_PensionBE);
+        }
     }
 }

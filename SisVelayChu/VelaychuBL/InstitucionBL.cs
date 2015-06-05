@@ -25,5 +25,10 @@ namespace VelaychuBL
         {
             return _InstitucionADO.BuscarInstitucionByDescripcion(_descripcion);
         }
+
+        public int InsertarInstitucion(InstitucionBE _InstitucionBE)
+        {
+            return _InstitucionADO.InsertarInstitucion(_InstitucionBE);
+        }
     }
 }
