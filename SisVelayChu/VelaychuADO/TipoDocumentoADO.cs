@@ -118,5 +118,48 @@ namespace VelaychuADO
             }
             return dts.Tables["Sistemas"];
         }
+
+        public int InsertarTipoDocumento(TipoDocumentoBE _TipoDocumentoBE)
+        {
+            SqlParameter par1;
+            int IdTipoDocumento = -1;
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspTipoDocumentoAdicionar";
+            try
+            {
+                par1 = cmd.Parameters.Add(new SqlParameter("@DescripcionTipoDocumento", SqlDbType.VarChar, 150));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@DescripcionTipoDocumento"].Value = _TipoDocumentoBE.DescripcionTipoDocumento;
+
+                par1 = cmd.Parameters.Add(new SqlParameter("@Abraviatura", SqlDbType.VarChar, 20));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@Abraviatura"].Value = _TipoDocumentoBE.Abreviatura;
+
+                SqlParameter par4 = cmd.Parameters.Add("@@identity", SqlDbType.Int);
+                par4.Direction = ParameterDirection.ReturnValue;
+                cnx.Open();
+                int n = cmd.ExecuteNonQuery();
+                if (n > 0) IdTipoDocumento = (int)par4.Value;
+            }
+            catch (SqlException x)
+            {
+                IdTipoDocumento = 0;
+            }
+            catch (Exception x)
+            {
+                IdTipoDocumento = 0;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return (IdTipoDocumento);
+        }
     }
 }

@@ -44,7 +44,6 @@ namespace VelaychuADO
             }
             return dts.Tables["Sistemas"];
         }
-
         public List<GradoBE> ListGrado_All()
         {
             string conexion = MiConexion.GetCnx();
@@ -111,5 +110,46 @@ namespace VelaychuADO
             }
             return dts.Tables["Sistemas"];
         }
+
+        public int InsertarGrado(GradoBE _GradoBE)
+        {
+            SqlParameter par1;
+            int IdGrado = -1;
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspGradoAdicionar";
+            try
+            {
+                par1 = cmd.Parameters.Add(new SqlParameter("@DescripcionGrado", SqlDbType.VarChar, 150));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@DescripcionGrado"].Value = _GradoBE.DescripcionGrado;
+
+
+                SqlParameter par4 = cmd.Parameters.Add("@@identity", SqlDbType.Int);
+                par4.Direction = ParameterDirection.ReturnValue;
+                cnx.Open();
+                int n = cmd.ExecuteNonQuery();
+                if (n > 0) IdGrado = (int)par4.Value;
+            }
+            catch (SqlException x)
+            {
+                IdGrado = 0;
+            }
+            catch (Exception x)
+            {
+                IdGrado = 0;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return (IdGrado);
+        }
+
     }
 }

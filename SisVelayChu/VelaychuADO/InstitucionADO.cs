@@ -44,7 +44,6 @@ namespace VelaychuADO
             }
             return dts.Tables["Sistemas"];
         }
-
         public List<InstitucionBE> ListInstitucion_All()
         {
             string conexion = MiConexion.GetCnx();
@@ -110,6 +109,46 @@ namespace VelaychuADO
                 cmd.Parameters.Clear();
             }
             return dts.Tables["Sistemas"];
+        }
+
+        public int InsertarInstitucion(InstitucionBE _InstitucionBE)
+        {
+            SqlParameter par1;
+            int IdInstitucion = -1;
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspInstitucionAdicionar";
+            try
+            {
+                par1 = cmd.Parameters.Add(new SqlParameter("@DescripcionInstitucion", SqlDbType.VarChar, 150));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@DescripcionInstitucion"].Value = _InstitucionBE.DescripcionInstitucion;
+
+
+                SqlParameter par4 = cmd.Parameters.Add("@@identity", SqlDbType.Int);
+                par4.Direction = ParameterDirection.ReturnValue;
+                cnx.Open();
+                int n = cmd.ExecuteNonQuery();
+                if (n > 0) IdInstitucion = (int)par4.Value;
+            }
+            catch (SqlException x)
+            {
+                IdInstitucion = 0;
+            }
+            catch (Exception x)
+            {
+                IdInstitucion = 0;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return (IdInstitucion);
         }
     }
 }

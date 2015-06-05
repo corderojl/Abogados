@@ -113,5 +113,45 @@ namespace VelaychuADO
             }
             return dts.Tables["Sistemas"];
         }
+
+        public int InsertarAsociacion(AsociacionBE _AsociacionBE)
+        {
+            SqlParameter par1;
+            int IdAcociacion = -1;
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspAsociacionAdicionar";
+            try
+            {
+                par1 = cmd.Parameters.Add(new SqlParameter("@NombreAsociaccion", SqlDbType.VarChar, 150));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@NombreAsociaccion"].Value = _AsociacionBE.NombreAsociaccion;
+
+
+                SqlParameter par4 = cmd.Parameters.Add("@@identity", SqlDbType.Int);
+                par4.Direction = ParameterDirection.ReturnValue;
+                cnx.Open();
+                int n = cmd.ExecuteNonQuery();
+                if (n > 0) IdAcociacion = (int)par4.Value;
+            }
+            catch (SqlException x)
+            {
+                IdAcociacion = 0;
+            }
+            catch (Exception x)
+            {
+                IdAcociacion = 0;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return (IdAcociacion);
+        }
     }
 }

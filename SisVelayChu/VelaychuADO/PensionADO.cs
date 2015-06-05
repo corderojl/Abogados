@@ -43,7 +43,6 @@ namespace VelaychuADO
             }
             return dts.Tables["Sistemas"];
         }
-
         public List<PensionBE> ListPension_All()
         {
             string conexion = MiConexion.GetCnx();
@@ -109,6 +108,46 @@ namespace VelaychuADO
                 cmd.Parameters.Clear();
             }
             return dts.Tables["Sistemas"];
+        }
+
+        public int InsertarPension(PensionBE _PensionBE)
+        {
+            SqlParameter par1;
+            int IdPension = -1;
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspPensionAdicionar";
+            try
+            {
+                par1 = cmd.Parameters.Add(new SqlParameter("@DescripcionPension", SqlDbType.VarChar, 150));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@DescripcionPension"].Value = _PensionBE.DescripcionPension;
+
+
+                SqlParameter par4 = cmd.Parameters.Add("@@identity", SqlDbType.Int);
+                par4.Direction = ParameterDirection.ReturnValue;
+                cnx.Open();
+                int n = cmd.ExecuteNonQuery();
+                if (n > 0) IdPension = (int)par4.Value;
+            }
+            catch (SqlException x)
+            {
+                IdPension = 0;
+            }
+            catch (Exception x)
+            {
+                IdPension = 0;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return (IdPension);
         }
     }
 }

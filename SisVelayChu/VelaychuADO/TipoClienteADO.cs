@@ -44,7 +44,6 @@ namespace VelaychuADO
             }
             return dts.Tables["Sistemas"];
         }
-
         public List<TipoClienteBE> ListTipoCliente_All()
         {
             string conexion = MiConexion.GetCnx();
@@ -110,6 +109,49 @@ namespace VelaychuADO
                 cmd.Parameters.Clear();
             }
             return dts.Tables["Sistemas"];
+        }
+
+        public int InsertarTipoCliente(TipoClienteBE _TipoClienteBE)
+        {
+            SqlParameter par1;
+            int IdTipoCliente = -1;
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspTipoClienteAdicionar";
+            try
+            {
+                par1 = cmd.Parameters.Add(new SqlParameter("@DescripcionTipoCliente", SqlDbType.VarChar, 150));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@DescripcionTipoCliente"].Value = _TipoClienteBE.DescripcionTipoCliente;
+
+                par1 = cmd.Parameters.Add(new SqlParameter("@Abraviatura", SqlDbType.VarChar, 20));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@Abraviatura"].Value = _TipoClienteBE.Abreviatura;
+
+                SqlParameter par4 = cmd.Parameters.Add("@@identity", SqlDbType.Int);
+                par4.Direction = ParameterDirection.ReturnValue;
+                cnx.Open();
+                int n = cmd.ExecuteNonQuery();
+                if (n > 0) IdTipoCliente = (int)par4.Value;
+            }
+            catch (SqlException x)
+            {
+                IdTipoCliente = 0;
+            }
+            catch (Exception x)
+            {
+                IdTipoCliente = 0;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return (IdTipoCliente);
         }
     }
 }
