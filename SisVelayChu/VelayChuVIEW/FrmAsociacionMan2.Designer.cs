@@ -30,7 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtInstitucion = new System.Windows.Forms.TextBox();
+            this.txtAsociacion = new System.Windows.Forms.TextBox();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -43,7 +43,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtInstitucion, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtAsociacion, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnGrabar, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 2, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -68,14 +68,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Institución";
             // 
-            // txtInstitucion
+            // txtAsociacion
             // 
-            this.txtInstitucion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.txtInstitucion, 2);
-            this.txtInstitucion.Location = new System.Drawing.Point(84, 44);
-            this.txtInstitucion.Name = "txtInstitucion";
-            this.txtInstitucion.Size = new System.Drawing.Size(320, 20);
-            this.txtInstitucion.TabIndex = 2;
+            this.txtAsociacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.txtAsociacion, 2);
+            this.txtAsociacion.Location = new System.Drawing.Point(84, 44);
+            this.txtAsociacion.Name = "txtAsociacion";
+            this.txtAsociacion.Size = new System.Drawing.Size(320, 20);
+            this.txtAsociacion.TabIndex = 2;
             // 
             // btnGrabar
             // 
@@ -86,6 +86,7 @@
             this.btnGrabar.TabIndex = 3;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnCancelar
             // 
@@ -115,7 +116,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtInstitucion;
+        private System.Windows.Forms.TextBox txtAsociacion;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnCancelar;
     }

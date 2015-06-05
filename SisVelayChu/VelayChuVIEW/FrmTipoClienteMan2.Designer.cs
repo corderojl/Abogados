@@ -31,10 +31,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDescripcionAbreviatura = new System.Windows.Forms.TextBox();
+            this.txtDescripcionTipoCliente = new System.Windows.Forms.TextBox();
             this.txtAbreviatura = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtDescripcionAbreviatura, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtDescripcionTipoCliente, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtAbreviatura, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnGrabar, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 2, 4);
@@ -83,14 +83,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Abreviatura";
             // 
-            // txtDescripcionAbreviatura
+            // txtDescripcionTipoCliente
             // 
-            this.txtDescripcionAbreviatura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.txtDescripcionAbreviatura, 2);
-            this.txtDescripcionAbreviatura.Location = new System.Drawing.Point(84, 42);
-            this.txtDescripcionAbreviatura.Name = "txtDescripcionAbreviatura";
-            this.txtDescripcionAbreviatura.Size = new System.Drawing.Size(320, 20);
-            this.txtDescripcionAbreviatura.TabIndex = 5;
+            this.txtDescripcionTipoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.txtDescripcionTipoCliente, 2);
+            this.txtDescripcionTipoCliente.Location = new System.Drawing.Point(84, 42);
+            this.txtDescripcionTipoCliente.Name = "txtDescripcionTipoCliente";
+            this.txtDescripcionTipoCliente.Size = new System.Drawing.Size(320, 20);
+            this.txtDescripcionTipoCliente.TabIndex = 5;
             // 
             // txtAbreviatura
             // 
@@ -99,16 +99,6 @@
             this.txtAbreviatura.Name = "txtAbreviatura";
             this.txtAbreviatura.Size = new System.Drawing.Size(156, 20);
             this.txtAbreviatura.TabIndex = 6;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.Location = new System.Drawing.Point(287, 146);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnGrabar
             // 
@@ -119,6 +109,17 @@
             this.btnGrabar.TabIndex = 7;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelar.Location = new System.Drawing.Point(287, 146);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // FrmTipoClienteMan2
             // 
@@ -139,7 +140,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDescripcionAbreviatura;
+        private System.Windows.Forms.TextBox txtDescripcionTipoCliente;
         private System.Windows.Forms.TextBox txtAbreviatura;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnCancelar;

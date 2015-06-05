@@ -31,8 +31,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPension = new System.Windows.Forms.TextBox();
-            this.btnGrabar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,16 +77,6 @@
             this.txtPension.Size = new System.Drawing.Size(311, 20);
             this.txtPension.TabIndex = 5;
             // 
-            // btnGrabar
-            // 
-            this.btnGrabar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGrabar.Location = new System.Drawing.Point(131, 114);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 23);
-            this.btnGrabar.TabIndex = 9;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -96,6 +86,17 @@
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGrabar.Location = new System.Drawing.Point(131, 114);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(75, 23);
+            this.btnGrabar.TabIndex = 9;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // FrmPensionMan2
             // 
