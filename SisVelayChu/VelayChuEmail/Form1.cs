@@ -15,7 +15,7 @@ namespace VelayChuEmail
     {
         public SmtpClient Cliente = new SmtpClient();
         public MailMessage msg = new MailMessage();
-        public System.Net.NetworkCredential SmtpCredits = new System.Net.NetworkCredential("corderito.jl@gmail.com", "velaychu");
+        public System.Net.NetworkCredential SmtpCredits = new System.Net.NetworkCredential("b.pacheco@velaychu.com", "1440bhli");
 
         public void EnviarMail(string sendTo, string sendFrom, string subject, string body)
         {
