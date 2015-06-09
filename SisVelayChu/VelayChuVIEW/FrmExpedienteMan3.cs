@@ -72,7 +72,7 @@ namespace VelayChuVIEW
                 dtgContrato.CellClick +=
             new DataGridViewCellEventHandler(dtgContrato_CellClick);
                 dtgContrato.Columns.Add(btnEliminar);
-                dtgContrato.Columns[1].Visible = false;
+                //dtgContrato.Columns[1].Visible = false;
                 cboContrato.DataSource = _ContratoBL.ListarCON_ContratoOAct();
                 cboContrato.DisplayMember = "DescripcionContrato";
                 cboContrato.ValueMember = "CodigoContrato";
@@ -105,7 +105,7 @@ namespace VelayChuVIEW
             if (result == DialogResult.Yes)
             {
                 // MessageBox.Show(dtgContrato.CurrentRow.Cells[2].Value.ToString());
-                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
+                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
                 res = _ExpedienteContratoBL.EliminarExpedienteContrato(_CodigoExpedienteContrato);
                 if (res)
                     llenarGrillaContratos();
@@ -152,10 +152,11 @@ namespace VelayChuVIEW
         {
             try
             {
-                int _CodigoContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
-                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
-                llenarGrillaDetalles(_CodigoContrato);
+              //  int _CodigoContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
+                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
+                llenarGrillaDetalles(_CodigoExpedienteContrato);
                 llenarGrillaDocumentos(_CodigoExpedienteContrato);
+                dtgDetalle.ClearSelection();
                 
             }
             catch (Exception ex)
@@ -263,7 +264,7 @@ namespace VelayChuVIEW
             bool _Presento = Convert.ToBoolean(dtgDocumento.CurrentRow.Cells[2].Value);
             if (_DocumentoClienteBL.CambiarDocumentoCliente(_CodigoDocumentoCliente, _Presento))
             {
-                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
+                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
 
                 llenarGrillaDocumentos(_CodigoExpedienteContrato);
                 dtgDocumento.Refresh();
@@ -321,6 +322,14 @@ namespace VelayChuVIEW
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmExpedienteMan3_Activated(object sender, EventArgs e)
+        {
+            llenarGrillaDetalles(Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value));
+            int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
+            llenarGrillaDocumentos(_CodigoExpedienteContrato);
+            dtgDetalle.ClearSelection();
         }
 
 

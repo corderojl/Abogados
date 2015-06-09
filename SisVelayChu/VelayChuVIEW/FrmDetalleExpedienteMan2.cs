@@ -73,7 +73,7 @@ namespace VelayChuVIEW
             {
                 var _mi_DetalleExpediente = _DetalleExpedienteBE;
                 //_miempl.Emp_id = "";
-                _mi_DetalleExpediente.CodigoContrato = _CodigoContrato;
+                _mi_DetalleExpediente.CodigoExpedienteContrato = _CodigoContrato;
                 _mi_DetalleExpediente.CodigoEvento = Convert.ToInt32(cboEvento.SelectedValue);
                 _mi_DetalleExpediente.CodigoEtapa = Convert.ToInt32(cboEtapa.SelectedValue);
                 _mi_DetalleExpediente.Fecha = dtpFecha.Value;

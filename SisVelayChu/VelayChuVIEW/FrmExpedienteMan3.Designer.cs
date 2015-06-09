@@ -437,6 +437,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmExpedienteMan3";
             this.Text = "FrmExpedienteMan3";
+            this.Activated += new System.EventHandler(this.FrmExpedienteMan3_Activated);
             this.Load += new System.EventHandler(this.FrmExpedienteMan3_Load);
             this.gpbCliente.ResumeLayout(false);
             this.gpbCliente.PerformLayout();

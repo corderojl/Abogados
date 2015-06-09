@@ -63,6 +63,7 @@ namespace VelayChuVIEW
                 fClienteMan3.Codigo = Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value);
                 fClienteMan3.MdiParent = this.MdiParent;
                 fClienteMan3.Show();
+                FiltrarDatos();
             }
             catch (Exception ex)
             {

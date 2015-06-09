@@ -58,7 +58,7 @@ namespace VelaychuADO
             {
                 lDetalleExpedienteBE = new List<DetalleExpedienteBE>();
                 int posCodigoDetalleExpediente = drd.GetOrdinal("CodigoDetalleExpediente");
-                int posCodigoContrato = drd.GetOrdinal("CodigoContrato");
+                int posCodigoExpedienteContrato = drd.GetOrdinal("CodigoExpedienteContrato");
                 int posCodigoEvento = drd.GetOrdinal("CodigoEvento");
                 int posCodigoEtapa = drd.GetOrdinal("CodigoEtapa");
                 int posFecha = drd.GetOrdinal("Fecha");
@@ -70,7 +70,7 @@ namespace VelaychuADO
                 {
                     oDetalleExpedienteBE = new DetalleExpedienteBE();
                     oDetalleExpedienteBE.CodigoDetalleExpediente = drd.GetInt32(posCodigoDetalleExpediente);
-                    oDetalleExpedienteBE.CodigoContrato = drd.GetInt32(posCodigoContrato);
+                    oDetalleExpedienteBE.CodigoExpedienteContrato = drd.GetInt32(posCodigoExpedienteContrato);
                     oDetalleExpedienteBE.CodigoEvento = drd.GetInt32(posCodigoEvento);
                     oDetalleExpedienteBE.CodigoEtapa = drd.GetInt32(posCodigoEtapa);
                     oDetalleExpedienteBE.Fecha = drd.GetDateTime(posFecha);
@@ -94,9 +94,9 @@ namespace VelaychuADO
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "uspListarDetalleExpedienteByContrato";
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoContrato", SqlDbType.VarChar, 150));
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpedienteContrato", SqlDbType.VarChar, 150));
                 par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoContrato"].Value = CodigoContrato;
+                cmd.Parameters["@CodigoExpedienteContrato"].Value = CodigoContrato;
                 SqlDataAdapter miada = default(SqlDataAdapter);
                 miada = new SqlDataAdapter(cmd);
                 miada.Fill(dts, "Sistemas");
@@ -136,7 +136,7 @@ namespace VelaychuADO
                     dtr.Read();
                     var _with1 = _DetalleExpedienteBE;
                     _with1.CodigoDetalleExpediente = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoDetalleExpediente")));
-                    _with1.CodigoContrato = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoContrato")));
+                    _with1.CodigoExpedienteContrato = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoExpedienteContrato")));
                     _with1.CodigoEvento = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoEvento")));
                     _with1.CodigoEtapa = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoEtapa")));
                     _with1.Fecha = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("Fecha")));
@@ -170,9 +170,9 @@ namespace VelaychuADO
             cmd.CommandText = "uspDetalleExpedienteAdicionar";
             try
             {
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoContrato", SqlDbType.Int));
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpedienteContrato", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoContrato"].Value = _DetalleExpedienteBE.CodigoContrato;
+                cmd.Parameters["@CodigoExpedienteContrato"].Value = _DetalleExpedienteBE.CodigoExpedienteContrato;
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoEvento", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoEvento"].Value = _DetalleExpedienteBE.CodigoEvento;
@@ -230,9 +230,9 @@ namespace VelaychuADO
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoDetalleExpediente", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoDetalleExpediente"].Value = _DetalleExpedienteBE.CodigoDetalleExpediente;
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoContrato", SqlDbType.Int));
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpedienteContrato", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoContrato"].Value = _DetalleExpedienteBE.CodigoContrato;
+                cmd.Parameters["@CodigoExpedienteContrato"].Value = _DetalleExpedienteBE.CodigoExpedienteContrato;
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoEvento", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoEvento"].Value = _DetalleExpedienteBE.CodigoEvento;

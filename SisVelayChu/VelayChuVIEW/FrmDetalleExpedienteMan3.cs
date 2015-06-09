@@ -35,7 +35,7 @@ namespace VelayChuVIEW
             try
             {
                 _DetalleExpedienteBE = _DetalleExpedienteBL.TraerExpediente(_CodigoDetalleExpediente);
-                lblCodigoContrato.Text = _DetalleExpedienteBE.CodigoContrato.ToString();
+                lblCodigoContrato.Text = _DetalleExpedienteBE.CodigoExpedienteContrato.ToString();
                 LlenarComboEvento(_DetalleExpedienteBE.CodigoEvento);
                 LlenarComboEtapa(_DetalleExpedienteBE.CodigoEtapa);
                 LlenarComboEspecialista(_DetalleExpedienteBE.CodigoUsuario);
@@ -93,7 +93,7 @@ namespace VelayChuVIEW
                 var _mi_DetalleExpediente = _DetalleExpedienteBE;
                 //_miempl.Emp_id = "";
                 _mi_DetalleExpediente.CodigoDetalleExpediente = _CodigoDetalleExpediente;
-                _mi_DetalleExpediente.CodigoContrato = Convert.ToInt32(lblCodigoContrato.Text);
+                _mi_DetalleExpediente.CodigoExpedienteContrato = Convert.ToInt32(lblCodigoContrato.Text);
                 _mi_DetalleExpediente.CodigoEvento = Convert.ToInt32(cboEvento.SelectedValue);
                 _mi_DetalleExpediente.CodigoEtapa = Convert.ToInt32(cboEtapa.SelectedValue);
                 _mi_DetalleExpediente.Fecha = dtpFecha.Value;
