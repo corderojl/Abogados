@@ -19,6 +19,7 @@ namespace VelayChuVIEW
         GradoBL _GradoBL = new GradoBL();
         InstitucionBL _InstitucionBL = new InstitucionBL();
         PensionBL _PensionBL = new PensionBL();
+        ContratoBL _ContratoBL = new ContratoBL();
 
         ClienteBE _ClienteBE = new ClienteBE();
 
@@ -27,6 +28,15 @@ namespace VelayChuVIEW
             InitializeComponent();
         }
 
+        private void llenarComboContrato()
+        {
+            cboContrato.Items.Insert(0, "Seleccionar");
+            cboContrato.DataSource = _ContratoBL.ListarCON_ContratoOAct();
+
+            cboContrato.DisplayMember = "DescripcionContrato";
+            cboContrato.ValueMember = "CodigoContrato";
+
+        }
         private void llenarComboTipoDocumento()
         {
             cboTipoDocumento.Items.Insert(0,"Seleccionar");
@@ -75,6 +85,8 @@ namespace VelayChuVIEW
             llenarComboGrado();
             llenarComboInstitucion();
             llenarComboPension();
+            llenarComboContrato();
+
 
         }
 
