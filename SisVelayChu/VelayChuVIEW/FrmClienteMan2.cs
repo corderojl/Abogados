@@ -20,8 +20,10 @@ namespace VelayChuVIEW
         InstitucionBL _InstitucionBL = new InstitucionBL();
         PensionBL _PensionBL = new PensionBL();
         ContratoBL _ContratoBL = new ContratoBL();
+        ExpedienteBL _ExpedienteBL = new ExpedienteBL();
 
         ClienteBE _ClienteBE = new ClienteBE();
+        ExpedientesBE _ExpedientesBE = new ExpedientesBE();
 
         public FrmClienteMan2()
         {
@@ -112,7 +114,14 @@ namespace VelayChuVIEW
                 _miempl.TelefonoCelular2 = txtCelular2.Text;
                 _miempl.Email = txtEmail.Text;
 
+                var _miexp = _ExpedientesBE;
+                _miexp.CodigoContrato = Convert.ToInt32(cboContrato.SelectedValue);
+
+
+
                 _registro = _ClienteBL.InsertarCliente(_ClienteBE);
+                //_registro = _ExpedienteBL.InsertarExpedientes(_ExpedientesBE);
+
                 if (_registro > -1)
                 {
                     MessageBox.Show("Se registro con Exito");
