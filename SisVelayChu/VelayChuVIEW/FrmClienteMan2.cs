@@ -116,6 +116,7 @@ namespace VelayChuVIEW
 
                 var _miexp = _ExpedientesBE;
                 _miexp.CodigoContrato = Convert.ToInt32(cboContrato.SelectedValue);
+                _miexp.CodigoMateria = Convert.ToInt32(cboContrato.SelectedValue);
 
 
 
