@@ -68,6 +68,7 @@
     <Compile Include="SalaADO.cs" />
     <Compile Include="TipoClienteADO.cs" />
     <Compile Include="TipoDocumentoADO.cs" />
+    <Compile Include="TmpAlertaADO.cs" />
     <Compile Include="UsuarioADO.cs" />
   </ItemGroup>
   <ItemGroup>
