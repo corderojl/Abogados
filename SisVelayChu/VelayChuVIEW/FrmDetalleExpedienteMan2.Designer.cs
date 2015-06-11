@@ -40,12 +40,12 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.cboEvento = new System.Windows.Forms.ComboBox();
             this.cboUsuario = new System.Windows.Forms.ComboBox();
-            this.cboUsuarioImpulso = new System.Windows.Forms.ComboBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaImpulso = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDiasAlerta = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,12 +80,12 @@
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.cboEvento, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cboUsuario, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.cboUsuarioImpulso, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.dtpFecha, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.dtpFechaImpulso, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.txtDiasAlerta, 1, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -192,7 +192,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 13);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Especialista:";
+            this.label2.Text = "Encargado del Impulso:";
             // 
             // label3
             // 
@@ -203,16 +203,6 @@
             this.label3.Size = new System.Drawing.Size(180, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Fecha de Impulso:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 286);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Especialista encargado de impulso:";
             // 
             // cboEvento
             // 
@@ -232,15 +222,6 @@
             this.cboUsuario.Size = new System.Drawing.Size(304, 21);
             this.cboUsuario.TabIndex = 0;
             // 
-            // cboUsuarioImpulso
-            // 
-            this.cboUsuarioImpulso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.cboUsuarioImpulso, 2);
-            this.cboUsuarioImpulso.Location = new System.Drawing.Point(189, 282);
-            this.cboUsuarioImpulso.Name = "cboUsuarioImpulso";
-            this.cboUsuarioImpulso.Size = new System.Drawing.Size(304, 21);
-            this.cboUsuarioImpulso.TabIndex = 0;
-            // 
             // dtpFecha
             // 
             this.dtpFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -258,6 +239,26 @@
             this.dtpFechaImpulso.Name = "dtpFechaImpulso";
             this.dtpFechaImpulso.Size = new System.Drawing.Size(150, 20);
             this.dtpFechaImpulso.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 286);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(180, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Días de Alerta:";
+            // 
+            // txtDiasAlerta
+            // 
+            this.txtDiasAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDiasAlerta.Location = new System.Drawing.Point(189, 282);
+            this.txtDiasAlerta.Name = "txtDiasAlerta";
+            this.txtDiasAlerta.Size = new System.Drawing.Size(150, 20);
+            this.txtDiasAlerta.TabIndex = 17;
+            this.txtDiasAlerta.Text = "5";
+            this.txtDiasAlerta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiasAlerta_KeyPress);
             // 
             // FrmDetalleExpedienteMan2
             // 
@@ -290,11 +291,11 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboEvento;
         private System.Windows.Forms.ComboBox cboUsuario;
-        private System.Windows.Forms.ComboBox cboUsuarioImpulso;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.DateTimePicker dtpFechaImpulso;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtDiasAlerta;
     }
 }

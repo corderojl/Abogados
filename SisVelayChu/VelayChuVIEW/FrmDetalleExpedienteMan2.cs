@@ -33,7 +33,7 @@ namespace VelayChuVIEW
             LlenarComboEvento();
             LlenarComboEtapa();
             LlenarComboEspecialista();
-            LlenarComboEspecialistaImpulso();
+            //LlenarComboEspecialistaImpulso();
         }
 
         private void LlenarComboEvento()
@@ -57,12 +57,12 @@ namespace VelayChuVIEW
             cboEtapa.ValueMember = "CodigoEtapa";
         }
 
-        private void LlenarComboEspecialistaImpulso()
-        {
-            cboUsuarioImpulso.DataSource = _UsuarioBL.ListarUsuario_Act();
-            cboUsuarioImpulso.DisplayMember = "NombreCompleto";
-            cboUsuarioImpulso.ValueMember = "CodigoUsuario";
-        }
+        //private void LlenarComboEspecialistaImpulso()
+        //{
+        //    cboUsuarioImpulso.DataSource = _UsuarioBL.ListarUsuario_Act();
+        //    cboUsuarioImpulso.DisplayMember = "NombreCompleto";
+        //    cboUsuarioImpulso.ValueMember = "CodigoUsuario";
+        //}
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
@@ -80,7 +80,8 @@ namespace VelayChuVIEW
                 _mi_DetalleExpediente.Estado = txtEstado.Text;
                 _mi_DetalleExpediente.CodigoUsuario = Convert.ToInt32(cboUsuario.SelectedValue);
                 _mi_DetalleExpediente.FechaImpulso = dtpFechaImpulso.Value;
-                _mi_DetalleExpediente.CodigoUsuarioImpulso = Convert.ToInt32(cboUsuarioImpulso.SelectedValue);
+                _mi_DetalleExpediente.CodigoUsuarioImpulso = 1;//Convert.ToInt32(cboUsuarioImpulso.SelectedValue);
+                _mi_DetalleExpediente.DiasAlerta = Convert.ToInt32(txtDiasAlerta.Text);
                 _registro = _DetalleExpedienteBL.InsertarDetalleExpediente(_DetalleExpedienteBE);
                 if (_registro > -1)
                 {
@@ -103,6 +104,16 @@ namespace VelayChuVIEW
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtDiasAlerta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+               // MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

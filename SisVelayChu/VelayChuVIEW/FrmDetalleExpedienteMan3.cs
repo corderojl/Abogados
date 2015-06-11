@@ -39,11 +39,12 @@ namespace VelayChuVIEW
                 LlenarComboEvento(_DetalleExpedienteBE.CodigoEvento);
                 LlenarComboEtapa(_DetalleExpedienteBE.CodigoEtapa);
                 LlenarComboEspecialista(_DetalleExpedienteBE.CodigoUsuario);
-                LlenarComboEspecialistaImpulso(_DetalleExpedienteBE.CodigoUsuarioImpulso);
+               // LlenarComboEspecialistaImpulso(_DetalleExpedienteBE.CodigoUsuarioImpulso);
 
                 txtEstado.Text = _DetalleExpedienteBE.Estado;
                 dtpFecha.Value = _DetalleExpedienteBE.Fecha;
                 dtpFechaImpulso.Value = _DetalleExpedienteBE.FechaImpulso;
+                txtDiasAlerta.Text = _DetalleExpedienteBE.DiasAlerta.ToString();
 
             }
             catch (Exception ex)
@@ -78,13 +79,13 @@ namespace VelayChuVIEW
             cboEtapa.SelectedValue = _CodigoEtapa;
         }
 
-        private void LlenarComboEspecialistaImpulso(int _CodigoUsuario)
-        {
-            cboUsuarioImpulso.DataSource = _UsuarioBL.ListarUsuario_Act();
-            cboUsuarioImpulso.DisplayMember = "NombreCompleto";
-            cboUsuarioImpulso.ValueMember = "CodigoUsuario";
-            cboUsuarioImpulso.SelectedValue = _CodigoUsuario;
-        }
+        //private void LlenarComboEspecialistaImpulso(int _CodigoUsuario)
+        //{
+        //    cboUsuarioImpulso.DataSource = _UsuarioBL.ListarUsuario_Act();
+        //    cboUsuarioImpulso.DisplayMember = "NombreCompleto";
+        //    cboUsuarioImpulso.ValueMember = "CodigoUsuario";
+        //    cboUsuarioImpulso.SelectedValue = _CodigoUsuario;
+        //}
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
@@ -100,7 +101,8 @@ namespace VelayChuVIEW
                 _mi_DetalleExpediente.Estado = txtEstado.Text;
                 _mi_DetalleExpediente.CodigoUsuario = Convert.ToInt32(cboUsuario.SelectedValue);
                 _mi_DetalleExpediente.FechaImpulso = dtpFechaImpulso.Value;
-                _mi_DetalleExpediente.CodigoUsuarioImpulso = Convert.ToInt32(cboUsuarioImpulso.SelectedValue);
+                _mi_DetalleExpediente.CodigoUsuarioImpulso = 1;// Convert.ToInt32(cboUsuarioImpulso.SelectedValue);
+                _mi_DetalleExpediente.DiasAlerta = Convert.ToInt32(txtDiasAlerta.Text);
                 if (_DetalleExpedienteBL.ActualizarDetalleExpediente(_DetalleExpedienteBE))
                 {
                     MessageBox.Show("El Detalle se actualizó con exito");
