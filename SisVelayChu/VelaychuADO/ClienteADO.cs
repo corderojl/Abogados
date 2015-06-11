@@ -328,8 +328,6 @@ namespace VelaychuADO
                     _with1.NumeroDocumento = dtr.GetValue(dtr.GetOrdinal("NumeroDocumento")).ToString();
                     _with1.DirecccionCompleta = dtr.GetValue(dtr.GetOrdinal("DirecccionCompleta")).ToString();
                     _with1.CodigoDepartamento = (dtr.GetValue(dtr.GetOrdinal("CodigoDepartamento"))).ToString();
-                    _with1.CodigoProvincia = (dtr.GetValue(dtr.GetOrdinal("CodigoProvincia"))).ToString();
-                    _with1.CodigoDistrito = (dtr.GetValue(dtr.GetOrdinal("CodigoDistrito"))).ToString();
                     _with1.TelefonoFijo = dtr.GetValue(dtr.GetOrdinal("TelefonoFijo")).ToString();
                     _with1.TelefonoCelular1 = dtr.GetValue(dtr.GetOrdinal("TelefonoCelular1")).ToString();
                     _with1.TelefonoCelular1 = dtr.GetValue(dtr.GetOrdinal("TelefonoCelular1")).ToString();
