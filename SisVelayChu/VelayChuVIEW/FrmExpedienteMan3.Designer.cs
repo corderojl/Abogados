@@ -317,11 +317,11 @@
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.groupBox3, 5, 4);
             this.tableLayoutPanel1.Controls.Add(this.cboContrato, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.button1, 7, 9);
             this.tableLayoutPanel1.Controls.Add(this.button2, 7, 10);
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 7, 13);
+            this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 3, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -379,16 +379,17 @@
             // cboContrato
             // 
             this.cboContrato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.cboContrato, 3);
             this.cboContrato.FormattingEnabled = true;
             this.cboContrato.Location = new System.Drawing.Point(3, 129);
             this.cboContrato.Name = "cboContrato";
-            this.cboContrato.Size = new System.Drawing.Size(120, 21);
+            this.cboContrato.Size = new System.Drawing.Size(372, 21);
             this.cboContrato.TabIndex = 7;
             // 
             // btnAgregarContrato
             // 
             this.btnAgregarContrato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarContrato.Location = new System.Drawing.Point(255, 129);
+            this.btnAgregarContrato.Location = new System.Drawing.Point(381, 129);
             this.btnAgregarContrato.Name = "btnAgregarContrato";
             this.btnAgregarContrato.Size = new System.Drawing.Size(120, 22);
             this.btnAgregarContrato.TabIndex = 8;

@@ -105,7 +105,7 @@ namespace VelayChuVIEW
             if (result == DialogResult.Yes)
             {
                 // MessageBox.Show(dtgContrato.CurrentRow.Cells[2].Value.ToString());
-                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
+                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
                 res = _ExpedienteContratoBL.EliminarExpedienteContrato(_CodigoExpedienteContrato);
                 if (res)
                     llenarGrillaContratos();
@@ -153,7 +153,7 @@ namespace VelayChuVIEW
             try
             {
               //  int _CodigoContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
-                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
+                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
                 llenarGrillaDetalles(_CodigoExpedienteContrato);
                 llenarGrillaDocumentos(_CodigoExpedienteContrato);
                 dtgDetalle.ClearSelection();
@@ -293,10 +293,10 @@ namespace VelayChuVIEW
             try
             {
                 FrmDetalleExpedienteMan2 _FrmDetalleExpedienteMan2 = new FrmDetalleExpedienteMan2();
-                _FrmDetalleExpedienteMan2.CodigoContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
+                _FrmDetalleExpedienteMan2.CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
                 _FrmDetalleExpedienteMan2.MdiParent = this.MdiParent;
                 _FrmDetalleExpedienteMan2.Show();
-                llenarGrillaDetalles(Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value));
+                llenarGrillaDetalles(Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value));
             }
             catch (Exception ex)
             {
@@ -326,8 +326,8 @@ namespace VelayChuVIEW
 
         private void FrmExpedienteMan3_Activated(object sender, EventArgs e)
         {
-            llenarGrillaDetalles(Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value));
-            int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[1].Value);
+            llenarGrillaDetalles(Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value));
+            int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
             llenarGrillaDocumentos(_CodigoExpedienteContrato);
             dtgDetalle.ClearSelection();
         }

@@ -22,11 +22,11 @@ namespace VelayChuVIEW
         {
             InitializeComponent();
         }
-        private int _CodigoContrato;
-        public int CodigoContrato
+        private int _CodigoExpedienteContrato;
+        public int CodigoExpedienteContrato
         {
-            get { return _CodigoContrato; }
-            set { _CodigoContrato = value; }
+            get { return _CodigoExpedienteContrato; }
+            set { _CodigoExpedienteContrato = value; }
         }
         private void FrmDetalleExpedienteMan2_Load(object sender, EventArgs e)
         {
@@ -73,7 +73,7 @@ namespace VelayChuVIEW
             {
                 var _mi_DetalleExpediente = _DetalleExpedienteBE;
                 //_miempl.Emp_id = "";
-                _mi_DetalleExpediente.CodigoExpedienteContrato = _CodigoContrato;
+                _mi_DetalleExpediente.CodigoExpedienteContrato = _CodigoExpedienteContrato;
                 _mi_DetalleExpediente.CodigoEvento = Convert.ToInt32(cboEvento.SelectedValue);
                 _mi_DetalleExpediente.CodigoEtapa = Convert.ToInt32(cboEtapa.SelectedValue);
                 _mi_DetalleExpediente.Fecha = dtpFecha.Value;
