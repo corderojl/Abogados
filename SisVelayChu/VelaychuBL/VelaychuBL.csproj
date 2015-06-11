@@ -62,6 +62,7 @@
     <Compile Include="SalaBL.cs" />
     <Compile Include="TipoClienteBL.cs" />
     <Compile Include="TipoDocumentoBL.cs" />
+    <Compile Include="TmpAlertaBL.cs" />
     <Compile Include="UsuarioBL.cs" />
   </ItemGroup>
   <ItemGroup>
