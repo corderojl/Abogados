@@ -22,14 +22,10 @@ namespace VelaychuBE
         public string NumeroDocumento { get; set; }
         public string DirecccionCompleta { get; set; }
         public string CodigoDepartamento { get; set; }
-        //public string CodigoProvincia { get; set; }
-        //public string CodigoDistrito { get; set; }
         public string TelefonoFijo { get; set; }
         public string TelefonoCelular1 { get; set; }
         public string TelefonoCelular2 { get; set; }
         public string Email { get; set; }
         public bool Activo { get; set; }
-        
-        
     }
 }
