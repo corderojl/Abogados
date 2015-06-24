@@ -32,6 +32,7 @@ namespace VelayChuVIEW
         JuzgadoBL _JuzgadoBL = new JuzgadoBL();
         MateriaBL _MateriaBL = new MateriaBL();
         EspecialistaBL _EspecialistaBL = new EspecialistaBL();
+        List<ClienteBE> ltClienteBE;
 
 
         public FrmExpedienteMan3()
@@ -50,14 +51,14 @@ namespace VelayChuVIEW
             try
             {
                 _ExpedientesBE = _ExpedienteBL.TraerExpediente(_codigo);
-                _ClienteBE = _ClienteBL.TraerCliente(_ExpedientesBE.CodigoCliente);
+                ltClienteBE = _ClienteBL.BuscarClienteByExpediente(_codigo);
 
                 btnActualizar.Enabled = true;
                 btnCancelar.Enabled = false;
                 btnGuardar.Enabled = false;
                 //llenarComboCliente(_ClienteBE.CodigoAsociacion);
-                txtCliente.Text = _ClienteBE.NombreCompleto;
-                //llenarComboMateria(_ClienteBE.CodigoTipoCliente);
+                ltbCliente.DataSource = ltClienteBE;
+                ltbCliente.DisplayMember = "NombreCompleto";
                 llenarComboJuzgado(_ExpedientesBE.CodigoJuzgado);
                 llenarComboEspecialista(_ExpedientesBE.CodigoEspecialista);
                 llenarComboSala(_ExpedientesBE.CodigoSala);
@@ -188,7 +189,7 @@ namespace VelayChuVIEW
             string val = "";
             for (int i = 0; i < dtgDetalle.Rows.Count; i++)
             {
-                val = dtgDetalle.Rows[i].Cells[7].Value.ToString();
+                val = dtgDetalle.Rows[i].Cells["Color"].Value.ToString();
                 if (val == "Rojo")
                     dtgDetalle.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                 else if (val == "Amarillo")
@@ -240,7 +241,6 @@ namespace VelayChuVIEW
             ExpedientesBE _ExpedientesBE = new ExpedientesBE();
             _ExpedientesBE.CodigoExpediente = _codigo;
             _ExpedientesBE.NumeroExpediente = txtExpediente.Text;
-            //_ExpedientesBE.CodigoCliente=Convert.ToInt32(lblCodigoCliente.Text);
             _ExpedientesBE.FechaRegistro = dtpFecha.Value;
             _ExpedientesBE.CodigoJuzgado = Convert.ToInt32(cboJuzgado.SelectedValue);
             _ExpedientesBE.CodigoEspecialista = Convert.ToInt32(cboEspecialista.SelectedValue);

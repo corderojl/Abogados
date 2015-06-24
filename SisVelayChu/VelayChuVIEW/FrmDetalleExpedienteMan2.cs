@@ -81,7 +81,7 @@ namespace VelayChuVIEW
                 _mi_DetalleExpediente.CodigoUsuario = Convert.ToInt32(cboUsuario.SelectedValue);
                 _mi_DetalleExpediente.FechaImpulso = dtpFechaImpulso.Value;
                 _mi_DetalleExpediente.CodigoUsuarioImpulso = 1;//Convert.ToInt32(cboUsuarioImpulso.SelectedValue);
-                _mi_DetalleExpediente.DiasAlerta = Convert.ToInt32(txtDiasAlerta.Text);
+                _mi_DetalleExpediente.CodigoExpedienteCliente = Convert.ToInt32(txtDiasAlerta.Text);
                 _registro = _DetalleExpedienteBL.InsertarDetalleExpediente(_DetalleExpedienteBE);
                 if (_registro > -1)
                 {

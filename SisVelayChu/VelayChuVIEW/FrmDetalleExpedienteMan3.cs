@@ -44,7 +44,7 @@ namespace VelayChuVIEW
                 txtEstado.Text = _DetalleExpedienteBE.Estado;
                 dtpFecha.Value = _DetalleExpedienteBE.Fecha;
                 dtpFechaImpulso.Value = _DetalleExpedienteBE.FechaImpulso;
-                txtDiasAlerta.Text = _DetalleExpedienteBE.DiasAlerta.ToString();
+                txtDiasAlerta.Text = _DetalleExpedienteBE.CodigoExpedienteCliente.ToString();
 
             }
             catch (Exception ex)
@@ -102,7 +102,7 @@ namespace VelayChuVIEW
                 _mi_DetalleExpediente.CodigoUsuario = Convert.ToInt32(cboUsuario.SelectedValue);
                 _mi_DetalleExpediente.FechaImpulso = dtpFechaImpulso.Value;
                 _mi_DetalleExpediente.CodigoUsuarioImpulso = 1;// Convert.ToInt32(cboUsuarioImpulso.SelectedValue);
-                _mi_DetalleExpediente.DiasAlerta = Convert.ToInt32(txtDiasAlerta.Text);
+                _mi_DetalleExpediente.CodigoExpedienteCliente = Convert.ToInt32(txtDiasAlerta.Text);
                 if (_DetalleExpedienteBL.ActualizarDetalleExpediente(_DetalleExpedienteBE))
                 {
                     MessageBox.Show("El Detalle se actualizó con exito");

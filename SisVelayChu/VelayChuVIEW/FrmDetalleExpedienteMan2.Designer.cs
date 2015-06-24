@@ -257,7 +257,7 @@
             this.txtDiasAlerta.Name = "txtDiasAlerta";
             this.txtDiasAlerta.Size = new System.Drawing.Size(150, 20);
             this.txtDiasAlerta.TabIndex = 17;
-            this.txtDiasAlerta.Text = "5";
+            this.txtDiasAlerta.Text = "0";
             this.txtDiasAlerta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiasAlerta_KeyPress);
             // 
             // FrmDetalleExpedienteMan2

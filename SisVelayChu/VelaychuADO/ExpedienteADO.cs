@@ -142,7 +142,6 @@ namespace VelaychuADO
                     _with1.CodigoExpediente = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoExpediente")));
                     _with1.NumeroExpediente = dtr.GetValue(dtr.GetOrdinal("NumeroExpediente")).ToString();
                     _with1.FechaRegistro = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaRegistro")));
-                    _with1.CodigoCliente = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoCliente")));
                     _with1.CodigoMateria = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoMateria")));
                     _with1.CodigoJuzgado = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoJuzgado")));
                     _with1.CodigoEspecialista = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoEspecialista")));
@@ -181,9 +180,6 @@ namespace VelaychuADO
                 par1 = cmd.Parameters.Add(new SqlParameter("@FechaRegistro", SqlDbType.Date));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@FechaRegistro"].Value = _ExpedientesBE.FechaRegistro;
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoCliente", SqlDbType.Int));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoCliente"].Value = _ExpedientesBE.CodigoCliente;
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoJuzgado", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoJuzgado"].Value = _ExpedientesBE.CodigoJuzgado;
@@ -236,9 +232,6 @@ namespace VelaychuADO
                 par1 = cmd.Parameters.Add(new SqlParameter("@FechaRegistro", SqlDbType.Date));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@FechaRegistro"].Value = _ExpedientesBE.FechaRegistro;
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoCliente", SqlDbType.Int));
-                par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoCliente"].Value = _ExpedientesBE.CodigoCliente;
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoJuzgado", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoJuzgado"].Value = _ExpedientesBE.CodigoJuzgado;

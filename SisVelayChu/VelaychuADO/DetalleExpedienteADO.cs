@@ -64,7 +64,7 @@ namespace VelaychuADO
                 int posFecha = drd.GetOrdinal("Fecha");
                 int posEstado = drd.GetOrdinal("Estado");
                 int posCodigoUsuario = drd.GetOrdinal("CodigoUsuario");
-                int posDiasAlerta = drd.GetOrdinal("DiasAlerta");
+                int posCodigoExpedienteCliente = drd.GetOrdinal("CodigoExpedienteCliente");
                 //int posactivo = drd.GetOrdinal("activo");
                 DetalleExpedienteBE oDetalleExpedienteBE = null;
                 while (drd.Read())
@@ -77,7 +77,7 @@ namespace VelaychuADO
                     oDetalleExpedienteBE.Fecha = drd.GetDateTime(posFecha);
                     oDetalleExpedienteBE.Estado = drd.GetString(posEstado);
                     oDetalleExpedienteBE.CodigoUsuario = drd.GetInt32(posCodigoUsuario);
-                    oDetalleExpedienteBE.DiasAlerta = drd.GetInt32(posDiasAlerta);
+                    oDetalleExpedienteBE.CodigoExpedienteCliente = drd.GetInt32(posCodigoExpedienteCliente);
                     //obeEmpleadoBE.activo = drd.GetBoolean(posactivo);
                     lDetalleExpedienteBE.Add(oDetalleExpedienteBE);
                 }
@@ -146,7 +146,7 @@ namespace VelaychuADO
                     _with1.CodigoUsuario = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoUsuario")));
                     _with1.FechaImpulso = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaImpulso")));
                     _with1.CodigoUsuarioImpulso = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoUsuarioImpulso")));
-                    _with1.DiasAlerta = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("DiasAlerta")));
+                    _with1.CodigoExpedienteCliente = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("CodigoExpedienteCliente")));
                 }
             }
             catch (SqlException ex)
@@ -197,9 +197,9 @@ namespace VelaychuADO
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoUsuarioImpulso", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoUsuarioImpulso"].Value = _DetalleExpedienteBE.CodigoUsuarioImpulso;
-                par1 = cmd.Parameters.Add(new SqlParameter("@DiasAlerta", SqlDbType.Int));
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpedienteCliente", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@DiasAlerta"].Value = _DetalleExpedienteBE.DiasAlerta;
+                cmd.Parameters["@CodigoExpedienteCliente"].Value = _DetalleExpedienteBE.CodigoExpedienteCliente;
                 SqlParameter par4 = cmd.Parameters.Add("@@identity", SqlDbType.Int);
                 par4.Direction = ParameterDirection.ReturnValue;
                 cnx.Open();
@@ -208,11 +208,11 @@ namespace VelaychuADO
             }
             catch (SqlException x)
             {
-                IdEmpleado = 0;
+                IdEmpleado = -1;
             }
             catch (Exception x)
             {
-                IdEmpleado = 0;
+                IdEmpleado = -1;
             }
             finally
             {
@@ -260,9 +260,9 @@ namespace VelaychuADO
                 par1 = cmd.Parameters.Add(new SqlParameter("@CodigoUsuarioImpulso", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@CodigoUsuarioImpulso"].Value = _DetalleExpedienteBE.CodigoUsuarioImpulso;
-                par1 = cmd.Parameters.Add(new SqlParameter("@DiasAlerta", SqlDbType.Int));
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpedienteCliente", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@DiasAlerta"].Value = _DetalleExpedienteBE.DiasAlerta;
+                cmd.Parameters["@CodigoExpedienteCliente"].Value = _DetalleExpedienteBE.CodigoExpedienteCliente;
                 cnx.Open();
                 cmd.ExecuteNonQuery();
                 vexito = true;

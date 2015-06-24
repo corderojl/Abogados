@@ -350,7 +350,75 @@ namespace VelaychuADO
             return _ClienteBE;
         }
 
+        public List<ClienteBE> BuscarClienteByExpediente(int _CodigoExpediente)
+        {
+            string conexion = MiConexion.GetCnx();
+            List<ClienteBE> lClienteBE = null;
+            try
+            {
+                SqlConnection con = new SqlConnection(conexion);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("uspBuscarClienteByExpediente", con);
+                cmd.Parameters.Add(new SqlParameter("@CodigoExpediente", SqlDbType.Int));
+                cmd.Parameters["@CodigoExpediente"].Value = _CodigoExpediente;
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader drd = cmd.ExecuteReader(CommandBehavior.SingleResult);
+                if (drd != null)
+                {
+                    lClienteBE = new List<ClienteBE>();
+                    int posCodigoCliente = drd.GetOrdinal("CodigoCliente");
+                    int posNombreCompleto = drd.GetOrdinal("NombreCompleto");
+                    int posCodigoTipoDocumento = drd.GetOrdinal("CodigoTipoDocumento");
+                    int posCodigoAsociacion = drd.GetOrdinal("CodigoAsociacion");
+                    int posCodigoTipoCliente = drd.GetOrdinal("CodigoTipoCliente");
+                    int posCodigoGrado = drd.GetOrdinal("CodigoGrado");
+                    int posCodigoInstitucion = drd.GetOrdinal("CodigoInstitucion");
+                    int posCodigoPension = drd.GetOrdinal("CodigoPension");
+                    int posNumeroDocumento = drd.GetOrdinal("NumeroDocumento");
+                    int posDirecccionCompleta = drd.GetOrdinal("DirecccionCompleta");
+                    int posCodigoDepartamento = drd.GetOrdinal("CodigoDepartamento");
+                    int posTelefonoFijo = drd.GetOrdinal("TelefonoFijo");
+                    int posTelefonoCelular1 = drd.GetOrdinal("TelefonoCelular1");
+                    int posTelefonoCelular2 = drd.GetOrdinal("TelefonoCelular2");
+                    int posEmail = drd.GetOrdinal("Email");
+                    int posactivo = drd.GetOrdinal("activo");
+                    ClienteBE oClienteBE = null;
+                    while (drd.Read())
+                    {
+                        oClienteBE = new ClienteBE();
+                        oClienteBE.CodigoCliente = drd.GetInt32(posCodigoCliente);
+                        oClienteBE.NombreCompleto = drd.GetString(posNombreCompleto);
+                        oClienteBE.CodigoTipoDocumento = drd.GetInt32(posCodigoTipoDocumento);
+                        oClienteBE.CodigoAsociacion = drd.GetInt32(posCodigoAsociacion);
+                        oClienteBE.CodigoTipoCliente = drd.GetInt32(posCodigoTipoCliente);
+                        oClienteBE.CodigoGrado = drd.GetInt32(posCodigoGrado);
+                        oClienteBE.CodigoInstitucion = drd.GetInt32(posCodigoInstitucion);
+                        oClienteBE.CodigoPension = drd.GetInt32(posCodigoPension);
+                        oClienteBE.NumeroDocumento = drd.GetString(posNumeroDocumento);
+                        oClienteBE.DirecccionCompleta = drd.GetString(posDirecccionCompleta);
+                        oClienteBE.CodigoDepartamento = drd.GetString(posCodigoDepartamento);
 
+                        oClienteBE.TelefonoFijo = drd.GetString(posTelefonoFijo);
+                        oClienteBE.TelefonoCelular1 = drd.GetString(posTelefonoCelular1);
+                        oClienteBE.TelefonoCelular2 = drd.GetString(posTelefonoCelular2);
+                        oClienteBE.Email = drd.GetString(posEmail);
+                        oClienteBE.Activo = drd.GetBoolean(posactivo);
+                        lClienteBE.Add(oClienteBE);
+                    }
+                    drd.Close();
+                    con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return (lClienteBE);
+        }
         public ClienteBE TraerInformacionCliente(int _Cliente_id)
         {
             SqlDataReader dtr = default(SqlDataReader);

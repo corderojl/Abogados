@@ -16,7 +16,7 @@ namespace VelaychuBE
         public int CodigoUsuario { get; set; }
         public DateTime FechaImpulso { get; set; }
         public int CodigoUsuarioImpulso { get; set; }
-        public int DiasAlerta { get; set; }
+        public int CodigoExpedienteCliente { get; set; }
         
     }
 }
