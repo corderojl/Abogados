@@ -34,6 +34,7 @@
             this.C = new System.Windows.Forms.DataGridView();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.C)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             this.tableLayoutPanel1.Controls.Add(this.C, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnReporte, 4, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -125,6 +127,16 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // btnReporte
+            // 
+            this.btnReporte.Location = new System.Drawing.Point(463, 278);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(75, 23);
+            this.btnReporte.TabIndex = 19;
+            this.btnReporte.Text = "button1";
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
             // FrmEtapaMan1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,5 +161,6 @@
         private System.Windows.Forms.DataGridView C;
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnReporte;
     }
 }
