@@ -184,6 +184,7 @@ namespace VelayChuVIEW
 
         private void Pintarfilas()
         {
+           
             string val = "";
             for (int i = 0; i < dtgDetalle.Rows.Count; i++)
             {
