@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelaychuBE", "VelaychuBE\VelaychuBE.csproj", "{DFB36936-9785-4726-B221-5470AC4A0F2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelaychuBL", "VelaychuBL\VelaychuBL.csproj", "{2181573D-75E5-4997-A4DC-A6FB81CE5E95}"
@@ -10,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelayChuVIEW", "VelayChuVIEW\VelayChuVIEW.csproj", "{90DC191C-3EC0-40CA-A65A-C68C94332F0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelayChuEmail", "VelayChuEmail\VelayChuEmail.csproj", "{34C1D802-D458-43F7-A709-60753DB25373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelaychuReportes", "VelaychuReportes\VelaychuReportes.csproj", "{FBA6DD7C-3D44-47E2-924D-CC28030DA75F}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -41,6 +45,10 @@ Global
 		{34C1D802-D458-43F7-A709-60753DB25373}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34C1D802-D458-43F7-A709-60753DB25373}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34C1D802-D458-43F7-A709-60753DB25373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA6DD7C-3D44-47E2-924D-CC28030DA75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA6DD7C-3D44-47E2-924D-CC28030DA75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA6DD7C-3D44-47E2-924D-CC28030DA75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA6DD7C-3D44-47E2-924D-CC28030DA75F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
