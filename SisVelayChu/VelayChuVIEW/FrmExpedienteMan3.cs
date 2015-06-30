@@ -59,6 +59,7 @@ namespace VelayChuVIEW
                 //llenarComboCliente(_ClienteBE.CodigoAsociacion);
                 ltbCliente.DataSource = ltClienteBE;
                 ltbCliente.DisplayMember = "NombreCompleto";
+                ltbCliente.ValueMember= "CodigoCliente";
                 llenarComboJuzgado(_ExpedientesBE.CodigoJuzgado);
                 llenarComboEspecialista(_ExpedientesBE.CodigoEspecialista);
                 llenarComboSala(_ExpedientesBE.CodigoSala);
@@ -332,6 +333,22 @@ namespace VelayChuVIEW
             llenarGrillaDocumentos(_CodigoExpedienteContrato);
             dtgDetalle.ClearSelection();
         }
+
+        private void ltbCliente_DoubleClick(object sender, EventArgs e)
+        {
+            //MessageBox.Show(ltbCliente.SelectedValue.ToString());
+            //FrmUsuarioMan3 frmVenMan03 = new FrmUsuarioMan3();
+            //frmVenMan03.Codigo = Convert.ToInt32(dtgUsuario.CurrentRow.Cells[0].Value);
+            //frmVenMan03.ShowDialog();
+
+            FrmPagoMan3 _FrmPagoMan3 = new FrmPagoMan3();
+            _FrmPagoMan3.CodigoCliente = Convert.ToInt32(ltbCliente.SelectedValue);
+            _FrmPagoMan3.CodigoExpediente = _codigo;
+            _FrmPagoMan3.MdiParent = this.MdiParent;
+            _FrmPagoMan3.Show();
+        }
+
+
 
 
         //private void llenarComboMateria(int _CodigoMaterias)

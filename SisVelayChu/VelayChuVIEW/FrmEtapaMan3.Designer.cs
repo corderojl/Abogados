@@ -141,6 +141,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmEtapaMan3";
             this.Text = "FrmEtapaMan3";
+            this.Load += new System.EventHandler(this.FrmEtapaMan3_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

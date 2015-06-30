@@ -427,6 +427,7 @@
             this.ltbCliente.Name = "ltbCliente";
             this.ltbCliente.Size = new System.Drawing.Size(240, 95);
             this.ltbCliente.TabIndex = 0;
+            this.ltbCliente.DoubleClick += new System.EventHandler(this.ltbCliente_DoubleClick);
             // 
             // FrmExpedienteMan3
             // 

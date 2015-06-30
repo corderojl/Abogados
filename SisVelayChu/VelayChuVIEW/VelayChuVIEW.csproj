@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmPagoMan3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPagoMan3.Designer.cs">
+      <DependentUpon>FrmPagoMan3.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,12 @@
     <Compile Include="FrmInstitucionMan3.Designer.cs">
       <DependentUpon>FrmInstitucionMan3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPagoMan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPagoMan1.Designer.cs">
+      <DependentUpon>FrmPagoMan1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPensionMan1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +257,9 @@
     <Compile Include="FSLogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmPagoMan3.resx">
+      <DependentUpon>FrmPagoMan3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInstitucionMan3.resx">
       <DependentUpon>FrmInstitucionMan3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPagoMan1.resx">
+      <DependentUpon>FrmPagoMan1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPensionMan1.resx">
       <DependentUpon>FrmPensionMan1.cs</DependentUpon>

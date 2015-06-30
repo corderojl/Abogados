@@ -15,5 +15,10 @@ namespace VelayChuVIEW
         {
             InitializeComponent();
         }
+
+        private void FrmEtapaMan3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

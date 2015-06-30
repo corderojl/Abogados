@@ -61,6 +61,7 @@
     <Compile Include="JuzgadoADO.cs" />
     <Compile Include="ListarExpedienteADO.cs" />
     <Compile Include="MateriaADO.cs" />
+    <Compile Include="PagoADO.cs" />
     <Compile Include="PensionADO.cs" />
     <Compile Include="PerfilADO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace VelayChuVIEW
 {
-    public partial class FrmGradoMan3 : Form
+    public partial class FrmPagoMan1 : Form
     {
-        public FrmGradoMan3()
+        public FrmPagoMan1()
         {
             InitializeComponent();
-        }
-
-        private void FrmGradoMan3_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
