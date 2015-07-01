@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VelaychuBL;
+using VelaychuReportes;
 
 
 namespace VelayChuVIEW
@@ -14,6 +15,7 @@ namespace VelayChuVIEW
     public partial class FrmEtapaMan1 : Form
     {
         EtapaBL _EtapaBL = new EtapaBL();
+        VelaychuReportes.frmRPTCargos rptCargos = new VelaychuReportes.frmRPTCargos();
 
         public FrmEtapaMan1()
         {
@@ -68,7 +70,7 @@ namespace VelayChuVIEW
         {
             FrmEtapaMan2 fFrmEtapaMan2 = new FrmEtapaMan2();
             fFrmEtapaMan2.MdiParent = this.MdiParent;
-            fFrmEtapaMan2.Show();  
+            rptCargos.Show();  
         }
 
     }
