@@ -70,7 +70,9 @@ namespace VelayChuVIEW
         {
             FrmEtapaMan2 fFrmEtapaMan2 = new FrmEtapaMan2();
             fFrmEtapaMan2.MdiParent = this.MdiParent;
-            rptCargos.Show();  
+            rptCargos.ShowDialog();
+
+
         }
 
     }
