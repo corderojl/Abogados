@@ -68,6 +68,7 @@ namespace VelayChuVIEW
                 llenarGrillaContratos();
                 DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
                 btnEliminar.HeaderText = "";
+                btnEliminar.Width = 50;
                 btnEliminar.Name = "btnEliminar";
                 btnEliminar.Text = "Eliminar";
                 btnEliminar.UseColumnTextForButtonValue = true;
@@ -118,6 +119,10 @@ namespace VelayChuVIEW
         private void llenarGrillaContratos()
         {
             dtgContrato.DataSource = _ContratoBL.BuscarContratoByExpediente(_codigo);
+            dtgContrato.Columns["CodigoExpedienteContrato"].Visible = false;
+            dtgContrato.Columns[0].Width = 50;
+            //dtgContrato.Columns[2].Width = 50;
+            //dtgExpediente.Columns[8].Width = 200;
             dtgContrato.Refresh();
         }
 
