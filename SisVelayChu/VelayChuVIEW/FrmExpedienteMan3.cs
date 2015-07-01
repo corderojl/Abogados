@@ -111,7 +111,11 @@ namespace VelayChuVIEW
                 int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
                 res = _ExpedienteContratoBL.EliminarExpedienteContrato(_CodigoExpedienteContrato);
                 if (res)
+                {
                     llenarGrillaContratos();
+                    _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
+                    llenarGrillaDocumentos(_CodigoExpedienteContrato);
+                }
             }
 
         }
@@ -307,7 +311,7 @@ namespace VelayChuVIEW
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Debe seleccionar un espediente");
+                MessageBox.Show("Debe seleccionar un expediente");
             }
         }
 
@@ -322,7 +326,7 @@ namespace VelayChuVIEW
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Debe seleccionar un espediente");
+                MessageBox.Show("Debe seleccionar un expediente");
             }
         }
 
