@@ -129,11 +129,12 @@
             // 
             // btnReporte
             // 
-            this.btnReporte.Location = new System.Drawing.Point(463, 278);
+            this.btnReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReporte.Location = new System.Drawing.Point(463, 294);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(75, 23);
+            this.btnReporte.Size = new System.Drawing.Size(112, 23);
             this.btnReporte.TabIndex = 19;
-            this.btnReporte.Text = "button1";
+            this.btnReporte.Text = "Reporte";
             this.btnReporte.UseVisualStyleBackColor = true;
             this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
