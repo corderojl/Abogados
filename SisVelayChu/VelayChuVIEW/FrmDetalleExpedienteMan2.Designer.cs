@@ -45,7 +45,7 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaImpulso = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtDiasAlerta = new System.Windows.Forms.TextBox();
+            this.cboCliente = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +85,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dtpFecha, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.dtpFechaImpulso, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.txtDiasAlerta, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.cboCliente, 1, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -248,17 +248,17 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(180, 13);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Días de Alerta:";
+            this.label6.Text = "Cliente:";
             // 
-            // txtDiasAlerta
+            // cboCliente
             // 
-            this.txtDiasAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDiasAlerta.Location = new System.Drawing.Point(189, 282);
-            this.txtDiasAlerta.Name = "txtDiasAlerta";
-            this.txtDiasAlerta.Size = new System.Drawing.Size(150, 20);
-            this.txtDiasAlerta.TabIndex = 17;
-            this.txtDiasAlerta.Text = "0";
-            this.txtDiasAlerta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiasAlerta_KeyPress);
+            this.cboCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.cboCliente, 2);
+            this.cboCliente.FormattingEnabled = true;
+            this.cboCliente.Location = new System.Drawing.Point(189, 282);
+            this.cboCliente.Name = "cboCliente";
+            this.cboCliente.Size = new System.Drawing.Size(304, 21);
+            this.cboCliente.TabIndex = 17;
             // 
             // FrmDetalleExpedienteMan2
             // 
@@ -296,6 +296,6 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.DateTimePicker dtpFechaImpulso;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtDiasAlerta;
+        private System.Windows.Forms.ComboBox cboCliente;
     }
 }

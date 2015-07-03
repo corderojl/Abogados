@@ -17,6 +17,7 @@ namespace VelayChuVIEW
         EtapaBL _EtapaBL = new EtapaBL();
         UsuarioBL _UsuarioBL = new UsuarioBL();
         DetalleExpedienteBL _DetalleExpedienteBL = new DetalleExpedienteBL();
+        ClienteBL _ClienteBL = new ClienteBL();
 
         public FrmDetalleExpedienteMan2()
         {
@@ -57,13 +58,7 @@ namespace VelayChuVIEW
             cboEtapa.ValueMember = "CodigoEtapa";
         }
 
-        //private void LlenarComboEspecialistaImpulso()
-        //{
-        //    cboUsuarioImpulso.DataSource = _UsuarioBL.ListarUsuario_Act();
-        //    cboUsuarioImpulso.DisplayMember = "NombreCompleto";
-        //    cboUsuarioImpulso.ValueMember = "CodigoUsuario";
-        //}
-
+       
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             DetalleExpedienteBE _DetalleExpedienteBE = new DetalleExpedienteBE();
@@ -72,7 +67,7 @@ namespace VelayChuVIEW
             try
             {
                 var _mi_DetalleExpediente = _DetalleExpedienteBE;
-                //_miempl.Emp_id = "";
+                
                 _mi_DetalleExpediente.CodigoExpedienteContrato = _CodigoExpedienteContrato;
                 _mi_DetalleExpediente.CodigoEvento = Convert.ToInt32(cboEvento.SelectedValue);
                 _mi_DetalleExpediente.CodigoEtapa = Convert.ToInt32(cboEtapa.SelectedValue);
@@ -81,7 +76,7 @@ namespace VelayChuVIEW
                 _mi_DetalleExpediente.CodigoUsuario = Convert.ToInt32(cboUsuario.SelectedValue);
                 _mi_DetalleExpediente.FechaImpulso = dtpFechaImpulso.Value;
                 _mi_DetalleExpediente.CodigoUsuarioImpulso = 1;//Convert.ToInt32(cboUsuarioImpulso.SelectedValue);
-                _mi_DetalleExpediente.CodigoExpedienteCliente = Convert.ToInt32(txtDiasAlerta.Text);
+                _mi_DetalleExpediente.CodigoExpedienteCliente = Convert.ToInt32(cboCliente.SelectedValue);
                 _registro = _DetalleExpedienteBL.InsertarDetalleExpediente(_DetalleExpedienteBE);
                 if (_registro > -1)
                 {
@@ -114,6 +109,35 @@ namespace VelayChuVIEW
                 e.Handled = true;
                 return;
             }
+        }
+        private void llenarCombo()
+        {
+            cboCliente.DataSource = _ClienteBL.ListarClienteO_Act();
+            cboCliente.DisplayMember = "NombreCompleto";
+            cboCliente.ValueMember = "CodigoCliente";
+
+            //
+            // cargo la lista de items para el autocomplete
+            //
+            cboCliente.AutoCompleteCustomSource = LoadAutoComplete();
+            cboCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cboCliente.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
+       
+        public static AutoCompleteStringCollection LoadAutoComplete()
+        {
+            ClienteBL _ClienteBL = new ClienteBL();
+            DataTable dt = _ClienteBL.ListarCliente_All();
+
+            AutoCompleteStringCollection stringCol = new AutoCompleteStringCollection();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                stringCol.Add(Convert.ToString(row["NombreCompleto"]));
+            }
+
+            return stringCol;
         }
     }
 }

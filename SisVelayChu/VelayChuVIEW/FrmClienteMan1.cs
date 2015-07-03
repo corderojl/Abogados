@@ -35,7 +35,7 @@ namespace VelayChuVIEW
             FrmClienteMan2 fFrmClienteMan2 = new FrmClienteMan2();
             fFrmClienteMan2.MdiParent = this.MdiParent;
             fFrmClienteMan2.Show();
-            //FiltrarDatos();
+            FiltrarDatos();
         }
 
         private void txtCliente_TextChanged(object sender, EventArgs e)
