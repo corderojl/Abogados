@@ -34,6 +34,7 @@
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.txtPosicion = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtCliente, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtPosicion, 3, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -125,6 +127,13 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // txtPosicion
+            // 
+            this.txtPosicion.Location = new System.Drawing.Point(513, 460);
+            this.txtPosicion.Name = "txtPosicion";
+            this.txtPosicion.Size = new System.Drawing.Size(100, 20);
+            this.txtPosicion.TabIndex = 15;
+            // 
             // FrmClienteMan1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,5 +158,6 @@
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.TextBox txtPosicion;
     }
 }

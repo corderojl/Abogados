@@ -90,7 +90,6 @@ namespace VelaychuADO
                         oClienteBE.NumeroDocumento = drd.GetString(posNumeroDocumento);
                         oClienteBE.DirecccionCompleta = drd.GetString(posDirecccionCompleta);
                         oClienteBE.CodigoDepartamento = drd.GetString(posCodigoDepartamento);
-                       
                         oClienteBE.TelefonoFijo = drd.GetString(posTelefonoFijo);
                         oClienteBE.TelefonoCelular1 = drd.GetString(posTelefonoCelular1);
                         oClienteBE.TelefonoCelular2 = drd.GetString(posTelefonoCelular2);
@@ -147,6 +146,57 @@ namespace VelaychuADO
                 cmd.Parameters.Clear();
             }
             return dts.Tables["Sistemas"];
+        }
+        public List<TmpClienteBE> BuscarClienyeByNombresO(string _nombresCompletos)
+        {
+            string conexion = MiConexion.GetCnx();
+            List<TmpClienteBE> lTmpClienteBEBE = null;
+            SqlParameter par1;
+            try
+            {
+                SqlConnection con = new SqlConnection(conexion);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_ClienteBuscarByNombres", con);
+                par1 = cmd.Parameters.Add(new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 150));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@NombreCompleto"].Value = _nombresCompletos;
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader drd = cmd.ExecuteReader(CommandBehavior.SingleResult);
+                if (drd != null)
+                {
+                    lTmpClienteBEBE = new List<TmpClienteBE>();
+                    int posCodigoCliente = drd.GetOrdinal("CodigoCliente");
+                    int posNombreCompleto = drd.GetOrdinal("NombreCompleto");
+                    int posNombreAsociaccion = drd.GetOrdinal("NombreAsociaccion");
+                    int posDescripcionGrado = drd.GetOrdinal("DescripcionGrado");
+                    int posDescripcionInstitucion = drd.GetOrdinal("DescripcionInstitucion");
+                    int posDescripcionPension = drd.GetOrdinal("DescripcionPension");
+                   
+                    TmpClienteBE oClienteBE = null;
+                    while (drd.Read())
+                    {
+                        oClienteBE = new TmpClienteBE();
+                        oClienteBE.CodigoCliente = drd.GetInt32(posCodigoCliente);
+                        oClienteBE.NombreCompleto = drd.GetString(posNombreCompleto);
+                        oClienteBE.NombreAsociaccion = drd.GetString(posNombreAsociaccion);
+                        oClienteBE.DescripcionGrado = drd.GetString(posDescripcionGrado);
+                        oClienteBE.DescripcionInstitucion = drd.GetString(posDescripcionInstitucion);
+                        oClienteBE.DescripcionPension = drd.GetString(posDescripcionPension);
+                        lTmpClienteBEBE.Add(oClienteBE);
+                    }
+                    drd.Close();
+                    con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return (lTmpClienteBEBE);
         }
 
         public int InsertarCliente(ClienteBE _ClienteBE)

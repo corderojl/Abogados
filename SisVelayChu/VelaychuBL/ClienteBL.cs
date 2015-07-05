@@ -22,7 +22,7 @@ namespace VelaychuBL
             return _ClienteADO.ListCliente_All();
         }
 
-        public object BuscarClienteByNombres(string _nombres)
+        public DataTable BuscarClienteByNombres(string _nombres)
         {
             return _ClienteADO.BuscarClienyeByNombres(_nombres);
         }
@@ -52,6 +52,10 @@ namespace VelaychuBL
         public List<ClienteBE> BuscarClienteByExpediente(int _codigo)
         {
             return _ClienteADO.BuscarClienteByExpediente(_codigo);
+        }
+        public List<TmpClienteBE> BuscarClienteByNombresO(string _nombres)
+        {
+            return _ClienteADO.BuscarClienyeByNombresO(_nombres);
         }
     }
 }

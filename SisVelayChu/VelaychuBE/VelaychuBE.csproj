@@ -68,6 +68,7 @@
     <Compile Include="TipoClienteBE.cs" />
     <Compile Include="TipoDocumentoBE.cs" />
     <Compile Include="TmpAlertaBE.cs" />
+    <Compile Include="TmpClienteBE.cs" />
     <Compile Include="UsuarioBE.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

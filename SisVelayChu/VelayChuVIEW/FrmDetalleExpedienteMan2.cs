@@ -34,6 +34,7 @@ namespace VelayChuVIEW
             LlenarComboEvento();
             LlenarComboEtapa();
             LlenarComboEspecialista();
+            llenarComboCliente();
             //LlenarComboEspecialistaImpulso();
         }
 
@@ -110,7 +111,7 @@ namespace VelayChuVIEW
                 return;
             }
         }
-        private void llenarCombo()
+        private void llenarComboCliente()
         {
             cboCliente.DataSource = _ClienteBL.ListarClienteO_Act();
             cboCliente.DisplayMember = "NombreCompleto";
