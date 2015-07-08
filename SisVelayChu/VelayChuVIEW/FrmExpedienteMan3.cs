@@ -51,7 +51,7 @@ namespace VelayChuVIEW
             try
             {
                 _ExpedientesBE = _ExpedienteBL.TraerExpediente(_codigo);
-                ltClienteBE = _ClienteBL.BuscarClienteByExpediente(_codigo);
+                ltClienteBE = _ClienteBL.BuscarClienteByExpedienteO(_codigo);
 
                 btnActualizar.Enabled = true;
                 btnCancelar.Enabled = false;
@@ -317,6 +317,7 @@ namespace VelayChuVIEW
             {
                 FrmDetalleExpedienteMan2 _FrmDetalleExpedienteMan2 = new FrmDetalleExpedienteMan2();
                 _FrmDetalleExpedienteMan2.CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
+                _FrmDetalleExpedienteMan2.CodigoExpediente = _codigo;
                 _FrmDetalleExpedienteMan2.MdiParent = this.MdiParent;
                 _FrmDetalleExpedienteMan2.Show();
                 llenarGrillaDetalles(Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value));
@@ -333,6 +334,7 @@ namespace VelayChuVIEW
             {
                 FrmDetalleExpedienteMan3 _FrmDetalleExpedienteMan3 = new FrmDetalleExpedienteMan3();
                 _FrmDetalleExpedienteMan3.CodigoDetalleExpediente = Convert.ToInt32(dtgDetalle.CurrentRow.Cells[0].Value);
+                _FrmDetalleExpedienteMan3.CodigoExpediente = _codigo;
                 _FrmDetalleExpedienteMan3.MdiParent = this.MdiParent;
                 _FrmDetalleExpedienteMan3.Show();
             }

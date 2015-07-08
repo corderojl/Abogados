@@ -399,8 +399,40 @@ namespace VelaychuADO
             }
             return _ClienteBE;
         }
+        public DataTable BuscarClienteByExpediente(int _CodigoExpediente)
+        {
+            DataSet dts = new DataSet();
+            SqlParameter par1;
+            try
+            {
+                cnx.ConnectionString = MiConexion.GetCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "uspBuscarClienteByExpediente";
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpediente", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoExpediente"].Value = _CodigoExpediente;
 
-        public List<ClienteBE> BuscarClienteByExpediente(int _CodigoExpediente)
+                SqlDataAdapter miada = default(SqlDataAdapter);
+                miada = new SqlDataAdapter(cmd);
+                miada.Fill(dts, "Sistemas");
+                dtv = dts.Tables["Sistemas"].DefaultView;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+            return dts.Tables["Sistemas"];
+        }
+        public List<ClienteBE> BuscarClienteByExpedienteO(int _CodigoExpediente)
         {
             string conexion = MiConexion.GetCnx();
             List<ClienteBE> lClienteBE = null;

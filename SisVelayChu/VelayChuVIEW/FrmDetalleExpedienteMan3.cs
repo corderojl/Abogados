@@ -18,6 +18,8 @@ namespace VelayChuVIEW
         UsuarioBL _UsuarioBL = new UsuarioBL();
         DetalleExpedienteBL _DetalleExpedienteBL = new DetalleExpedienteBL();
         DetalleExpedienteBE _DetalleExpedienteBE = new DetalleExpedienteBE();
+        ClienteBL _ClienteBL = new ClienteBL();
+
         public FrmDetalleExpedienteMan3()
         {
             InitializeComponent();
@@ -28,7 +30,13 @@ namespace VelayChuVIEW
             get { return _CodigoDetalleExpediente; }
             set { _CodigoDetalleExpediente = value; }
         }
-
+        
+        private int _CodigoExpediente;
+        public int CodigoExpediente
+        {
+            get { return _CodigoExpediente; }
+            set { _CodigoExpediente = value; }
+        }
         private void FrmDetalleExpedienteMan3_Load(object sender, EventArgs e)
         {
            
@@ -44,7 +52,7 @@ namespace VelayChuVIEW
                 txtEstado.Text = _DetalleExpedienteBE.Estado;
                 dtpFecha.Value = _DetalleExpedienteBE.Fecha;
                 dtpFechaImpulso.Value = _DetalleExpedienteBE.FechaImpulso;
-                txtDiasAlerta.Text = _DetalleExpedienteBE.CodigoExpedienteCliente.ToString();
+                LlenarComboCliente(_DetalleExpedienteBE.CodigoExpedienteCliente);
 
             }
             catch (Exception ex)
@@ -53,6 +61,37 @@ namespace VelayChuVIEW
             }
 
 
+        }
+
+        private void LlenarComboCliente(int _CodigoExpedienteCliente)
+        {
+            cboCliente.DataSource = _ClienteBL.BuscarClienteByExpediente(CodigoExpediente); ;
+            cboCliente.DisplayMember = "NombreCompleto";
+            cboCliente.ValueMember = "CodigoExpedienteCliente";
+            //cboCliente.Items.Insert(0,"Todos");
+            cboCliente.SelectedValue = _CodigoExpedienteCliente;
+            //
+            // cargo la lista de items para el autocomplete
+            //
+            cboCliente.AutoCompleteCustomSource = LoadAutoComplete();
+            cboCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cboCliente.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
+
+        public static AutoCompleteStringCollection LoadAutoComplete()
+        {
+            ClienteBL _ClienteBL = new ClienteBL();
+            DataTable dt = _ClienteBL.ListarCliente_All();
+
+            AutoCompleteStringCollection stringCol = new AutoCompleteStringCollection();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                stringCol.Add(Convert.ToString(row["NombreCompleto"]));
+            }
+
+            return stringCol;
         }
 
         private void LlenarComboEvento(int _CodigoEvento)
@@ -102,7 +141,7 @@ namespace VelayChuVIEW
                 _mi_DetalleExpediente.CodigoUsuario = Convert.ToInt32(cboUsuario.SelectedValue);
                 _mi_DetalleExpediente.FechaImpulso = dtpFechaImpulso.Value;
                 _mi_DetalleExpediente.CodigoUsuarioImpulso = 1;// Convert.ToInt32(cboUsuarioImpulso.SelectedValue);
-                _mi_DetalleExpediente.CodigoExpedienteCliente = Convert.ToInt32(txtDiasAlerta.Text);
+                _mi_DetalleExpediente.CodigoExpedienteCliente = Convert.ToInt32(cboCliente.SelectedValue.ToString());
                 if (_DetalleExpedienteBL.ActualizarDetalleExpediente(_DetalleExpedienteBE))
                 {
                     MessageBox.Show("El Detalle se actualizó con exito");

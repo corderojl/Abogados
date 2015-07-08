@@ -46,8 +46,8 @@
             this.dtpFechaImpulso = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.lblCodigoContrato = new System.Windows.Forms.Label();
-            this.txtDiasAlerta = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.cboCliente = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +89,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblCodigoContrato, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.txtDiasAlerta, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.cboCliente, 1, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -267,14 +267,6 @@
             this.lblCodigoContrato.TabIndex = 17;
             this.lblCodigoContrato.Text = "0";
             // 
-            // txtDiasAlerta
-            // 
-            this.txtDiasAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDiasAlerta.Location = new System.Drawing.Point(195, 282);
-            this.txtDiasAlerta.Name = "txtDiasAlerta";
-            this.txtDiasAlerta.Size = new System.Drawing.Size(155, 20);
-            this.txtDiasAlerta.TabIndex = 18;
-            // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -284,6 +276,16 @@
             this.label9.Size = new System.Drawing.Size(186, 13);
             this.label9.TabIndex = 19;
             this.label9.Text = "Días de Alerta:";
+            // 
+            // cboCliente
+            // 
+            this.cboCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.cboCliente, 2);
+            this.cboCliente.FormattingEnabled = true;
+            this.cboCliente.Location = new System.Drawing.Point(195, 282);
+            this.cboCliente.Name = "cboCliente";
+            this.cboCliente.Size = new System.Drawing.Size(313, 21);
+            this.cboCliente.TabIndex = 20;
             // 
             // FrmDetalleExpedienteMan3
             // 
@@ -322,8 +324,8 @@
         private System.Windows.Forms.DateTimePicker dtpFechaImpulso;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblCodigoContrato;
-        private System.Windows.Forms.TextBox txtDiasAlerta;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboCliente;
 
     }
 }

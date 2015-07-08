@@ -24,10 +24,16 @@ namespace VelayChuVIEW
             InitializeComponent();
         }
         private int _CodigoExpedienteContrato;
+        private int _CodigoExpediente;
         public int CodigoExpedienteContrato
         {
             get { return _CodigoExpedienteContrato; }
             set { _CodigoExpedienteContrato = value; }
+        }
+        public int CodigoExpediente
+        {
+            get { return _CodigoExpediente; }
+            set { _CodigoExpediente = value; }
         }
         private void FrmDetalleExpedienteMan2_Load(object sender, EventArgs e)
         {
@@ -113,10 +119,9 @@ namespace VelayChuVIEW
         }
         private void llenarComboCliente()
         {
-            cboCliente.DataSource = _ClienteBL.ListarClienteO_Act();
+            cboCliente.DataSource = _ClienteBL.BuscarClienteByExpediente(CodigoExpediente); 
             cboCliente.DisplayMember = "NombreCompleto";
-            cboCliente.ValueMember = "CodigoCliente";
-
+            cboCliente.ValueMember = "CodigoExpedienteCliente";
             //
             // cargo la lista de items para el autocomplete
             //
