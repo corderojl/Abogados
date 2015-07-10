@@ -107,12 +107,14 @@ namespace VelayChuVIEW
                                          MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                // MessageBox.Show(dtgContrato.CurrentRow.Cells[2].Value.ToString());
+                
                 int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
                 res = _ExpedienteContratoBL.EliminarExpedienteContrato(_CodigoExpedienteContrato);
                 if (res)
                 {
                     llenarGrillaContratos();
+                    // Validar cuando se elimina un contrato..., deberia eliminarse todo lo relacionado a el
+                    // Etapas, Documentos asociados al contrato, etc
                     _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
                     llenarGrillaDocumentos(_CodigoExpedienteContrato);
                 }
