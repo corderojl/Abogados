@@ -56,6 +56,7 @@
             this.btnAgregarContrato = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ltbCliente = new System.Windows.Forms.ListBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.gpbCliente.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContrato)).BeginInit();
@@ -296,6 +297,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.gpbCliente, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 7, 11);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -429,6 +431,17 @@
             this.ltbCliente.TabIndex = 0;
             this.ltbCliente.DoubleClick += new System.EventHandler(this.ltbCliente_DoubleClick);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEliminar.Location = new System.Drawing.Point(885, 443);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(120, 34);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FrmExpedienteMan3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,5 +497,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox ltbCliente;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

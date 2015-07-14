@@ -53,6 +53,7 @@ namespace VelayChuVIEW
                 _ExpedientesBE = _ExpedienteBL.TraerExpediente(_codigo);
                 ltClienteBE = _ClienteBL.BuscarClienteByExpedienteO(_codigo);
 
+                ltClienteBE.RemoveAll(ClienteBE => ClienteBE.CodigoCliente == 0);
                 btnActualizar.Enabled = true;
                 btnCancelar.Enabled = false;
                 btnGuardar.Enabled = false;
@@ -96,6 +97,8 @@ namespace VelayChuVIEW
 
         private void dtgContrato_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
             if (e.RowIndex < 0 || e.ColumnIndex !=
                 dtgContrato.Columns["btnEliminar"].Index) return;
 
@@ -112,12 +115,20 @@ namespace VelayChuVIEW
                 res = _ExpedienteContratoBL.EliminarExpedienteContrato(_CodigoExpedienteContrato);
                 if (res)
                 {
+                        dtgDocumento.DataSource = null;
+                        dtgDocumento.Refresh();
+                        dtgDetalle.DataSource = null;
+                        dtgDetalle.Refresh();
                     llenarGrillaContratos();
                     // Validar cuando se elimina un contrato..., deberia eliminarse todo lo relacionado a el
                     // Etapas, Documentos asociados al contrato, etc
                     _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
                     llenarGrillaDocumentos(_CodigoExpedienteContrato);
                 }
+            }
+            }
+            catch (Exception ex)
+            {
             }
 
         }
@@ -194,7 +205,7 @@ namespace VelayChuVIEW
                 dtgDocumento.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 dtgDocumento.Refresh();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
             }
         }
@@ -285,6 +296,8 @@ namespace VelayChuVIEW
 
         private void dtgDocumento_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
             int _CodigoDocumentoCliente = Convert.ToInt32(dtgDocumento.CurrentRow.Cells[0].Value);
             bool _Presento = Convert.ToBoolean(dtgDocumento.CurrentRow.Cells[2].Value);
             if (_DocumentoClienteBL.CambiarDocumentoCliente(_CodigoDocumentoCliente, _Presento))
@@ -296,6 +309,11 @@ namespace VelayChuVIEW
             }
             else
                 MessageBox.Show("No se puede cambiar el estado");
+        }
+            catch (Exception ex)
+            {
+
+            }
         }
 
 
@@ -360,8 +378,8 @@ namespace VelayChuVIEW
                 llenarGrillaDocumentos(_CodigoExpedienteContrato);
                 dtgDetalle.ClearSelection();
             }
-            catch(Exception ex)
-            {}
+            catch (Exception ex)
+            { }
         }
 
         private void ltbCliente_DoubleClick(object sender, EventArgs e)
@@ -376,6 +394,38 @@ namespace VelayChuVIEW
             _FrmPagoMan3.CodigoExpediente = _codigo;
             _FrmPagoMan3.MdiParent = this.MdiParent;
             _FrmPagoMan3.Show();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool res;
+                const string message = "¿Desea Eliminar el Detalle?";
+                const string caption = "Eliminar Detalle";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    int _CodigoDetalle = Convert.ToInt32(dtgDetalle.CurrentRow.Cells[0].Value);
+                    MessageBox.Show("El codigo: " + _CodigoDetalle);
+                    res = _DetalleExpedienteBL.EliminarDetalleExpediente(_CodigoDetalle);
+                    if (res)
+                    {
+                        dtgDocumento.DataSource = null;
+                        dtgDocumento.Refresh();
+                        dtgDetalle.DataSource = null;
+                        dtgDetalle.Refresh();
+                        llenarGrillaContratos();
+                        _CodigoDetalle = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
+                        llenarGrillaDocumentos(_CodigoDetalle);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
 
