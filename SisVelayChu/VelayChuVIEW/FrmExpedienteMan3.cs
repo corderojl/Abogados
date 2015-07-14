@@ -319,11 +319,16 @@ namespace VelayChuVIEW
 
         private void btnAgregarContrato_Click(object sender, EventArgs e)
         {
-            ExpedienteContratoBE _ExpedienteContratoBE = new ExpedienteContratoBE();
-            _ExpedienteContratoBE.CodigoContrato = int.Parse(cboContrato.SelectedValue.ToString());
-            _ExpedienteContratoBE.CodigoExpediente = _codigo;
-            _ExpedienteContratoBL.InsertarExpedienteContrato(_ExpedienteContratoBE);
-            llenarGrillaContratos();
+            if (cboContrato.SelectedValue.ToString() != "1")
+            {
+                ExpedienteContratoBE _ExpedienteContratoBE = new ExpedienteContratoBE();
+                _ExpedienteContratoBE.CodigoContrato = int.Parse(cboContrato.SelectedValue.ToString());
+                _ExpedienteContratoBE.CodigoExpediente = _codigo;
+                _ExpedienteContratoBL.InsertarExpedienteContrato(_ExpedienteContratoBE);
+                llenarGrillaContratos();
+            }
+            else
+                MessageBox.Show("Seleccione un Contrato");
         }
 
         private void dtgDetalle_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
