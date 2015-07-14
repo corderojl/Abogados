@@ -99,33 +99,33 @@ namespace VelayChuVIEW
         {
             try
             {
-            if (e.RowIndex < 0 || e.ColumnIndex !=
-                dtgContrato.Columns["btnEliminar"].Index) return;
+                if (e.RowIndex < 0 || e.ColumnIndex !=
+                    dtgContrato.Columns["btnEliminar"].Index) return;
 
-            bool res;
-            const string message = "¿Desea Eliminar el Contrato?";
-            const string caption = "Eliminar Contrato";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                
-                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
-                res = _ExpedienteContratoBL.EliminarExpedienteContrato(_CodigoExpedienteContrato);
-                if (res)
+                bool res;
+                const string message = "¿Desea Eliminar el Contrato?";
+                const string caption = "Eliminar Contrato";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
+
+                    int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
+                    res = _ExpedienteContratoBL.EliminarExpedienteContrato(_CodigoExpedienteContrato);
+                    if (res)
+                    {
                         dtgDocumento.DataSource = null;
                         dtgDocumento.Refresh();
                         dtgDetalle.DataSource = null;
                         dtgDetalle.Refresh();
-                    llenarGrillaContratos();
-                    // Validar cuando se elimina un contrato..., deberia eliminarse todo lo relacionado a el
-                    // Etapas, Documentos asociados al contrato, etc
-                    _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
-                    llenarGrillaDocumentos(_CodigoExpedienteContrato);
+                        llenarGrillaContratos();
+                        // Validar cuando se elimina un contrato..., deberia eliminarse todo lo relacionado a el
+                        // Etapas, Documentos asociados al contrato, etc
+                        _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
+                        llenarGrillaDocumentos(_CodigoExpedienteContrato);
+                    }
                 }
-            }
             }
             catch (Exception ex)
             {
@@ -298,18 +298,18 @@ namespace VelayChuVIEW
         {
             try
             {
-            int _CodigoDocumentoCliente = Convert.ToInt32(dtgDocumento.CurrentRow.Cells[0].Value);
-            bool _Presento = Convert.ToBoolean(dtgDocumento.CurrentRow.Cells[2].Value);
-            if (_DocumentoClienteBL.CambiarDocumentoCliente(_CodigoDocumentoCliente, _Presento))
-            {
-                int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
+                int _CodigoDocumentoCliente = Convert.ToInt32(dtgDocumento.CurrentRow.Cells[0].Value);
+                bool _Presento = Convert.ToBoolean(dtgDocumento.CurrentRow.Cells[2].Value);
+                if (_DocumentoClienteBL.CambiarDocumentoCliente(_CodigoDocumentoCliente, _Presento))
+                {
+                    int _CodigoExpedienteContrato = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
 
-                llenarGrillaDocumentos(_CodigoExpedienteContrato);
-                dtgDocumento.Refresh();
+                    llenarGrillaDocumentos(_CodigoExpedienteContrato);
+                    dtgDocumento.Refresh();
+                }
+                else
+                    MessageBox.Show("No se puede cambiar el estado");
             }
-            else
-                MessageBox.Show("No se puede cambiar el estado");
-        }
             catch (Exception ex)
             {
 
