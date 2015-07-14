@@ -122,19 +122,20 @@ namespace VelayChuVIEW
             cboCliente.DataSource = _ClienteBL.BuscarClienteByExpediente(CodigoExpediente); 
             cboCliente.DisplayMember = "NombreCompleto";
             cboCliente.ValueMember = "CodigoExpedienteCliente";
+
             //
             // cargo la lista de items para el autocomplete
             //
-            cboCliente.AutoCompleteCustomSource = LoadAutoComplete();
+            cboCliente.AutoCompleteCustomSource = LoadAutoComplete(CodigoExpediente);
             cboCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
             cboCliente.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
-       
-        public static AutoCompleteStringCollection LoadAutoComplete()
+
+        public static AutoCompleteStringCollection LoadAutoComplete(int CodigoExpediente)
         {
             ClienteBL _ClienteBL = new ClienteBL();
-            DataTable dt = _ClienteBL.ListarCliente_All();
+            DataTable dt = _ClienteBL.BuscarClienteByExpediente(CodigoExpediente);
 
             AutoCompleteStringCollection stringCol = new AutoCompleteStringCollection();
 
