@@ -288,5 +288,38 @@ namespace VelaychuADO
             return vexito;
 
         }
+
+        public bool EliminarDetalleExpediente(int _CodigoDetalle)
+        {
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspUsuarioStatus";
+
+            try
+            {
+                cmd.Parameters.Add(new SqlParameter("@CodigoExpedienteContrato", SqlDbType.Int));
+                cmd.Parameters["@CodigoExpedienteContrato"].Value = _CodigoDetalle;
+                
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                vexito = true;
+
+            }
+            catch (SqlException x)
+            {
+                vexito = false;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+
+            return vexito;
+        }
     }
 }

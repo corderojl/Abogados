@@ -36,5 +36,10 @@ namespace VelaychuBL
         {
             return _DetalleExpedienteADO.ActualizarDetalleExpediente(_DetalleExpedienteBE);
         }
+
+        public bool EliminarDetalleExpediente(int _CodigoDetalle)
+        {
+            return _DetalleExpedienteADO.EliminarDetalleExpediente(_CodigoDetalle);
+        }
     }
 }
