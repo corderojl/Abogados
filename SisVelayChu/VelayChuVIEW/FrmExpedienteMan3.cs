@@ -408,24 +408,30 @@ namespace VelayChuVIEW
                 bool res;
                 const string message = "¿Desea Eliminar el Detalle?";
                 const string caption = "Eliminar Detalle";
-                var result = MessageBox.Show(message, caption,
-                                             MessageBoxButtons.YesNo,
-                                             MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (dtgDetalle.CurrentRow.Cells[0].Value != null)
                 {
-                    int _CodigoDetalle = Convert.ToInt32(dtgDetalle.CurrentRow.Cells[0].Value);
-                    MessageBox.Show("El codigo: " + _CodigoDetalle);
-                    res = _DetalleExpedienteBL.EliminarDetalleExpediente(_CodigoDetalle);
-                    if (res)
+                    var result = MessageBox.Show(message, caption,
+                                                 MessageBoxButtons.YesNo,
+                                                 MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
                     {
-                        dtgDocumento.DataSource = null;
-                        dtgDocumento.Refresh();
-                        dtgDetalle.DataSource = null;
-                        dtgDetalle.Refresh();
-                        llenarGrillaContratos();
-                        _CodigoDetalle = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
-                        llenarGrillaDocumentos(_CodigoDetalle);
+                        int _CodigoDetalle = Convert.ToInt32(dtgDetalle.CurrentRow.Cells[0].Value);
+                        
+                        res = _DetalleExpedienteBL.EliminarDetalleExpediente(_CodigoDetalle);
+                        if (res)
+                        {
+                            dtgDocumento.DataSource = null;
+                            dtgDocumento.Refresh();
+                            dtgDetalle.DataSource = null;
+                            dtgDetalle.Refresh();
+                            llenarGrillaContratos();
+                            _CodigoDetalle = Convert.ToInt32(dtgContrato.CurrentRow.Cells[2].Value);
+                            llenarGrillaDocumentos(_CodigoDetalle);
+                        }
                     }
+                    else
+                        MessageBox.Show("Debe seleccionar un detalle");
+
                 }
             }
             catch (Exception ex)

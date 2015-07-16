@@ -294,7 +294,7 @@ namespace VelaychuADO
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "uspUsuarioStatus";
+            cmd.CommandText = "uspEliminarDetalleExpediente";
 
             try
             {
