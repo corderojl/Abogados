@@ -22,11 +22,15 @@ namespace VelayChuVIEW
         SalaBL _SalaBL = new SalaBL();
         JuzgadoBL _JuzgadoBL = new JuzgadoBL();
         EspecialistaBL _EspecialistaBL = new EspecialistaBL();
-        List<ClienteBE> ltClienteBE;
+        ExpedienteBL _ExpedienteBL = new ExpedienteBL();
+        ExpedientesBE _ExpedientesBE = new ExpedientesBE();
+        ExpedienteClienteBL _ExpedienteClienteBL = new ExpedienteClienteBL();
+
+        List<ExpedienteClienteBE> ltExpedienteClienteBE;
 
         public FrmExpedienteMan2()
         {
-            InitializeComponent();  
+            InitializeComponent();
         }
 
         private void FrmExpedienteMan2_Load(object sender, EventArgs e)
@@ -93,7 +97,7 @@ namespace VelayChuVIEW
 
         public static AutoCompleteStringCollection LoadAutoComplete()
         {
-            ClienteBL _ClienteBL=new ClienteBL();
+            ClienteBL _ClienteBL = new ClienteBL();
             DataTable dt = _ClienteBL.ListarCliente_All();
 
             AutoCompleteStringCollection stringCol = new AutoCompleteStringCollection();
@@ -148,7 +152,25 @@ namespace VelayChuVIEW
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            ltExpedienteClienteBE = new List<ExpedienteClienteBE>();
+            ExpedienteClienteBE _ExpedienteClienteBE = new ExpedienteClienteBE();
+            int _CodigoContrato;
+            _ExpedientesBE.NumeroExpediente = txtNumeroExpediente.Text;
+            _ExpedientesBE.CodigoJuzgado = Convert.ToInt32(cboJuzgado.SelectedValue.ToString());
+            _ExpedientesBE.CodigoSala = Convert.ToInt32(cboSala.SelectedValue.ToString());
+            _ExpedientesBE.CodigoEspecialista = Convert.ToInt32(cboEspecialista.SelectedValue.ToString());
+            _ExpedientesBE.FechaRegistro = dtpFecha.Value;
+            _CodigoContrato = _ExpedienteBL.InsertarExpedientes(_ExpedientesBE);
 
+            foreach (DataGridViewRow row in dtgCliente.Rows)
+            {
+                _ExpedienteClienteBE.CodigoCliente = Convert.ToInt32(row.Cells[0].Value);
+                _ExpedienteClienteBE.CodigoExpediente = 1;
+                _ExpedienteClienteBE.CodigoAsociacion = Convert.ToInt32(row.Cells[2].Value);
+                _ExpedienteClienteBE.CodigoExpedienteCliente = _CodigoContrato;
+                ltExpedienteClienteBE.Add(_ExpedienteClienteBE);
+            }
+            _ExpedienteClienteBL.InsertarExpedienteClientes(ltExpedienteClienteBE);
         }
 
     }

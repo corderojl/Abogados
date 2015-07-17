@@ -88,5 +88,12 @@ namespace VelayChuVIEW
                 //MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void btnNuevoExpediente_Click(object sender, EventArgs e)
+        {
+            FrmExpedienteMan2 fFrmClienteMan2 = new FrmExpedienteMan2();
+            fFrmClienteMan2.MdiParent = this.MdiParent;
+            fFrmClienteMan2.Show();
+        }
     }
 }
