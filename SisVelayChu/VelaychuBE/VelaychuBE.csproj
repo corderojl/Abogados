@@ -52,6 +52,7 @@
     <Compile Include="EstadosImpulsosBE.cs" />
     <Compile Include="EtapaBE.cs" />
     <Compile Include="EventoBE.cs" />
+    <Compile Include="ExpedienteClienteBE.cs" />
     <Compile Include="ExpedienteContratoBE.cs" />
     <Compile Include="ExpedientesBE.cs" />
     <Compile Include="GradoBE.cs" />

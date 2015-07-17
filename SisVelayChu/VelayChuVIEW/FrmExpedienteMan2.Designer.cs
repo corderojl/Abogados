@@ -29,56 +29,150 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNumeroExpediente = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboEspecialista = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cboClientes = new System.Windows.Forms.ComboBox();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.lstInformacionCliente = new System.Windows.Forms.ListBox();
-            this.cboContratos = new System.Windows.Forms.ComboBox();
-            this.btnAgregarContrato = new System.Windows.Forms.Button();
-            this.dtgContrato = new System.Windows.Forms.DataGridView();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.cboAsociacion = new System.Windows.Forms.ComboBox();
+            this.cboJuzgado = new System.Windows.Forms.ComboBox();
+            this.cboSala = new System.Windows.Forms.ComboBox();
+            this.dtgCliente = new System.Windows.Forms.DataGridView();
+            this.CodigoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoAsociacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreAsociacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnQuitarCliente = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgContrato)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.07692F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.07692F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.07692F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cboClientes, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnBuscarCliente, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lstInformacionCliente, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cboContratos, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnAgregarContrato, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.dtgContrato, 1, 5);
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.16726F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.52313F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.55753F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.72598F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.50652F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.67497F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.8446F));
+            this.tableLayoutPanel1.Controls.Add(this.label4, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtNumeroExpediente, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dtpFecha, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cboEspecialista, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cboClientes, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnAgregar, 6, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cboAsociacion, 5, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cboJuzgado, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dtgCliente, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 5, 6);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 6, 6);
+            this.tableLayoutPanel1.Controls.Add(this.cboSala, 5, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.489576F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50899F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.14306F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.14306F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.14306F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.14306F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.14306F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.14306F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.14306F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(524, 465);
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.40517F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.40517F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.18966F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(844, 465);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(458, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 13);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Juzgado:";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Nº de Expediente:";
+            // 
+            // txtNumeroExpediente
+            // 
+            this.txtNumeroExpediente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNumeroExpediente.Location = new System.Drawing.Point(114, 10);
+            this.txtNumeroExpediente.Name = "txtNumeroExpediente";
+            this.txtNumeroExpediente.Size = new System.Drawing.Size(108, 20);
+            this.txtNumeroExpediente.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(228, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Nº Fecha:";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(317, 10);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(135, 20);
+            this.dtpFecha.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Especialista:";
+            // 
+            // cboEspecialista
+            // 
+            this.cboEspecialista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.cboEspecialista, 3);
+            this.cboEspecialista.FormattingEnabled = true;
+            this.cboEspecialista.Location = new System.Drawing.Point(114, 49);
+            this.cboEspecialista.Name = "cboEspecialista";
+            this.cboEspecialista.Size = new System.Drawing.Size(338, 21);
+            this.cboEspecialista.TabIndex = 8;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(13, 9);
+            this.label2.Location = new System.Drawing.Point(3, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 26);
+            this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre del Cliente";
             // 
@@ -87,80 +181,167 @@
             this.cboClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.cboClientes, 3);
             this.cboClientes.FormattingEnabled = true;
-            this.cboClientes.Location = new System.Drawing.Point(83, 11);
+            this.cboClientes.Location = new System.Drawing.Point(114, 89);
             this.cboClientes.Name = "cboClientes";
-            this.cboClientes.Size = new System.Drawing.Size(354, 21);
+            this.cboClientes.Size = new System.Drawing.Size(338, 21);
             this.cboClientes.TabIndex = 5;
             // 
-            // btnBuscarCliente
+            // btnAgregar
             // 
-            this.btnBuscarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscarCliente.Location = new System.Drawing.Point(443, 7);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(78, 29);
-            this.btnBuscarCliente.TabIndex = 6;
-            this.btnBuscarCliente.Text = "Buscar";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.Location = new System.Drawing.Point(704, 88);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(137, 23);
+            this.btnAgregar.TabIndex = 17;
+            this.btnAgregar.Text = "&Agregar Cliente";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // lstInformacionCliente
+            // cboAsociacion
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.lstInformacionCliente, 3);
-            this.lstInformacionCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstInformacionCliente.Enabled = false;
-            this.lstInformacionCliente.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstInformacionCliente.FormattingEnabled = true;
-            this.lstInformacionCliente.ItemHeight = 14;
-            this.lstInformacionCliente.Location = new System.Drawing.Point(83, 47);
-            this.lstInformacionCliente.Name = "lstInformacionCliente";
-            this.tableLayoutPanel1.SetRowSpan(this.lstInformacionCliente, 3);
-            this.lstInformacionCliente.Size = new System.Drawing.Size(354, 154);
-            this.lstInformacionCliente.TabIndex = 7;
+            this.cboAsociacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboAsociacion.FormattingEnabled = true;
+            this.cboAsociacion.Location = new System.Drawing.Point(555, 89);
+            this.cboAsociacion.Name = "cboAsociacion";
+            this.cboAsociacion.Size = new System.Drawing.Size(143, 21);
+            this.cboAsociacion.TabIndex = 26;
             // 
-            // cboContratos
+            // cboJuzgado
             // 
-            this.cboContratos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.cboContratos, 2);
-            this.cboContratos.FormattingEnabled = true;
-            this.cboContratos.Location = new System.Drawing.Point(83, 219);
-            this.cboContratos.Name = "cboContratos";
-            this.cboContratos.Size = new System.Drawing.Size(234, 21);
-            this.cboContratos.TabIndex = 8;
+            this.cboJuzgado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboJuzgado.FormattingEnabled = true;
+            this.cboJuzgado.Location = new System.Drawing.Point(555, 9);
+            this.cboJuzgado.Name = "cboJuzgado";
+            this.cboJuzgado.Size = new System.Drawing.Size(143, 21);
+            this.cboJuzgado.TabIndex = 27;
             // 
-            // btnAgregarContrato
+            // cboSala
             // 
-            this.btnAgregarContrato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarContrato.Location = new System.Drawing.Point(323, 218);
-            this.btnAgregarContrato.Name = "btnAgregarContrato";
-            this.btnAgregarContrato.Size = new System.Drawing.Size(114, 23);
-            this.btnAgregarContrato.TabIndex = 9;
-            this.btnAgregarContrato.Text = "Agregar Contrato";
-            this.btnAgregarContrato.UseVisualStyleBackColor = true;
-            this.btnAgregarContrato.Click += new System.EventHandler(this.btnAgregarContrato_Click);
+            this.cboSala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboSala.FormattingEnabled = true;
+            this.cboSala.Location = new System.Drawing.Point(555, 49);
+            this.cboSala.Name = "cboSala";
+            this.cboSala.Size = new System.Drawing.Size(143, 21);
+            this.cboSala.TabIndex = 28;
             // 
-            // dtgContrato
+            // dtgCliente
             // 
-            this.dtgContrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.dtgContrato, 3);
-            this.dtgContrato.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgContrato.Location = new System.Drawing.Point(83, 258);
-            this.dtgContrato.Name = "dtgContrato";
-            this.tableLayoutPanel1.SetRowSpan(this.dtgContrato, 3);
-            this.dtgContrato.Size = new System.Drawing.Size(354, 147);
-            this.dtgContrato.TabIndex = 10;
+            this.dtgCliente.AllowUserToAddRows = false;
+            this.dtgCliente.AllowUserToDeleteRows = false;
+            this.dtgCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodigoCliente,
+            this.NombreCompleto,
+            this.CodigoAsociacion,
+            this.NombreAsociacion,
+            this.btnQuitarCliente});
+            this.tableLayoutPanel1.SetColumnSpan(this.dtgCliente, 7);
+            this.dtgCliente.Location = new System.Drawing.Point(3, 123);
+            this.dtgCliente.Name = "dtgCliente";
+            this.dtgCliente.ReadOnly = true;
+            this.dtgCliente.RowHeadersVisible = false;
+            this.tableLayoutPanel1.SetRowSpan(this.dtgCliente, 3);
+            this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgCliente.Size = new System.Drawing.Size(838, 297);
+            this.dtgCliente.TabIndex = 18;
+            this.dtgCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellContentClick);
+            // 
+            // CodigoCliente
+            // 
+            this.CodigoCliente.FillWeight = 58.03977F;
+            this.CodigoCliente.HeaderText = "Codigo";
+            this.CodigoCliente.Name = "CodigoCliente";
+            this.CodigoCliente.ReadOnly = true;
+            // 
+            // NombreCompleto
+            // 
+            this.NombreCompleto.FillWeight = 165.8181F;
+            this.NombreCompleto.HeaderText = "Nombres";
+            this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.ReadOnly = true;
+            // 
+            // CodigoAsociacion
+            // 
+            this.CodigoAsociacion.HeaderText = "CodigoAsociacion";
+            this.CodigoAsociacion.Name = "CodigoAsociacion";
+            this.CodigoAsociacion.ReadOnly = true;
+            this.CodigoAsociacion.Visible = false;
+            // 
+            // NombreAsociacion
+            // 
+            this.NombreAsociacion.HeaderText = "Asociación";
+            this.NombreAsociacion.Name = "NombreAsociacion";
+            this.NombreAsociacion.ReadOnly = true;
+            this.NombreAsociacion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // btnQuitarCliente
+            // 
+            this.btnQuitarCliente.HeaderText = "Boton";
+            this.btnQuitarCliente.Name = "btnQuitarCliente";
+            this.btnQuitarCliente.ReadOnly = true;
+            this.btnQuitarCliente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnQuitarCliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(458, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 13);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Sala:";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(458, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 13);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Asociación:";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Location = new System.Drawing.Point(555, 426);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(143, 36);
+            this.btnGuardar.TabIndex = 25;
+            this.btnGuardar.Text = "&Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(704, 426);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(137, 36);
+            this.btnCancelar.TabIndex = 32;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // FrmExpedienteMan2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 465);
+            this.ClientSize = new System.Drawing.Size(844, 465);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmExpedienteMan2";
-            this.Text = "FrmExpedienteMan2";
+            this.Text = "Nuevo Expediente";
             this.Load += new System.EventHandler(this.FrmExpedienteMan2_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgContrato)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,11 +351,27 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboClientes;
-        private System.Windows.Forms.Button btnBuscarCliente;
-        private System.Windows.Forms.ListBox lstInformacionCliente;
-        private System.Windows.Forms.ComboBox cboContratos;
-        private System.Windows.Forms.Button btnAgregarContrato;
-        private System.Windows.Forms.DataGridView dtgContrato;
+        private System.Windows.Forms.ComboBox cboEspecialista;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNumeroExpediente;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.DataGridView dtgCliente;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoAsociacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreAsociacion;
+        private System.Windows.Forms.DataGridViewButtonColumn btnQuitarCliente;
+        private System.Windows.Forms.ComboBox cboAsociacion;
+        private System.Windows.Forms.ComboBox cboJuzgado;
+        private System.Windows.Forms.ComboBox cboSala;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnCancelar;
 
     }
 }

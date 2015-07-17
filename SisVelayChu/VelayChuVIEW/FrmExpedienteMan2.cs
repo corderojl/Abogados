@@ -18,7 +18,12 @@ namespace VelayChuVIEW
         ClienteBE _ClienteBE = new ClienteBE();
         ClienteBL _ClienteBL = new ClienteBL();
         ContratoBL _ContratoBL = new ContratoBL();
-        
+        AsociacionBL _AsociacionBL = new AsociacionBL();
+        SalaBL _SalaBL = new SalaBL();
+        JuzgadoBL _JuzgadoBL = new JuzgadoBL();
+        EspecialistaBL _EspecialistaBL = new EspecialistaBL();
+        List<ClienteBE> ltClienteBE;
+
         public FrmExpedienteMan2()
         {
             InitializeComponent();  
@@ -30,14 +35,45 @@ namespace VelayChuVIEW
             {
 
                 llenarCombo();
-                LlenarComboContratos();
-                
+                llenarComboAsociacion();
+                llenarComboSala();
+                llenarComboJuzgado();
+                llenarComboEspecialista();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
 
+        }
+
+        private void llenarComboEspecialista()
+        {
+            cboEspecialista.DataSource = _EspecialistaBL.ListEspecialista_All();
+            cboEspecialista.DisplayMember = "NombreEspecialista";
+            cboEspecialista.ValueMember = "CodigoEspecialista";
+        }
+
+        private void llenarComboJuzgado()
+        {
+            cboJuzgado.DataSource = _JuzgadoBL.ListJuzgado_All();
+            cboJuzgado.DisplayMember = "DescripcionJuzgado";
+            cboJuzgado.ValueMember = "CodigoJuzgado";
+        }
+
+        private void llenarComboSala()
+        {
+            cboSala.DataSource = _SalaBL.ListarCON_SalaOAct();
+            cboSala.DisplayMember = "DescripcionSalas";
+            cboSala.ValueMember = "CodigoSala";
+        }
+
+        private void llenarComboAsociacion()
+        {
+            cboAsociacion.DataSource = _AsociacionBL.ListarDataTableAsociacon_All();
+            cboAsociacion.DisplayMember = "NombreAsociaccion";
+            cboAsociacion.ValueMember = "CodigoAsociacion";
         }
 
         private void llenarCombo()
@@ -54,12 +90,6 @@ namespace VelayChuVIEW
             cboClientes.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
-        private void LlenarComboContratos()
-        {
-            cboContratos.DataSource = _ContratoBL.ListarCON_ContratoOAct();
-            cboContratos.DisplayMember = "DescripcionContrato";
-            cboContratos.ValueMember = "CodigoContrato";
-        }
 
         public static AutoCompleteStringCollection LoadAutoComplete()
         {
@@ -77,7 +107,6 @@ namespace VelayChuVIEW
         }
 
 
-
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(cboClientes.SelectedValue.ToString());
@@ -85,25 +114,41 @@ namespace VelayChuVIEW
             int codigo = Convert.ToInt32(cboClientes.SelectedValue.ToString());
             _ClienteBE = _ClienteBL.TraerInformacionCliente(codigo);
 
-            lstInformacionCliente.Items.Add("Cliente        : "+_ClienteBE.NombreCompleto);
-            lstInformacionCliente.Items.Add("Dirección      : " + _ClienteBE.DirecccionCompleta);
-            lstInformacionCliente.Items.Add("Telefono       : " + _ClienteBE.TelefonoFijo);
-            lstInformacionCliente.Items.Add("Celular #1     : " + _ClienteBE.TelefonoCelular1);
-            lstInformacionCliente.Items.Add("Celular #2     : " + _ClienteBE.TelefonoCelular2);
-            lstInformacionCliente.Items.Add("Asociacion     : " + _ClienteBE.NombreAsociaccion);
-            lstInformacionCliente.Items.Add("Grado          : " + _ClienteBE.DescripcionGrado);
-            lstInformacionCliente.Items.Add("Pension        : " + _ClienteBE.DescripcionPension);
-            lstInformacionCliente.Items.Add("Institucion    : " + _ClienteBE.DescripcionInstitucion);
-
         }
 
-        private void btnAgregarContrato_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            ExpedienteContratoBE _ExpedienteContratoBE = new ExpedienteContratoBE();
-            _ExpedienteContratoBE.CodigoContrato = int.Parse(cboContratos.SelectedValue.ToString());
-            //_ExpedienteContratoBE.CodigoExpediente = _codigo;
-            //_ExpedienteContratoBL.InsertarExpedienteContrato(_ExpedienteContratoBE);
-            //llenarGrillaContratos();
+            string[] row1 = new string[] { cboClientes.SelectedValue.ToString(), cboClientes.Text.ToString(), cboAsociacion.SelectedValue.ToString(), cboAsociacion.Text.ToString(), "Quitar" };
+            dtgCliente.Rows.Add(row1);
+        }
+
+        private void dtgCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex < 0 || e.ColumnIndex !=
+                    dtgCliente.Columns["btnQuitarCliente"].Index) return;
+
+                bool res;
+                const string message = "¿Desea Quitar Cliente de la lista?";
+                const string caption = "Quitar Cliente";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    int fil = dtgCliente.CurrentRow.Index;
+                    dtgCliente.Rows.RemoveAt(fil);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
