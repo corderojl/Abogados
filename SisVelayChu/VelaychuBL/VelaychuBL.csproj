@@ -50,6 +50,7 @@
     <Compile Include="EtapaBL.cs" />
     <Compile Include="EventoBL.cs" />
     <Compile Include="ExpedienteBL.cs" />
+    <Compile Include="ExpedienteClienteBL.cs" />
     <Compile Include="ExpedienteContratoBL.cs" />
     <Compile Include="GradoBL.cs" />
     <Compile Include="InstitucionBL.cs" />

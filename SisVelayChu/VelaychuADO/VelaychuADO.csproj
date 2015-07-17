@@ -55,6 +55,7 @@
     <Compile Include="EtapaADO.cs" />
     <Compile Include="EventoADO.cs" />
     <Compile Include="ExpedienteADO.cs" />
+    <Compile Include="ExpedienteClienteADO.cs" />
     <Compile Include="ExpedienteContratoADO.cs" />
     <Compile Include="GradoADO.cs" />
     <Compile Include="InstitucionADO.cs" />
