@@ -153,21 +153,22 @@ namespace VelayChuVIEW
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             ltExpedienteClienteBE = new List<ExpedienteClienteBE>();
-            ExpedienteClienteBE _ExpedienteClienteBE = new ExpedienteClienteBE();
-            int _CodigoContrato;
+            ExpedienteClienteBE _ExpedienteClienteBE = null;
+            int _CodigoExpediente;
             _ExpedientesBE.NumeroExpediente = txtNumeroExpediente.Text;
             _ExpedientesBE.CodigoJuzgado = Convert.ToInt32(cboJuzgado.SelectedValue.ToString());
             _ExpedientesBE.CodigoSala = Convert.ToInt32(cboSala.SelectedValue.ToString());
             _ExpedientesBE.CodigoEspecialista = Convert.ToInt32(cboEspecialista.SelectedValue.ToString());
             _ExpedientesBE.FechaRegistro = dtpFecha.Value;
-            _CodigoContrato = _ExpedienteBL.InsertarExpedientes(_ExpedientesBE);
+            _CodigoExpediente = _ExpedienteBL.InsertarExpedientes(_ExpedientesBE);
 
             foreach (DataGridViewRow row in dtgCliente.Rows)
             {
+                _ExpedienteClienteBE =new ExpedienteClienteBE();
                 _ExpedienteClienteBE.CodigoCliente = Convert.ToInt32(row.Cells[0].Value);
-                _ExpedienteClienteBE.CodigoExpediente = 1;
+                _ExpedienteClienteBE.CodigoExpediente = _CodigoExpediente;
                 _ExpedienteClienteBE.CodigoAsociacion = Convert.ToInt32(row.Cells[2].Value);
-                _ExpedienteClienteBE.CodigoExpedienteCliente = _CodigoContrato;
+                _ExpedienteClienteBE.CodigoExpedienteCliente = -1;
                 ltExpedienteClienteBE.Add(_ExpedienteClienteBE);
             }
             _ExpedienteClienteBL.InsertarExpedienteClientes(ltExpedienteClienteBE);
