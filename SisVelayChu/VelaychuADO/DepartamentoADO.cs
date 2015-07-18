@@ -57,8 +57,8 @@ namespace VelaychuADO
             if (drd != null)
             {
                 lDepartamentoBE = new List<DepartamentoBE>();
-                int posCodigoDepartamento = drd.GetOrdinal("CodigoContrato");
-                int posDescripciondepartamento = drd.GetOrdinal("DescripcionContrato");
+                int posCodigoDepartamento = drd.GetOrdinal("CodigoDepartamento");
+                int posDescripciondepartamento = drd.GetOrdinal("Descripciondepartamento");
 
                 //int posactivo = drd.GetOrdinal("activo");
                 DepartamentoBE oDepartamentoBE = null;

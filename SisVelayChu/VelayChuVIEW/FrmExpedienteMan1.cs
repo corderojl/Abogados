@@ -77,6 +77,7 @@ namespace VelayChuVIEW
             FrmExpedienteMan2 fFrmClienteMan2 = new FrmExpedienteMan2();
             fFrmClienteMan2.MdiParent = this.MdiParent;
             fFrmClienteMan2.Show();
+            llenarData();
         }
 
 

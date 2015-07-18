@@ -21,6 +21,7 @@ namespace VelayChuVIEW
         PensionBL _PensionBL = new PensionBL();
         ContratoBL _ContratoBL = new ContratoBL();
         ExpedienteBL _ExpedienteBL = new ExpedienteBL();
+        DepartamentoBL _DepartamentoBL = new DepartamentoBL();
 
         ClienteBE _ClienteBE = new ClienteBE();
         ExpedientesBE _ExpedientesBE = new ExpedientesBE();
@@ -30,15 +31,7 @@ namespace VelayChuVIEW
             InitializeComponent();
         }
 
-        private void llenarComboContrato()
-        {
-            cboContrato.Items.Insert(0, "Seleccionar");
-            cboContrato.DataSource = _ContratoBL.ListarCON_ContratoOAct();
-
-            cboContrato.DisplayMember = "DescripcionContrato";
-            cboContrato.ValueMember = "CodigoContrato";
-
-        }
+       
         private void llenarComboTipoDocumento()
         {
             cboTipoDocumento.Items.Insert(0,"Seleccionar");
@@ -87,9 +80,15 @@ namespace VelayChuVIEW
             llenarComboGrado();
             llenarComboInstitucion();
             llenarComboPension();
-            llenarComboContrato();
+            llenarComboDepartamento();
+        }
 
-
+        private void llenarComboDepartamento()
+        {
+            cboDepartamento.DataSource = _DepartamentoBL.ListarCON_DepartamentoOAct();
+            cboDepartamento.DisplayMember = "Descripciondepartamento";
+            cboDepartamento.ValueMember = "CodigoDepartamento";
+            cboDepartamento.SelectedValue = "015";
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -109,17 +108,11 @@ namespace VelayChuVIEW
                 _miempl.CodigoInstitucion = Convert.ToInt32(cboInstitucion.SelectedValue);
                 _miempl.CodigoPension = Convert.ToInt32(cboPension.SelectedValue);
                 _miempl.DirecccionCompleta = txtDireccionCompleta.Text;
+                _miempl.CodigoDepartamento = cboDepartamento.SelectedValue.ToString();
                 _miempl.TelefonoFijo = txtTelefonoFijo.Text;
                 _miempl.TelefonoCelular1 = txtCelular1.Text;
                 _miempl.TelefonoCelular2 = txtCelular2.Text;
                 _miempl.Email = txtEmail.Text;
-
-                var _miexp = _ExpedientesBE;
-                _miexp.CodigoContrato = Convert.ToInt32(cboContrato.SelectedValue);
-                _miexp.CodigoMateria = Convert.ToInt32(cboContrato.SelectedValue);
-
-
-
                 _registro = _ClienteBL.InsertarCliente(_ClienteBE);
                 //_registro = _ExpedienteBL.InsertarExpedientes(_ExpedientesBE);
 

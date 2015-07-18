@@ -43,6 +43,7 @@
     <Compile Include="CargoBL.cs" />
     <Compile Include="ClienteBL.cs" />
     <Compile Include="ContratoBL.cs" />
+    <Compile Include="DepartamentoBL.cs" />
     <Compile Include="DetalleExpedienteBL.cs" />
     <Compile Include="DocumentoBL.cs" />
     <Compile Include="DocumentosClienteBL.cs" />

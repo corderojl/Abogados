@@ -171,7 +171,23 @@ namespace VelayChuVIEW
                 _ExpedienteClienteBE.CodigoExpedienteCliente = -1;
                 ltExpedienteClienteBE.Add(_ExpedienteClienteBE);
             }
-            _ExpedienteClienteBL.InsertarExpedienteClientes(ltExpedienteClienteBE);
+            int vexito=_ExpedienteClienteBL.InsertarExpedienteClientes(ltExpedienteClienteBE);
+            if (vexito > 0)
+            {
+                MessageBox.Show("El Expediente se registro con Éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("El Expediente se registro con Éxito", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }

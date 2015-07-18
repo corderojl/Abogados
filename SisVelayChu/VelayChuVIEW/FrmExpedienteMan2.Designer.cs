@@ -41,7 +41,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.cboAsociacion = new System.Windows.Forms.ComboBox();
             this.cboJuzgado = new System.Windows.Forms.ComboBox();
-            this.cboSala = new System.Windows.Forms.ComboBox();
             this.dtgCliente = new System.Windows.Forms.DataGridView();
             this.CodigoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +51,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cboSala = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.SuspendLayout();
@@ -215,15 +215,6 @@
             this.cboJuzgado.Size = new System.Drawing.Size(143, 21);
             this.cboJuzgado.TabIndex = 27;
             // 
-            // cboSala
-            // 
-            this.cboSala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboSala.FormattingEnabled = true;
-            this.cboSala.Location = new System.Drawing.Point(555, 49);
-            this.cboSala.Name = "cboSala";
-            this.cboSala.Size = new System.Drawing.Size(143, 21);
-            this.cboSala.TabIndex = 28;
-            // 
             // dtgCliente
             // 
             this.dtgCliente.AllowUserToAddRows = false;
@@ -329,6 +320,16 @@
             this.btnCancelar.TabIndex = 32;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // cboSala
+            // 
+            this.cboSala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboSala.FormattingEnabled = true;
+            this.cboSala.Location = new System.Drawing.Point(555, 49);
+            this.cboSala.Name = "cboSala";
+            this.cboSala.Size = new System.Drawing.Size(143, 21);
+            this.cboSala.TabIndex = 28;
             // 
             // FrmExpedienteMan2
             // 

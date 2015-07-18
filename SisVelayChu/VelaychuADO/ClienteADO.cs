@@ -236,9 +236,9 @@ namespace VelaychuADO
                 par1 = cmd.Parameters.Add(new SqlParameter("@DirecccionCompleta", SqlDbType.VarChar, 350));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@DirecccionCompleta"].Value = _ClienteBE.DirecccionCompleta;
-                //par1 = cmd.Parameters.Add(new SqlParameter("@CodigoDepartamento", SqlDbType.VarChar, 3));
-                //par1.Direction = ParameterDirection.Input;
-                //cmd.Parameters["@CodigoDepartamento"].Value = _ClienteBE.CodigoDepartamento;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoDepartamento", SqlDbType.VarChar, 3));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoDepartamento"].Value = _ClienteBE.CodigoDepartamento;
                 //par1 = cmd.Parameters.Add(new SqlParameter("@CodigoProvincia", SqlDbType.VarChar, 3));
                 //par1.Direction = ParameterDirection.Input;
                 //cmd.Parameters["@CodigoProvincia"].Value = _ClienteBE.CodigoProvincia;
