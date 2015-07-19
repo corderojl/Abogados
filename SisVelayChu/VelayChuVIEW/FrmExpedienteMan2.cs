@@ -82,7 +82,9 @@ namespace VelayChuVIEW
 
         private void llenarCombo()
         {
-            cboClientes.DataSource = _ClienteBL.ListarClienteO_Act();
+            List<ClienteBE> ltClienteBE;
+            ltClienteBE = _ClienteBL.ListarClienteO_Act();
+            cboClientes.DataSource = ltClienteBE;
             cboClientes.DisplayMember = "NombreCompleto";
             cboClientes.ValueMember = "CodigoCliente";
 
@@ -92,6 +94,8 @@ namespace VelayChuVIEW
             cboClientes.AutoCompleteCustomSource = LoadAutoComplete();
             cboClientes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cboClientes.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //cboClientes.Items.RemoveAt(0);
+           // cboClientes.Rem(ClienteBE => ClienteBE.CodigoCliente == 0);
         }
 
 
@@ -162,6 +166,7 @@ namespace VelayChuVIEW
             _ExpedientesBE.FechaRegistro = dtpFecha.Value;
             _CodigoExpediente = _ExpedienteBL.InsertarExpedientes(_ExpedientesBE);
 
+            ltExpedienteClienteBE.Add(new ExpedienteClienteBE() { CodigoCliente = 0, CodigoExpediente = _CodigoExpediente, CodigoAsociacion = Convert.ToInt32(cboAsociacion.SelectedValue.ToString()), CodigoExpedienteCliente = 1 });
             foreach (DataGridViewRow row in dtgCliente.Rows)
             {
                 _ExpedienteClienteBE =new ExpedienteClienteBE();

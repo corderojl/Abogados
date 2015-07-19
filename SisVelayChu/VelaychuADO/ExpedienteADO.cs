@@ -154,6 +154,10 @@ namespace VelaychuADO
             {
                 throw new Exception(ex.Message);
             }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
             finally
             {
                 if (cnx.State == ConnectionState.Open)

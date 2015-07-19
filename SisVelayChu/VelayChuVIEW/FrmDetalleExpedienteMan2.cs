@@ -122,7 +122,7 @@ namespace VelayChuVIEW
             cboCliente.DataSource = _ClienteBL.BuscarClienteByExpediente(CodigoExpediente); 
             cboCliente.DisplayMember = "NombreCompleto";
             cboCliente.ValueMember = "CodigoExpedienteCliente";
-
+           
             //
             // cargo la lista de items para el autocomplete
             //
