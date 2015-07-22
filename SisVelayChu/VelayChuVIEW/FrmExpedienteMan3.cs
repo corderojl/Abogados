@@ -215,6 +215,9 @@ namespace VelayChuVIEW
             dtgDetalle.DataSource = _DetalleExpedienteBL.ListarDetalleExpedienteByContrato(_CodigoContrato);
             Pintarfilas();
             dtgDetalle.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dtgDetalle.Columns["Id"].Visible = false;
+            //dtgDetalle.Columns["CodigoCliente"].Visible = false;
+            dtgDetalle.Columns["CodigoExpedienteCliente"].Visible = false;
             dtgDetalle.Refresh();
         }
 
