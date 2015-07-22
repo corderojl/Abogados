@@ -126,8 +126,13 @@ namespace VelayChuVIEW
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string[] row1 = new string[] { cboClientes.SelectedValue.ToString(), cboClientes.Text.ToString(), cboAsociacion.SelectedValue.ToString(), cboAsociacion.Text.ToString(), "Quitar" };
-            dtgCliente.Rows.Add(row1);
+            if (Buscar(cboClientes.SelectedValue.ToString(), "Codigo", dtgCliente))
+                MessageBox.Show("El Cliente ya se encuentra registrado");
+            else
+            {
+                string[] row1 = new string[] { cboClientes.SelectedValue.ToString(), cboClientes.Text.ToString(), cboAsociacion.SelectedValue.ToString(), cboAsociacion.Text.ToString(), "Quitar" };
+                dtgCliente.Rows.Add(row1);
+            }
         }
 
         private void dtgCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -194,6 +199,47 @@ namespace VelayChuVIEW
         {
             this.Close();
         }
+        private bool Buscar(string TextoABuscar, string Columna, DataGridView grid)
+        {
+            bool encontrado = false;
+            foreach (DataGridViewRow Row in grid.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                string Valor = Convert.ToString(Row.Cells["CodigoCliente"].Value);
 
+                if (Valor == TextoABuscar)                
+                    encontrado= true;                
+               
+            }
+            //bool encontrado = false;
+            //if (TextoABuscar == string.Empty) return false;
+            //if (grid.RowCount == 0) return false;
+            //grid.ClearSelection();
+            //if (Columna == string.Empty)
+            //{
+            //    foreach (DataGridViewRow row in grid.Rows)
+            //    {
+            //        foreach (DataGridViewCell cell in row.Cells)
+            //            if (cell.Value == TextoABuscar)
+            //            {
+            //                row.Selected = true;
+            //                return true;
+            //            }
+            //    }
+            //}
+            //else
+            //{
+            //    foreach (DataGridViewRow row in grid.Rows)
+            //    {
+
+            //        if (row.Cells[Columna].Value == TextoABuscar)
+            //        {
+            //            row.Selected = true;
+            //            return true;
+            //        }
+            //    }
+            //}
+            return encontrado;
+        }
     }
 }
