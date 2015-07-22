@@ -124,7 +124,7 @@
             this.txtNumeroExpediente.Location = new System.Drawing.Point(114, 10);
             this.txtNumeroExpediente.Name = "txtNumeroExpediente";
             this.txtNumeroExpediente.Size = new System.Drawing.Size(108, 20);
-            this.txtNumeroExpediente.TabIndex = 12;
+            this.txtNumeroExpediente.TabIndex = 0;
             // 
             // label3
             // 
@@ -143,7 +143,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(317, 10);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(135, 20);
-            this.dtpFecha.TabIndex = 10;
+            this.dtpFecha.TabIndex = 1;
             // 
             // label5
             // 
@@ -163,7 +163,7 @@
             this.cboEspecialista.Location = new System.Drawing.Point(114, 49);
             this.cboEspecialista.Name = "cboEspecialista";
             this.cboEspecialista.Size = new System.Drawing.Size(338, 21);
-            this.cboEspecialista.TabIndex = 8;
+            this.cboEspecialista.TabIndex = 3;
             // 
             // label2
             // 
@@ -192,8 +192,8 @@
             this.btnAgregar.Location = new System.Drawing.Point(704, 88);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(137, 23);
-            this.btnAgregar.TabIndex = 17;
-            this.btnAgregar.Text = "&Agregar Cliente";
+            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.Text = "Agregar Cliente";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -204,7 +204,7 @@
             this.cboAsociacion.Location = new System.Drawing.Point(555, 89);
             this.cboAsociacion.Name = "cboAsociacion";
             this.cboAsociacion.Size = new System.Drawing.Size(143, 21);
-            this.cboAsociacion.TabIndex = 26;
+            this.cboAsociacion.TabIndex = 6;
             // 
             // cboJuzgado
             // 
@@ -213,7 +213,7 @@
             this.cboJuzgado.Location = new System.Drawing.Point(555, 9);
             this.cboJuzgado.Name = "cboJuzgado";
             this.cboJuzgado.Size = new System.Drawing.Size(143, 21);
-            this.cboJuzgado.TabIndex = 27;
+            this.cboJuzgado.TabIndex = 2;
             // 
             // dtgCliente
             // 
@@ -237,7 +237,7 @@
             this.tableLayoutPanel1.SetRowSpan(this.dtgCliente, 3);
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgCliente.Size = new System.Drawing.Size(838, 297);
-            this.dtgCliente.TabIndex = 18;
+            this.dtgCliente.TabIndex = 8;
             this.dtgCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellContentClick);
             // 
             // CodigoCliente
@@ -304,7 +304,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(555, 426);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(143, 36);
-            this.btnGuardar.TabIndex = 25;
+            this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -317,7 +317,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(704, 426);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(137, 36);
-            this.btnCancelar.TabIndex = 32;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -329,7 +329,7 @@
             this.cboSala.Location = new System.Drawing.Point(555, 49);
             this.cboSala.Name = "cboSala";
             this.cboSala.Size = new System.Drawing.Size(143, 21);
-            this.cboSala.TabIndex = 28;
+            this.cboSala.TabIndex = 4;
             // 
             // FrmExpedienteMan2
             // 

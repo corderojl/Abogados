@@ -59,6 +59,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.cboDepartamento = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +70,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.55498F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.44502F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtNombreCompleto, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 9);
@@ -99,6 +101,8 @@
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.label14, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.cboDepartamento, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblCodigo, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -129,7 +133,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 13);
+            this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombres:";
             // 
@@ -137,10 +141,10 @@
             // 
             this.txtNombreCompleto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtNombreCompleto, 2);
-            this.txtNombreCompleto.Location = new System.Drawing.Point(126, 39);
+            this.txtNombreCompleto.Location = new System.Drawing.Point(125, 39);
             this.txtNombreCompleto.Name = "txtNombreCompleto";
-            this.txtNombreCompleto.Size = new System.Drawing.Size(417, 20);
-            this.txtNombreCompleto.TabIndex = 7;
+            this.txtNombreCompleto.Size = new System.Drawing.Size(418, 20);
+            this.txtNombreCompleto.TabIndex = 0;
             // 
             // label8
             // 
@@ -148,7 +152,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 307);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 13);
+            this.label8.Size = new System.Drawing.Size(116, 13);
             this.label8.TabIndex = 21;
             this.label8.Text = "Dirección";
             // 
@@ -156,10 +160,10 @@
             // 
             this.txtDireccionCompleta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtDireccionCompleta, 2);
-            this.txtDireccionCompleta.Location = new System.Drawing.Point(126, 303);
+            this.txtDireccionCompleta.Location = new System.Drawing.Point(125, 303);
             this.txtDireccionCompleta.Name = "txtDireccionCompleta";
-            this.txtDireccionCompleta.Size = new System.Drawing.Size(417, 20);
-            this.txtDireccionCompleta.TabIndex = 24;
+            this.txtDireccionCompleta.Size = new System.Drawing.Size(418, 20);
+            this.txtDireccionCompleta.TabIndex = 8;
             // 
             // label9
             // 
@@ -167,7 +171,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 76);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 13);
+            this.label9.Size = new System.Drawing.Size(116, 13);
             this.label9.TabIndex = 26;
             this.label9.Text = "Tipo de Documento:";
             // 
@@ -175,10 +179,10 @@
             // 
             this.cboTipoDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboTipoDocumento.FormattingEnabled = true;
-            this.cboTipoDocumento.Location = new System.Drawing.Point(126, 72);
+            this.cboTipoDocumento.Location = new System.Drawing.Point(125, 72);
             this.cboTipoDocumento.Name = "cboTipoDocumento";
-            this.cboTipoDocumento.Size = new System.Drawing.Size(228, 21);
-            this.cboTipoDocumento.TabIndex = 18;
+            this.cboTipoDocumento.Size = new System.Drawing.Size(226, 21);
+            this.cboTipoDocumento.TabIndex = 1;
             // 
             // label3
             // 
@@ -186,26 +190,26 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 109);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 13);
+            this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Numero Documento";
             // 
             // txtNumeroDocumento
             // 
             this.txtNumeroDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(126, 105);
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(125, 105);
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
-            this.txtNumeroDocumento.Size = new System.Drawing.Size(228, 20);
-            this.txtNumeroDocumento.TabIndex = 9;
+            this.txtNumeroDocumento.Size = new System.Drawing.Size(226, 20);
+            this.txtNumeroDocumento.TabIndex = 2;
             // 
             // cboAsociacion
             // 
             this.cboAsociacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboAsociacion.FormattingEnabled = true;
-            this.cboAsociacion.Location = new System.Drawing.Point(126, 138);
+            this.cboAsociacion.Location = new System.Drawing.Point(125, 138);
             this.cboAsociacion.Name = "cboAsociacion";
-            this.cboAsociacion.Size = new System.Drawing.Size(228, 21);
-            this.cboAsociacion.TabIndex = 22;
+            this.cboAsociacion.Size = new System.Drawing.Size(226, 21);
+            this.cboAsociacion.TabIndex = 3;
             // 
             // label4
             // 
@@ -213,7 +217,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 13);
+            this.label4.Size = new System.Drawing.Size(116, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Asociacion";
             // 
@@ -223,7 +227,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 175);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 13);
+            this.label6.Size = new System.Drawing.Size(116, 13);
             this.label6.TabIndex = 19;
             this.label6.Text = "Tipo de Cliente";
             // 
@@ -231,19 +235,19 @@
             // 
             this.cboTipoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboTipoCliente.FormattingEnabled = true;
-            this.cboTipoCliente.Location = new System.Drawing.Point(126, 171);
+            this.cboTipoCliente.Location = new System.Drawing.Point(125, 171);
             this.cboTipoCliente.Name = "cboTipoCliente";
-            this.cboTipoCliente.Size = new System.Drawing.Size(228, 21);
-            this.cboTipoCliente.TabIndex = 23;
+            this.cboTipoCliente.Size = new System.Drawing.Size(226, 21);
+            this.cboTipoCliente.TabIndex = 4;
             // 
             // cboGrado
             // 
             this.cboGrado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboGrado.FormattingEnabled = true;
-            this.cboGrado.Location = new System.Drawing.Point(126, 204);
+            this.cboGrado.Location = new System.Drawing.Point(125, 204);
             this.cboGrado.Name = "cboGrado";
-            this.cboGrado.Size = new System.Drawing.Size(228, 21);
-            this.cboGrado.TabIndex = 23;
+            this.cboGrado.Size = new System.Drawing.Size(226, 21);
+            this.cboGrado.TabIndex = 5;
             // 
             // label2
             // 
@@ -251,7 +255,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 208);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 13);
+            this.label2.Size = new System.Drawing.Size(116, 13);
             this.label2.TabIndex = 19;
             this.label2.Text = "Grado";
             // 
@@ -259,10 +263,10 @@
             // 
             this.cboInstitucion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboInstitucion.FormattingEnabled = true;
-            this.cboInstitucion.Location = new System.Drawing.Point(126, 237);
+            this.cboInstitucion.Location = new System.Drawing.Point(125, 237);
             this.cboInstitucion.Name = "cboInstitucion";
-            this.cboInstitucion.Size = new System.Drawing.Size(228, 21);
-            this.cboInstitucion.TabIndex = 23;
+            this.cboInstitucion.Size = new System.Drawing.Size(226, 21);
+            this.cboInstitucion.TabIndex = 6;
             // 
             // label5
             // 
@@ -270,7 +274,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(3, 241);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 13);
+            this.label5.Size = new System.Drawing.Size(116, 13);
             this.label5.TabIndex = 19;
             this.label5.Text = "Institucion";
             // 
@@ -278,10 +282,10 @@
             // 
             this.cboPension.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboPension.FormattingEnabled = true;
-            this.cboPension.Location = new System.Drawing.Point(126, 270);
+            this.cboPension.Location = new System.Drawing.Point(125, 270);
             this.cboPension.Name = "cboPension";
-            this.cboPension.Size = new System.Drawing.Size(228, 21);
-            this.cboPension.TabIndex = 23;
+            this.cboPension.Size = new System.Drawing.Size(226, 21);
+            this.cboPension.TabIndex = 7;
             // 
             // label7
             // 
@@ -289,26 +293,27 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 274);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 13);
+            this.label7.Size = new System.Drawing.Size(116, 13);
             this.label7.TabIndex = 19;
             this.label7.Text = "Pension";
             // 
             // btnGrabar
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGrabar.Location = new System.Drawing.Point(126, 524);
+            this.btnGrabar.Location = new System.Drawing.Point(125, 524);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(228, 23);
+            this.btnGrabar.Size = new System.Drawing.Size(226, 23);
             this.btnGrabar.TabIndex = 14;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(360, 524);
+            this.btnCancelar.Location = new System.Drawing.Point(357, 524);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(183, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(186, 23);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -319,7 +324,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(3, 468);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(117, 13);
+            this.label13.Size = new System.Drawing.Size(116, 13);
             this.label13.TabIndex = 21;
             this.label13.Text = "Email";
             // 
@@ -327,10 +332,10 @@
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtEmail, 2);
-            this.txtEmail.Location = new System.Drawing.Point(126, 464);
+            this.txtEmail.Location = new System.Drawing.Point(125, 464);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(417, 20);
-            this.txtEmail.TabIndex = 24;
+            this.txtEmail.Size = new System.Drawing.Size(418, 20);
+            this.txtEmail.TabIndex = 13;
             // 
             // label12
             // 
@@ -338,17 +343,17 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 437);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(117, 13);
+            this.label12.Size = new System.Drawing.Size(116, 13);
             this.label12.TabIndex = 21;
             this.label12.Text = "Celular # 2";
             // 
             // txtCelular2
             // 
             this.txtCelular2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCelular2.Location = new System.Drawing.Point(126, 434);
+            this.txtCelular2.Location = new System.Drawing.Point(125, 434);
             this.txtCelular2.Name = "txtCelular2";
-            this.txtCelular2.Size = new System.Drawing.Size(228, 20);
-            this.txtCelular2.TabIndex = 24;
+            this.txtCelular2.Size = new System.Drawing.Size(226, 20);
+            this.txtCelular2.TabIndex = 12;
             // 
             // label11
             // 
@@ -356,25 +361,25 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(3, 406);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(117, 13);
+            this.label11.Size = new System.Drawing.Size(116, 13);
             this.label11.TabIndex = 21;
             this.label11.Text = "Celular # 1 ";
             // 
             // txtCelular1
             // 
             this.txtCelular1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCelular1.Location = new System.Drawing.Point(126, 402);
+            this.txtCelular1.Location = new System.Drawing.Point(125, 402);
             this.txtCelular1.Name = "txtCelular1";
-            this.txtCelular1.Size = new System.Drawing.Size(228, 20);
-            this.txtCelular1.TabIndex = 24;
+            this.txtCelular1.Size = new System.Drawing.Size(226, 20);
+            this.txtCelular1.TabIndex = 11;
             // 
             // txtTelefonoFijo
             // 
             this.txtTelefonoFijo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelefonoFijo.Location = new System.Drawing.Point(126, 369);
+            this.txtTelefonoFijo.Location = new System.Drawing.Point(125, 369);
             this.txtTelefonoFijo.Name = "txtTelefonoFijo";
-            this.txtTelefonoFijo.Size = new System.Drawing.Size(228, 20);
-            this.txtTelefonoFijo.TabIndex = 24;
+            this.txtTelefonoFijo.Size = new System.Drawing.Size(226, 20);
+            this.txtTelefonoFijo.TabIndex = 10;
             // 
             // label10
             // 
@@ -382,7 +387,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(3, 373);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 13);
+            this.label10.Size = new System.Drawing.Size(116, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "Telefono Fijo";
             // 
@@ -392,7 +397,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(3, 340);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(117, 13);
+            this.label14.Size = new System.Drawing.Size(116, 13);
             this.label14.TabIndex = 27;
             this.label14.Text = "Departamento:";
             // 
@@ -400,10 +405,32 @@
             // 
             this.cboDepartamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDepartamento.FormattingEnabled = true;
-            this.cboDepartamento.Location = new System.Drawing.Point(126, 336);
+            this.cboDepartamento.Location = new System.Drawing.Point(125, 336);
             this.cboDepartamento.Name = "cboDepartamento";
-            this.cboDepartamento.Size = new System.Drawing.Size(228, 21);
-            this.cboDepartamento.TabIndex = 28;
+            this.cboDepartamento.Size = new System.Drawing.Size(226, 21);
+            this.cboDepartamento.TabIndex = 9;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(116, 13);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "Codigo:";
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.ForeColor = System.Drawing.Color.Blue;
+            this.lblCodigo.Location = new System.Drawing.Point(125, 6);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(226, 20);
+            this.lblCodigo.TabIndex = 30;
+            this.lblCodigo.Text = "0";
             // 
             // FrmClienteMan3
             // 
@@ -455,6 +482,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cboDepartamento;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblCodigo;
 
     }
 }

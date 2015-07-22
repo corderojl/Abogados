@@ -150,7 +150,7 @@
             this.txtEstado.Location = new System.Drawing.Point(189, 165);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(304, 20);
-            this.txtEstado.TabIndex = 8;
+            this.txtEstado.TabIndex = 3;
             // 
             // cboEtapa
             // 
@@ -160,7 +160,7 @@
             this.cboEtapa.Location = new System.Drawing.Point(189, 87);
             this.cboEtapa.Name = "cboEtapa";
             this.cboEtapa.Size = new System.Drawing.Size(304, 21);
-            this.cboEtapa.TabIndex = 3;
+            this.cboEtapa.TabIndex = 1;
             // 
             // btnGrabar
             // 
@@ -168,7 +168,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(189, 360);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(150, 27);
-            this.btnGrabar.TabIndex = 9;
+            this.btnGrabar.TabIndex = 7;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -179,7 +179,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(345, 360);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(148, 27);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -211,7 +211,7 @@
             this.cboEvento.Location = new System.Drawing.Point(189, 48);
             this.cboEvento.Name = "cboEvento";
             this.cboEvento.Size = new System.Drawing.Size(150, 21);
-            this.cboEvento.TabIndex = 14;
+            this.cboEvento.TabIndex = 0;
             // 
             // cboUsuario
             // 
@@ -220,7 +220,7 @@
             this.cboUsuario.Location = new System.Drawing.Point(189, 204);
             this.cboUsuario.Name = "cboUsuario";
             this.cboUsuario.Size = new System.Drawing.Size(304, 21);
-            this.cboUsuario.TabIndex = 0;
+            this.cboUsuario.TabIndex = 4;
             // 
             // dtpFecha
             // 
@@ -229,7 +229,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(189, 126);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(150, 20);
-            this.dtpFecha.TabIndex = 0;
+            this.dtpFecha.TabIndex = 2;
             // 
             // dtpFechaImpulso
             // 
@@ -238,7 +238,7 @@
             this.dtpFechaImpulso.Location = new System.Drawing.Point(189, 243);
             this.dtpFechaImpulso.Name = "dtpFechaImpulso";
             this.dtpFechaImpulso.Size = new System.Drawing.Size(150, 20);
-            this.dtpFechaImpulso.TabIndex = 15;
+            this.dtpFechaImpulso.TabIndex = 5;
             // 
             // label6
             // 
@@ -258,7 +258,7 @@
             this.cboCliente.Location = new System.Drawing.Point(189, 282);
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(304, 21);
-            this.cboCliente.TabIndex = 17;
+            this.cboCliente.TabIndex = 6;
             // 
             // FrmDetalleExpedienteMan2
             // 

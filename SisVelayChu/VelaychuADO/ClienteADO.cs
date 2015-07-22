@@ -554,5 +554,91 @@ namespace VelaychuADO
             }
             return _ClienteBE;
         }
+
+        public bool ActualizarCliente(ClienteBE _ClienteBE)
+        {
+            bool _vcod = false;
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspClienteActualizar";
+            SqlParameter par1;
+            try
+            {
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoCliente", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoCliente"].Value = _ClienteBE.CodigoCliente;
+                par1 = cmd.Parameters.Add(new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 150));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@NombreCompleto"].Value = _ClienteBE.NombreCompleto;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoTipoDocumento", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoTipoDocumento"].Value = _ClienteBE.CodigoTipoDocumento;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoAsociacion", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoAsociacion"].Value = _ClienteBE.CodigoAsociacion;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoTipoCliente", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoTipoCliente"].Value = _ClienteBE.CodigoTipoCliente;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoGrado", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoGrado"].Value = _ClienteBE.CodigoGrado;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoInstitucion", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoInstitucion"].Value = _ClienteBE.CodigoInstitucion;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoPension", SqlDbType.Int));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoPension"].Value = _ClienteBE.CodigoPension;
+                par1 = cmd.Parameters.Add(new SqlParameter("@NumeroDocumento", SqlDbType.VarChar, 50));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@NumeroDocumento"].Value = _ClienteBE.NumeroDocumento;
+                par1 = cmd.Parameters.Add(new SqlParameter("@DirecccionCompleta", SqlDbType.VarChar, 350));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@DirecccionCompleta"].Value = _ClienteBE.DirecccionCompleta;
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoDepartamento", SqlDbType.VarChar, 3));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@CodigoDepartamento"].Value = _ClienteBE.CodigoDepartamento;
+                //par1 = cmd.Parameters.Add(new SqlParameter("@CodigoProvincia", SqlDbType.VarChar, 3));
+                //par1.Direction = ParameterDirection.Input;
+                //cmd.Parameters["@CodigoProvincia"].Value = _ClienteBE.CodigoProvincia;
+                //par1 = cmd.Parameters.Add(new SqlParameter("@CodigoDistrito", SqlDbType.VarChar, 3));
+                //par1.Direction = ParameterDirection.Input;
+                //cmd.Parameters["@CodigoDistrito"].Value = _ClienteBE.CodigoDistrito;
+                par1 = cmd.Parameters.Add(new SqlParameter("@TelefonoFijo", SqlDbType.VarChar, 20));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@TelefonoFijo"].Value = _ClienteBE.TelefonoFijo;
+                par1 = cmd.Parameters.Add(new SqlParameter("@TelefonoCelular1", SqlDbType.VarChar, 20));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@TelefonoCelular1"].Value = _ClienteBE.TelefonoCelular1;
+                par1 = cmd.Parameters.Add(new SqlParameter("@TelefonoCelular2", SqlDbType.VarChar, 20));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@TelefonoCelular2"].Value = _ClienteBE.TelefonoCelular2;
+                par1 = cmd.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar, 50));
+                par1.Direction = ParameterDirection.Input;
+                cmd.Parameters["@Email"].Value = _ClienteBE.Email;
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                _vcod = true;
+
+            }
+            catch (SqlException x)
+            {
+                _vcod = false;
+            }
+            catch (Exception x)
+            {
+                _vcod = false;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd.Parameters.Clear();
+            }
+
+            return _vcod;
+        }
     }
 }

@@ -62,5 +62,10 @@ namespace VelaychuBL
         {
             return _ClienteADO.BuscarClienteByExpediente(_CodigoExpediente);
         }
+
+        public bool ActualizarCliente(ClienteBE _ClienteBE)
+        {
+            return _ClienteADO.ActualizarCliente(_ClienteBE);
+        }
     }
 }

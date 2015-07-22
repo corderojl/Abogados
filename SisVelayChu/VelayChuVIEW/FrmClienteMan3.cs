@@ -49,8 +49,15 @@ namespace VelayChuVIEW
                 llenarComboInstitucion(_ClienteBE.CodigoInstitucion);
                 llenarComboPension(_ClienteBE.CodigoPension);
                 llenarComboDepartamento(_ClienteBE.CodigoDepartamento);
+                llenarComboTipoDocumento(_ClienteBE.CodigoTipoDocumento);
                 txtNombreCompleto.Text = _ClienteBE.NombreCompleto;
-
+                txtNumeroDocumento.Text = _ClienteBE.NumeroDocumento;
+                txtDireccionCompleta.Text = _ClienteBE.DirecccionCompleta;
+                txtTelefonoFijo.Text = _ClienteBE.TelefonoFijo;
+                txtCelular1.Text = _ClienteBE.TelefonoCelular1;
+                txtCelular2.Text = _ClienteBE.TelefonoCelular2;
+                txtEmail.Text = _ClienteBE.Email;
+                lblCodigo.Text = _codigo.ToString();
                 //dtgExpediente.Columns[0].Width = 40;
                 //dtgExpediente.Columns[1].Width = 150;
                 //dtgExpediente.Columns[8].Width = 200;
@@ -61,6 +68,16 @@ namespace VelayChuVIEW
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void llenarComboTipoDocumento(int _CodigoTipoDocumento)
+        {
+            cboTipoDocumento.Items.Insert(0, "Seleccionar");
+            cboTipoDocumento.DataSource = _TipoDocumentoBL.ListTipoDocumento_All();
+
+            cboTipoDocumento.DisplayMember = "DescripcionTipoDocumento";
+            cboTipoDocumento.ValueMember = "CodigoTipoDocumento";
+            cboTipoDocumento.SelectedValue = _CodigoTipoDocumento;
         }
 
         private void llenarComboDepartamento(string _CodigoDepartamento)
@@ -107,6 +124,47 @@ namespace VelayChuVIEW
             cboPension.ValueMember = "CodigoPension";
             cboPension.SelectedValue = _CodigoPension;
         }
-        
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            ClienteBL _ClienteBL = new ClienteBL();
+            bool _registro = false;
+            try
+            {
+                var _miempl = _ClienteBE;
+                _miempl.CodigoCliente = int.Parse(lblCodigo.Text);
+                _miempl.NombreCompleto = txtNombreCompleto.Text;
+                _miempl.CodigoTipoDocumento = Convert.ToInt32(cboTipoDocumento.SelectedValue);
+                _miempl.NumeroDocumento = txtNumeroDocumento.Text;
+                _miempl.CodigoAsociacion = Convert.ToInt32(cboAsociacion.SelectedValue);
+                _miempl.CodigoTipoCliente = Convert.ToInt32(cboTipoCliente.SelectedValue);
+                _miempl.CodigoGrado = Convert.ToInt32(cboGrado.SelectedValue);
+                _miempl.CodigoInstitucion = Convert.ToInt32(cboInstitucion.SelectedValue);
+                _miempl.CodigoPension = Convert.ToInt32(cboPension.SelectedValue);
+                _miempl.DirecccionCompleta = txtDireccionCompleta.Text;
+                _miempl.CodigoDepartamento = cboDepartamento.SelectedValue.ToString();
+                _miempl.TelefonoFijo = txtTelefonoFijo.Text;
+                _miempl.TelefonoCelular1 = txtCelular1.Text;
+                _miempl.TelefonoCelular2 = txtCelular2.Text;
+                _miempl.Email = txtEmail.Text;
+                _registro = _ClienteBL.ActualizarCliente(_ClienteBE);
+                //_registro = _ExpedienteBL.InsertarExpedientes(_ExpedientesBE);
+
+                if (_registro)
+                {
+                    MessageBox.Show("Se registro con Exito");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error, verifique los Datos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se a producido el siguiente error: " + ex.Message);
+            }
+        }
+    
     }
 }

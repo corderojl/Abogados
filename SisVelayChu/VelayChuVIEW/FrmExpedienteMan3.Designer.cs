@@ -107,7 +107,7 @@
             this.cboSala.Location = new System.Drawing.Point(412, 42);
             this.cboSala.Name = "cboSala";
             this.cboSala.Size = new System.Drawing.Size(101, 21);
-            this.cboSala.TabIndex = 12;
+            this.cboSala.TabIndex = 5;
             // 
             // label5
             // 
@@ -124,7 +124,7 @@
             this.cboEspecialista.Location = new System.Drawing.Point(91, 42);
             this.cboEspecialista.Name = "cboEspecialista";
             this.cboEspecialista.Size = new System.Drawing.Size(269, 21);
-            this.cboEspecialista.TabIndex = 10;
+            this.cboEspecialista.TabIndex = 4;
             // 
             // label6
             // 
@@ -141,7 +141,7 @@
             this.cboJuzgado.Location = new System.Drawing.Point(422, 12);
             this.cboJuzgado.Name = "cboJuzgado";
             this.cboJuzgado.Size = new System.Drawing.Size(91, 21);
-            this.cboJuzgado.TabIndex = 8;
+            this.cboJuzgado.TabIndex = 3;
             // 
             // label4
             // 
@@ -157,7 +157,7 @@
             this.txtExpediente.Location = new System.Drawing.Point(91, 13);
             this.txtExpediente.Name = "txtExpediente";
             this.txtExpediente.Size = new System.Drawing.Size(65, 20);
-            this.txtExpediente.TabIndex = 2;
+            this.txtExpediente.TabIndex = 1;
             // 
             // label1
             // 
@@ -174,7 +174,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(219, 13);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(101, 20);
-            this.dtpFecha.TabIndex = 0;
+            this.dtpFecha.TabIndex = 2;
             // 
             // groupBox2
             // 
@@ -205,7 +205,7 @@
             this.dtgContrato.RowHeadersVisible = false;
             this.dtgContrato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgContrato.Size = new System.Drawing.Size(492, 135);
-            this.dtgContrato.TabIndex = 0;
+            this.dtgContrato.TabIndex = 11;
             this.dtgContrato.Click += new System.EventHandler(this.dtgContrato_Click);
             // 
             // groupBox3
@@ -237,7 +237,7 @@
             this.dtgDocumento.RowHeadersVisible = false;
             this.dtgDocumento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDocumento.Size = new System.Drawing.Size(366, 135);
-            this.dtgDocumento.TabIndex = 0;
+            this.dtgDocumento.TabIndex = 12;
             this.dtgDocumento.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellContentDoubleClick);
             // 
             // groupBox5
@@ -269,7 +269,7 @@
             this.dtgDetalle.RowHeadersVisible = false;
             this.dtgDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDetalle.Size = new System.Drawing.Size(870, 175);
-            this.dtgDetalle.TabIndex = 0;
+            this.dtgDetalle.TabIndex = 13;
             this.dtgDetalle.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgDetalle_ColumnHeaderMouseClick);
             // 
             // tableLayoutPanel1
@@ -325,7 +325,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(885, 3);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(120, 34);
-            this.btnActualizar.TabIndex = 4;
+            this.btnActualizar.TabIndex = 6;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -336,7 +336,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(885, 43);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(120, 34);
-            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar cambios";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -347,7 +347,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(885, 83);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(120, 34);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -360,7 +360,7 @@
             this.cboContrato.Location = new System.Drawing.Point(3, 129);
             this.cboContrato.Name = "cboContrato";
             this.cboContrato.Size = new System.Drawing.Size(372, 21);
-            this.cboContrato.TabIndex = 7;
+            this.cboContrato.TabIndex = 9;
             // 
             // button1
             // 
@@ -368,7 +368,7 @@
             this.button1.Location = new System.Drawing.Point(885, 363);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 34);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 14;
             this.button1.Text = "Nuevo Detalle";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -379,7 +379,7 @@
             this.button2.Location = new System.Drawing.Point(885, 403);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 34);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 15;
             this.button2.Text = "Actualizar Detalle";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -390,7 +390,7 @@
             this.btnSalir.Location = new System.Drawing.Point(885, 523);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(120, 36);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -401,7 +401,7 @@
             this.btnAgregarContrato.Location = new System.Drawing.Point(381, 129);
             this.btnAgregarContrato.Name = "btnAgregarContrato";
             this.btnAgregarContrato.Size = new System.Drawing.Size(120, 22);
-            this.btnAgregarContrato.TabIndex = 8;
+            this.btnAgregarContrato.TabIndex = 10;
             this.btnAgregarContrato.Text = "Agregar Contrato";
             this.btnAgregarContrato.UseVisualStyleBackColor = true;
             this.btnAgregarContrato.Click += new System.EventHandler(this.btnAgregarContrato_Click);
@@ -437,7 +437,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(885, 443);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(120, 34);
-            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.TabIndex = 16;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);

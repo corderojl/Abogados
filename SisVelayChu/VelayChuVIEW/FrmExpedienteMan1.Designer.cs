@@ -94,7 +94,7 @@
             this.tableLayoutPanel1.SetRowSpan(this.dtgExpediente, 4);
             this.dtgExpediente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgExpediente.Size = new System.Drawing.Size(840, 357);
-            this.dtgExpediente.TabIndex = 0;
+            this.dtgExpediente.TabIndex = 2;
             this.dtgExpediente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgExpediente_CellContentDoubleClick);
             // 
             // label1
@@ -114,7 +114,7 @@
             this.txtNumeroExpediente.Location = new System.Drawing.Point(144, 14);
             this.txtNumeroExpediente.Name = "txtNumeroExpediente";
             this.txtNumeroExpediente.Size = new System.Drawing.Size(135, 20);
-            this.txtNumeroExpediente.TabIndex = 2;
+            this.txtNumeroExpediente.TabIndex = 0;
             this.txtNumeroExpediente.TextChanged += new System.EventHandler(this.txtNumeroExpediente_TextChanged);
             // 
             // label2
@@ -135,7 +135,7 @@
             this.txtNombreCliente.Location = new System.Drawing.Point(426, 14);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(276, 20);
-            this.txtNombreCliente.TabIndex = 2;
+            this.txtNombreCliente.TabIndex = 1;
             this.txtNombreCliente.TextChanged += new System.EventHandler(this.txtNombreCliente_TextChanged);
             // 
             // button1
@@ -144,7 +144,7 @@
             this.button1.Location = new System.Drawing.Point(426, 475);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 25);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Nuevo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -155,7 +155,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(567, 475);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(135, 25);
-            this.btnActualizar.TabIndex = 4;
+            this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -193,7 +193,7 @@
             this.btnLastPage.Location = new System.Drawing.Point(450, 12);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(75, 31);
-            this.btnLastPage.TabIndex = 4;
+            this.btnLastPage.TabIndex = 6;
             this.btnLastPage.Text = ">|";
             this.btnLastPage.UseVisualStyleBackColor = true;
             this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
@@ -204,7 +204,7 @@
             this.btnNextPage.Location = new System.Drawing.Point(367, 12);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(75, 31);
-            this.btnNextPage.TabIndex = 3;
+            this.btnNextPage.TabIndex = 5;
             this.btnNextPage.Text = ">>";
             this.btnNextPage.UseVisualStyleBackColor = true;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
@@ -215,7 +215,7 @@
             this.btnPreviousPage.Location = new System.Drawing.Point(116, 12);
             this.btnPreviousPage.Name = "btnPreviousPage";
             this.btnPreviousPage.Size = new System.Drawing.Size(75, 31);
-            this.btnPreviousPage.TabIndex = 2;
+            this.btnPreviousPage.TabIndex = 4;
             this.btnPreviousPage.Text = "<<";
             this.btnPreviousPage.UseVisualStyleBackColor = true;
             this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
@@ -226,7 +226,7 @@
             this.btnFirstPage.Location = new System.Drawing.Point(34, 12);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(75, 31);
-            this.btnFirstPage.TabIndex = 1;
+            this.btnFirstPage.TabIndex = 3;
             this.btnFirstPage.Text = "|<";
             this.btnFirstPage.UseVisualStyleBackColor = true;
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
