@@ -13,12 +13,12 @@ namespace VelaychuBL
     {
         ListarExpedienteADO _ListarExpedienteADO = new ListarExpedienteADO();
 
-        public object BuscarExpedienteByNombreCliente(string _nombreCliente)
+        public DataTable BuscarExpedienteByNombreCliente(string _nombreCliente)
         {
             return _ListarExpedienteADO.BuscarExpedienteByNombreCliente(_nombreCliente);
         }
 
-        public object BuscarExpedienteByNumeroExpedient(string _NroExpediente)
+        public DataTable BuscarExpedienteByNumeroExpedient(string _NroExpediente)
         {
             return _ListarExpedienteADO.BuscarExpedienteByNumeroExpedient(_NroExpediente);
         }

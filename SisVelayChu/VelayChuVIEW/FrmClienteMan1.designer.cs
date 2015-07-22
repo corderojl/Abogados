@@ -35,8 +35,15 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnNuevoExpediente = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDisplayPageNo = new System.Windows.Forms.TextBox();
+            this.btnLastPage = new System.Windows.Forms.Button();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnPreviousPage = new System.Windows.Forms.Button();
+            this.btnFirstPage = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -53,6 +60,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevoExpediente, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -60,8 +68,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.840864F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.7721F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.16503F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.43419F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.233791F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.823183F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 509);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -79,10 +87,11 @@
             this.dtgCliente.ReadOnly = true;
             this.dtgCliente.RowHeadersVisible = false;
             this.dtgCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.tableLayoutPanel1.SetRowSpan(this.dtgCliente, 4);
+            this.tableLayoutPanel1.SetRowSpan(this.dtgCliente, 3);
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCliente.Size = new System.Drawing.Size(848, 406);
+            this.dtgCliente.Size = new System.Drawing.Size(848, 360);
             this.dtgCliente.TabIndex = 0;
+            this.dtgCliente.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellContentDoubleClick);
             // 
             // label2
             // 
@@ -102,16 +111,16 @@
             this.txtCliente.Location = new System.Drawing.Point(173, 12);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(504, 20);
-            this.txtCliente.TabIndex = 12;
+            this.txtCliente.TabIndex = 0;
             this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // btnInsertar
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertar.Location = new System.Drawing.Point(173, 470);
+            this.btnInsertar.Location = new System.Drawing.Point(173, 471);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(164, 25);
-            this.btnInsertar.TabIndex = 13;
+            this.btnInsertar.TabIndex = 5;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
@@ -119,10 +128,10 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(343, 470);
+            this.btnActualizar.Location = new System.Drawing.Point(343, 471);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(164, 25);
-            this.btnActualizar.TabIndex = 14;
+            this.btnActualizar.TabIndex = 6;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -130,13 +139,84 @@
             // btnNuevoExpediente
             // 
             this.btnNuevoExpediente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoExpediente.Location = new System.Drawing.Point(513, 471);
+            this.btnNuevoExpediente.Location = new System.Drawing.Point(513, 472);
             this.btnNuevoExpediente.Name = "btnNuevoExpediente";
             this.btnNuevoExpediente.Size = new System.Drawing.Size(164, 23);
-            this.btnNuevoExpediente.TabIndex = 16;
+            this.btnNuevoExpediente.TabIndex = 7;
             this.btnNuevoExpediente.Text = "Nuevo Expediente";
             this.btnNuevoExpediente.UseVisualStyleBackColor = true;
             this.btnNuevoExpediente.Click += new System.EventHandler(this.btnNuevoExpediente_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox1, 3);
+            this.groupBox1.Controls.Add(this.txtDisplayPageNo);
+            this.groupBox1.Controls.Add(this.btnLastPage);
+            this.groupBox1.Controls.Add(this.btnNextPage);
+            this.groupBox1.Controls.Add(this.btnPreviousPage);
+            this.groupBox1.Controls.Add(this.btnFirstPage);
+            this.groupBox1.Location = new System.Drawing.Point(173, 414);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(504, 41);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            // 
+            // txtDisplayPageNo
+            // 
+            this.txtDisplayPageNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtDisplayPageNo.Enabled = false;
+            this.txtDisplayPageNo.Location = new System.Drawing.Point(197, 15);
+            this.txtDisplayPageNo.Name = "txtDisplayPageNo";
+            this.txtDisplayPageNo.Size = new System.Drawing.Size(112, 20);
+            this.txtDisplayPageNo.TabIndex = 4;
+            this.txtDisplayPageNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnLastPage
+            // 
+            this.btnLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnLastPage.Location = new System.Drawing.Point(423, 12);
+            this.btnLastPage.Name = "btnLastPage";
+            this.btnLastPage.Size = new System.Drawing.Size(75, 23);
+            this.btnLastPage.TabIndex = 4;
+            this.btnLastPage.Text = ">|";
+            this.btnLastPage.UseVisualStyleBackColor = true;
+            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnNextPage.Location = new System.Drawing.Point(340, 12);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(75, 23);
+            this.btnNextPage.TabIndex = 3;
+            this.btnNextPage.Text = ">>";
+            this.btnNextPage.UseVisualStyleBackColor = true;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            // 
+            // btnPreviousPage
+            // 
+            this.btnPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPreviousPage.Location = new System.Drawing.Point(89, 12);
+            this.btnPreviousPage.Name = "btnPreviousPage";
+            this.btnPreviousPage.Size = new System.Drawing.Size(75, 23);
+            this.btnPreviousPage.TabIndex = 2;
+            this.btnPreviousPage.Text = "<<";
+            this.btnPreviousPage.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
+            // 
+            // btnFirstPage
+            // 
+            this.btnFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnFirstPage.Location = new System.Drawing.Point(7, 12);
+            this.btnFirstPage.Name = "btnFirstPage";
+            this.btnFirstPage.Size = new System.Drawing.Size(75, 23);
+            this.btnFirstPage.TabIndex = 1;
+            this.btnFirstPage.Text = "|<";
+            this.btnFirstPage.UseVisualStyleBackColor = true;
+            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
             // FrmClienteMan1
             // 
@@ -150,6 +230,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -163,5 +245,11 @@
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnNuevoExpediente;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtDisplayPageNo;
+        private System.Windows.Forms.Button btnLastPage;
+        private System.Windows.Forms.Button btnNextPage;
+        private System.Windows.Forms.Button btnPreviousPage;
+        private System.Windows.Forms.Button btnFirstPage;
     }
 }

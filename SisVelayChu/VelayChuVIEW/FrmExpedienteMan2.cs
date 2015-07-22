@@ -184,7 +184,7 @@ namespace VelayChuVIEW
             }
             else
             {
-                MessageBox.Show("El Expediente se registro con Éxito", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Hubó un problema al registrar el Expediente", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             
 
