@@ -24,6 +24,7 @@ namespace VelayChuVIEW
         GradoBL _GradoBL = new GradoBL();
         InstitucionBL _InstitucionBL = new InstitucionBL();
         PensionBL _PensionBL = new PensionBL();
+        DepartamentoBL _DepartamentoBL = new DepartamentoBL();
         
 
         public FrmClienteMan3()
@@ -47,7 +48,8 @@ namespace VelayChuVIEW
                 llenarComboGrado(_ClienteBE.CodigoGrado);
                 llenarComboInstitucion(_ClienteBE.CodigoInstitucion);
                 llenarComboPension(_ClienteBE.CodigoPension);
-                txtNombreCliente.Text = _ClienteBE.NombreCompleto;
+                llenarComboDepartamento(_ClienteBE.CodigoDepartamento);
+                txtNombreCompleto.Text = _ClienteBE.NombreCompleto;
 
                 //dtgExpediente.Columns[0].Width = 40;
                 //dtgExpediente.Columns[1].Width = 150;
@@ -59,6 +61,16 @@ namespace VelayChuVIEW
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void llenarComboDepartamento(string _CodigoDepartamento)
+        {
+           
+            cboDepartamento.DataSource = _DepartamentoBL.ListarCON_DepartamentoOAct();
+            cboDepartamento.DisplayMember = "Descripciondepartamento";
+            cboDepartamento.ValueMember = "CodigoDepartamento";
+            cboDepartamento.SelectedValue = _CodigoDepartamento;
+       
         }
         private void llenarComboAsociacion(int _CodigoAsociacion)
         {
