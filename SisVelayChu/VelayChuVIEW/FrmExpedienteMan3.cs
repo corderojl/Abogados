@@ -321,16 +321,34 @@ namespace VelayChuVIEW
         {
             if (cboContrato.SelectedValue.ToString() != "1")
             {
-                ExpedienteContratoBE _ExpedienteContratoBE = new ExpedienteContratoBE();
-                _ExpedienteContratoBE.CodigoContrato = int.Parse(cboContrato.SelectedValue.ToString());
-                _ExpedienteContratoBE.CodigoExpediente = _codigo;
-                _ExpedienteContratoBL.InsertarExpedienteContrato(_ExpedienteContratoBE);
-                llenarGrillaContratos();
+                if (Buscar(cboContrato.SelectedValue.ToString(), "Id", dtgContrato))
+                    MessageBox.Show("El Contrato ya existe");
+                else
+                {
+                    ExpedienteContratoBE _ExpedienteContratoBE = new ExpedienteContratoBE();
+                    _ExpedienteContratoBE.CodigoContrato = int.Parse(cboContrato.SelectedValue.ToString());
+                    _ExpedienteContratoBE.CodigoExpediente = _codigo;
+                    _ExpedienteContratoBL.InsertarExpedienteContrato(_ExpedienteContratoBE);
+                    llenarGrillaContratos();
+                }
             }
             else
                 MessageBox.Show("Seleccione un Contrato");
         }
+        private bool Buscar(string TextoABuscar, string Columna, DataGridView grid)
+        {
+            bool encontrado = false;
+            foreach (DataGridViewRow Row in grid.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                string Valor = Convert.ToString(Row.Cells[Columna].Value);
 
+                if (Valor == TextoABuscar)
+                    encontrado = true;
+
+            }
+            return encontrado;
+        }
         private void dtgDetalle_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Pintarfilas();

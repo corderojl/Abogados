@@ -126,7 +126,7 @@ namespace VelayChuVIEW
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (Buscar(cboClientes.SelectedValue.ToString(), "Codigo", dtgCliente))
+            if (Buscar(cboClientes.SelectedValue.ToString(), "CodigoCliente", dtgCliente))
                 MessageBox.Show("El Cliente ya se encuentra registrado");
             else
             {
@@ -205,40 +205,12 @@ namespace VelayChuVIEW
             foreach (DataGridViewRow Row in grid.Rows)
             {
                 String strFila = Row.Index.ToString();
-                string Valor = Convert.ToString(Row.Cells["CodigoCliente"].Value);
+                string Valor = Convert.ToString(Row.Cells[Columna].Value);
 
                 if (Valor == TextoABuscar)                
                     encontrado= true;                
                
             }
-            //bool encontrado = false;
-            //if (TextoABuscar == string.Empty) return false;
-            //if (grid.RowCount == 0) return false;
-            //grid.ClearSelection();
-            //if (Columna == string.Empty)
-            //{
-            //    foreach (DataGridViewRow row in grid.Rows)
-            //    {
-            //        foreach (DataGridViewCell cell in row.Cells)
-            //            if (cell.Value == TextoABuscar)
-            //            {
-            //                row.Selected = true;
-            //                return true;
-            //            }
-            //    }
-            //}
-            //else
-            //{
-            //    foreach (DataGridViewRow row in grid.Rows)
-            //    {
-
-            //        if (row.Cells[Columna].Value == TextoABuscar)
-            //        {
-            //            row.Selected = true;
-            //            return true;
-            //        }
-            //    }
-            //}
             return encontrado;
         }
     }
