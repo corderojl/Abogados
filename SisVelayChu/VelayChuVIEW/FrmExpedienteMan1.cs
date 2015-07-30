@@ -79,38 +79,45 @@ namespace VelayChuVIEW
         }
         private void txtNumeroExpediente_TextChanged(object sender, EventArgs e)
         {
-            txtNombreCliente.Text   = "";
-            string _numero_expediente;
-            maxRec = dtSource.Rows.Count;
-            PageCount = maxRec / pageSize;
-
-            //Adjust the page number if the last page contains a partial page.
-            if ((maxRec % pageSize) > 0)
+            try
             {
-                PageCount += 1;
+                txtNombreCliente.Text = "";
+                string _numero_expediente;
+                maxRec = dtSource.Rows.Count;
+                PageCount = maxRec / pageSize;
+
+                //Adjust the page number if the last page contains a partial page.
+                if ((maxRec % pageSize) > 0)
+                {
+                    PageCount += 1;
+                }
+
+                // Initial seeings
+                currentPage = 1;
+                recNo = 0;
+                _numero_expediente = "%" + txtNumeroExpediente.Text + "%";
+                dtSource = oListarExpedientesBL.BuscarExpedienteByNumeroExpedient(_numero_expediente);
+                maxRec = dtSource.Rows.Count;
+                PageCount = maxRec / pageSize;
+
+                //Adjust the page number if the last page contains a partial page.
+                if ((maxRec % pageSize) > 0)
+                {
+                    PageCount += 1;
+                }
+                // Initial seeings
+                currentPage = 1;
+                recNo = 0;
+                LoadPage();
+
+                dtgExpediente.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+                dtgExpediente.Refresh();
             }
-
-            // Initial seeings
-            currentPage = 1;
-            recNo = 0;
-            _numero_expediente = "%" + txtNumeroExpediente.Text + "%";
-            dtSource = oListarExpedientesBL.BuscarExpedienteByNumeroExpedient(_numero_expediente);
-            maxRec = dtSource.Rows.Count;
-            PageCount = maxRec / pageSize;
-
-            //Adjust the page number if the last page contains a partial page.
-            if ((maxRec % pageSize) > 0)
+            catch (Exception ex)
             {
-                PageCount += 1;
+                MessageBox.Show("No se encontró Expediente");
             }
-            // Initial seeings
-            currentPage = 1;
-            recNo = 0;
-            LoadPage();
-            
-            dtgExpediente.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
-            dtgExpediente.Refresh();
         }
 
         private void txtNombreCliente_TextChanged(object sender, EventArgs e)
@@ -174,7 +181,7 @@ namespace VelayChuVIEW
 
         private void FrmExpedienteMan1_Load(object sender, EventArgs e)
         {
-            //llenarData();
+            llenarData();
         }
 
         private void button1_Click(object sender, EventArgs e)

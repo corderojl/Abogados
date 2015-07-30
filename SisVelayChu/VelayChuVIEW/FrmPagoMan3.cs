@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using VelaychuBE;
 using VelaychuBL;
 
 namespace VelayChuVIEW
@@ -55,6 +56,31 @@ namespace VelayChuVIEW
             dtgPago.Columns[3].ReadOnly = false;
             dtgPago.Columns[4].Width = 50;
             dtgPago.Columns[4].ReadOnly = false;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            List<PagoBE> ltPagoBE = new List<PagoBE>();
+            PagoBE _PagoBE = null;
+
+             foreach (DataGridViewRow row in dtgPago.Rows)
+            {
+                _PagoBE = new PagoBE();
+                _PagoBE.CodigoPago = Convert.ToInt32(row.Cells[0].Value);
+                _PagoBE.Porcentaje = float.Parse(row.Cells[3].Value.ToString());
+                _PagoBE.Monto = Convert.ToDecimal(row.Cells[4].Value);
+                ltPagoBE.Add(_PagoBE);
+            }
+            bool vexito = _PagoBL.ActualizarPago(ltPagoBE);
+            if (vexito)
+            {
+                MessageBox.Show("La actualización se realizó con Éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Hubó un problema con la actualización", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

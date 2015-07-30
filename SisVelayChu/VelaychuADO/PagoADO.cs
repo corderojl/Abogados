@@ -61,9 +61,9 @@ namespace VelaychuADO
             cmd.CommandText = "uspPagoActualizar";
             try
             {
-                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpediente", SqlDbType.Int));
+                par1 = cmd.Parameters.Add(new SqlParameter("@CodigoPago", SqlDbType.Int));
                 par1.Direction = ParameterDirection.Input;
-                cmd.Parameters["@CodigoExpediente"].Value = _PagoBE.CodigoPago;
+                cmd.Parameters["@CodigoPago"].Value = _PagoBE.CodigoPago;
                 par1 = cmd.Parameters.Add(new SqlParameter("@Porcentaje", SqlDbType.Float));
                 par1.Direction = ParameterDirection.Input;
                 cmd.Parameters["@Porcentaje"].Value = _PagoBE.Porcentaje;
@@ -106,16 +106,15 @@ namespace VelaychuADO
                     cnx.Open();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "uspPagoActualizar";
-                    par1 = cmd.Parameters.Add(new SqlParameter("@CodigoExpediente", SqlDbType.Int));
+                    par1 = cmd.Parameters.Add(new SqlParameter("@CodigoPago", SqlDbType.Int));
                     par1.Direction = ParameterDirection.Input;
-                    cmd.Parameters["@CodigoExpediente"].Value = _PagoBE.CodigoPago;
+                    cmd.Parameters["@CodigoPago"].Value = _PagoBE.CodigoPago;
                     par1 = cmd.Parameters.Add(new SqlParameter("@Porcentaje", SqlDbType.Float));
                     par1.Direction = ParameterDirection.Input;
                     cmd.Parameters["@Porcentaje"].Value = _PagoBE.Porcentaje;
                     par1 = cmd.Parameters.Add(new SqlParameter("@Monto", SqlDbType.Decimal));
                     par1.Direction = ParameterDirection.Input;
                     cmd.Parameters["@Monto"].Value = _PagoBE.Monto;
-                    cnx.Open();
                     cmd.ExecuteNonQuery();
                     vexito = true;
                     cnx.Close();
