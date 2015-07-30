@@ -120,28 +120,34 @@ namespace VelayChuVIEW
 
         private void llenarData()
         {
-            // Initial seeings
-            currentPage = 1;
-            recNo = 0;
-            string _nombre_cliente;
-            _nombre_cliente = "%" + txtNombreCliente.Text + "%";
-            dtSource = oListarExpedientesBL.BuscarExpedienteByNombreCliente(_nombre_cliente);
-            maxRec = dtSource.Rows.Count;
-            PageCount = maxRec / pageSize;
-
-            //Adjust the page number if the last page contains a partial page.
-            if ((maxRec % pageSize) > 0)
+            try
             {
-                PageCount += 1;
+                // Initial seeings
+                currentPage = 1;
+                recNo = 0;
+                string _nombre_cliente;
+                _nombre_cliente = "%" + txtNombreCliente.Text + "%";
+                dtSource = oListarExpedientesBL.BuscarExpedienteByNombreCliente(_nombre_cliente);
+                maxRec = dtSource.Rows.Count;
+                PageCount = maxRec / pageSize;
+
+                //Adjust the page number if the last page contains a partial page.
+                if ((maxRec % pageSize) > 0)
+                {
+                    PageCount += 1;
+                }
+                // Initial seeings
+                currentPage = 1;
+                recNo = 0;
+                LoadPage();
+                dtgExpediente.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dtgExpediente.Columns[0].Visible = false;
+                dtgExpediente.Columns[1].Visible = false;
+                dtgExpediente.Refresh();
             }
-            // Initial seeings
-            currentPage = 1;
-            recNo = 0;
-            LoadPage();
-            dtgExpediente.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dtgExpediente.Columns[0].Visible = false;
-            dtgExpediente.Columns[1].Visible = false;
-            dtgExpediente.Refresh();
+            catch (Exception ex)
+            {
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -168,7 +174,7 @@ namespace VelayChuVIEW
 
         private void FrmExpedienteMan1_Load(object sender, EventArgs e)
         {
-            llenarData();
+            //llenarData();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -61,6 +61,7 @@
     <Compile Include="JuzgadoBE.cs" />
     <Compile Include="ListarExpedientesBE.cs" />
     <Compile Include="MateriaBE.cs" />
+    <Compile Include="PagoBE.cs" />
     <Compile Include="PensionBE.cs" />
     <Compile Include="PerfilBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
